@@ -1,7 +1,6 @@
 ---
 title: "06_estimacion_intervalos"
 author: "Salvador Garcia"
-date: "3/18/2020"
 output:   
   html_document:
     toc: true
