@@ -1,7 +1,6 @@
 ---
 title: "04_dist_muestrales_aprox"
 author: "Salvador Garcia"
-date: "3/18/2020"
 output: html_document
 ---
 

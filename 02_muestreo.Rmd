@@ -1,7 +1,6 @@
 ---
 title: "Muestreo"
 author: "Salvador Garcia"
-date: "3/18/2020"
 output: html_document
 ---
 
