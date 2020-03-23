@@ -60,7 +60,7 @@ Entonces el intervalo de confianza puede ser expresado como:
 
 
 \begin{equation}
-\boxed{\left(\hat{p} - z_{\alpha/2} \frac{p(1-p)}{\sqrt{n}}, 
+\boxed{\left(\hat{p} - z_{\alpha/2} \sqrt{\frac{p(1-p)}{n}}, 
       \hat{p} + z_{\alpha/2} \frac{p(1-p)}{\sqrt{n}} \right)}
 (\#eq:form602)
 \end{equation}
