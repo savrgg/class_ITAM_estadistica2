@@ -66,7 +66,7 @@ Entonces el intervalo de confianza puede ser expresado como:
 \end{equation}
 
 ### IC diferencia de medias (muestras independientes)
-En el caso de tener dos poblaciones es posible medir la diferencia de medias entre las poblaciones. Se le llama muestra independientes cuando no hay relación entre una u otra población. En cambio cuando son dependientes comúnmente son muestras pareadas (siguiente sección). En el caso de independencia y asumiendo normalidad, se tienen dos poblaciones $X \sim N(\mu_x, \sigma_X^2)$ y $Y \sim N(\mu_y, \sigma_Y^2)$. En esta sección se asume que se conoce la varianza de ambas poblaciones. Con estos supuestos se sabe que $\overline{Y}-\overline{X} \sim N(\mu_{Y}-\mu_{X},\sqrt{\frac{\sigma_X^2}{n}+\frac{\sigma_Y^2}{m}})$. De esta manera podemos escribir a Z como:
+En el caso de tener dos poblaciones es posible medir la diferencia de medias entre las poblaciones. Se le llama muestra independientes cuando no hay relación entre una u otra población. En cambio cuando son dependientes comúnmente son muestras pareadas (siguiente sección). En el caso de independencia y asumiendo normalidad, se tienen dos poblaciones $X \sim N(\mu_x, \sigma_X^2)$ y $Y \sim N(\mu_y, \sigma_Y^2)$. En esta sección se asume que se conoce la varianza de ambas poblaciones. Con estos supuestos se sabe que $\overline{Y}-\overline{X} \sim N(\mu_{Y}-\mu_{X},\frac{\sigma_X^2}{n}+\frac{\sigma_Y^2}{m})$. De esta manera podemos escribir a Z como:
 
 $$Z = \frac{\left(\overline{Y}-\overline{X}\right) -\left(\mu_{Y}-\mu_{X}\right)}{\sqrt{\frac{\sigma_X^2}{n}+\frac{\sigma_Y^2}{m}}} \sim N\left(0,1\right)$$
 Sean $-z_{\alpha/2}$ y $z_{\alpha_2}$ puntos críticos, tal que:
@@ -87,7 +87,7 @@ Entonces el intervalo de confianza puede ser expresado como:
 
 
 ### IC diferencia de medias (muestras dependientes)
-Otro caso común es cuando se desea medir la diferencia de las medias de dos grupos. Donde cada $X_i$ esta distribuida con media $\mu_X$ y varianza $\sigma_X^2$, y de una manera análoga $Y_i$ se distribuye $\mu_X$ y varianza $\sigma_X^2$. Cuando se asume que las muestras son pareadas se calcula la diferencia entre cada par de valores ($X_i$, $Y_i$). Para esto, se definer la diferencia $D_i = Y_i - X_i$. Definido de esta forma, D_i se distibuye con media $\mu_D = \mu_X - \mu_Y$ y varianza $\sigma_D^2 = \sigma_X^2 + \sigma_Y^2 - 2\sigma_{XY}$. En particular, al asumir normalidad: $\overline{Y}-\overline{X} \sim N\left(\mu_{Y}-\mu_{X},\sqrt{\frac{\sigma_X^2 + \sigma_Y^2 - 2\sigma_{XY}}{n}}\right)$ o visto de otra manera: $\overline{D} \sim N\left(\mu_{D},\sqrt{\frac{\sigma_D^2}{n}}\right)$
+Otro caso común es cuando se desea medir la diferencia de las medias de dos grupos. Donde cada $X_i$ esta distribuida con media $\mu_X$ y varianza $\sigma_X^2$, y de una manera análoga $Y_i$ se distribuye $\mu_X$ y varianza $\sigma_X^2$. Cuando se asume que las muestras son pareadas se calcula la diferencia entre cada par de valores ($X_i$, $Y_i$). Para esto, se definer la diferencia $D_i = Y_i - X_i$. Definido de esta forma, D_i se distibuye con media $\mu_D = \mu_X - \mu_Y$ y varianza $\sigma_D^2 = \sigma_X^2 + \sigma_Y^2 - 2\sigma_{XY}$. En particular, al asumir normalidad: $\overline{Y}-\overline{X} \sim N\left(\mu_{Y}-\mu_{X},\frac{\sigma_X^2 + \sigma_Y^2 - 2\sigma_{XY}}{n}\right)$ o visto de otra manera: $\overline{D} \sim N\left(\mu_{D},\sqrt{\frac{\sigma_D^2}{n}}\right)$
 
 
 $$  Z = \frac{\left(\overline{Y}-\overline{X} \right) - \left(\mu_{Y}-\mu_{X}\right)}{\sqrt{\frac{\sigma_X^2 + \sigma_Y^2 - 2\sigma_{XY}}{n}}}$$
