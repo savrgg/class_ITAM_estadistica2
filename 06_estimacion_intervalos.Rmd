@@ -61,7 +61,7 @@ Entonces el intervalo de confianza puede ser expresado como:
 
 \begin{equation}
 \boxed{\left(\hat{p} - z_{\alpha/2} \sqrt{\frac{p(1-p)}{n}}, 
-      \hat{p} + z_{\alpha/2} \frac{p(1-p)}{\sqrt{n}} \right)}
+      \hat{p} + z_{\alpha/2} \sqrt{\frac{p(1-p)}{\n}} \right)}
 (\#eq:form602)
 \end{equation}
 
@@ -226,11 +226,49 @@ Entonces el intervalo de confianza puede ser expresado como:
 (\#eq:form610)
 \end{equation}
 
-
 ## Tamaño de muestra
 
+De los intervalos de confianza mostrados anteriormente, se puede ver que muchos dependen de dos factores: el nivel de confianza $1-\alpha$ y del tamaño de muestra $n$. Entonces podemos observar que el tamaño de la muestra influye el intervalo que mostramos. Generalmente el $n$ se encuentra en el denominador, por lo que a mayor tamaño de muestra, el intervalo de confianza se hace más reducido. De las primeras clases del curso se introdujo la expresion:
 
-## Resumen estimación por intervalos
+$$|{\hat{\theta}- \theta}| \leq B$$
+
+Es decir, que tan cerca se encuentra el estimador del parámetro poblacional. La B la definimos coo el error máximo de estimación, tal que:
+
+$$P(|{\hat{\theta}- \theta}| \leq B) = 1-\alpha$$
+
+### Tamaño de muestra para la media
+
+En el caso de la media, tenemos que el intervalo de confianza para $\mu$:
+
+$$\left(\overline{X} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}, \overline{X} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\right)$$
+Y adecuando la expresión del tamaño de muestra para el caso tenemos que:
+
+$$P(|{{\overline{X}}- \mu}| \leq B) = 1-\alpha$$
+De esta manera, podemos ver $B =z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$. Despejando $n$ de la expresión tenemos que:
+
+$$ n = \frac{(z_{\alpha/2})^2 \sigma^2}{B^2} $$
+
+### Tamaño de muestra para la proporción
+
+En el caso de la proporción, tenemos que el intervalo de confianza para $p$:
+
+$$\left(\hat{p} - z_{\alpha/2} \sqrt{\frac{p(1-p)}{n}}, 
+      \hat{p} + z_{\alpha/2} \sqrt{\frac{p(1-p)}{n}} \right)$$
+
+Y adecuando la expresión del tamaño de muestra para el caso tenemos que:
+
+$$P(|{{\hat{p}}- p}| \leq B) = 1-\alpha$$
+De esta manera, podemos ver $B =z_{\alpha/2} \frac{\sqrt{\hat{p}({1-\hat{p}})}}{\sqrt{n}}$. Despejando $n$ de la expresión tenemos que:
+
+$$ n = \frac{(z_{\alpha/2})^2 \hat{p}({1-\hat{p}})}{B^2} $$
+## Intervalos de confianza de un lado
+
+Otra manera de construir intervalos de confianza es tomando unicamente en cuenta una cola. Se dice que un intervalo de confianza es **inferior** para $\theta$ si unicamente se proporciona un valor mínimo sin especificar un máximo:
+
+$$(B, \infty)$$
+
+Por otro lado, se dice que un intervalo de confianza es **superior** para $\theta$ si unicamente se proporciona un valor máximo sin especificar un valor mínimo:
+$$(-\infty, A)$$
 
 
 

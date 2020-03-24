@@ -86,8 +86,10 @@
 <li class="chapter" data-level="2.4" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#estadístico-f---cociente-de-varianzas"><i class="fa fa-check"></i><b>2.4</b> Estadístico F - Cociente de varianzas</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#ic-para-cociente-de-varianzas-muestras-independientes"><i class="fa fa-check"></i><b>2.4.1</b> IC para cociente de varianzas (muestras independientes)</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#tamaño-de-muestra"><i class="fa fa-check"></i><b>2.5</b> Tamaño de muestra</a></li>
-<li class="chapter" data-level="2.6" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#resumen-estimación-por-intervalos"><i class="fa fa-check"></i><b>2.6</b> Resumen estimación por intervalos</a></li>
+<li class="chapter" data-level="2.5" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#tamaño-de-muestra"><i class="fa fa-check"></i><b>2.5</b> Tamaño de muestra</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#tamaño-de-muestra-para-la-media"><i class="fa fa-check"></i><b>2.5.1</b> Tamaño de muestra para la media</a></li>
+<li class="chapter" data-level="2.5.2" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#tamaño-de-muestra-para-la-proporción"><i class="fa fa-check"></i><b>2.5.2</b> Tamaño de muestra para la proporción</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -148,7 +150,7 @@ P\left(\hat{p} - z_{\alpha/2} {\sqrt{\frac{p(1-p)}{n}}} \leq p \leq \hat{p} + z_
 Entonces el intervalo de confianza puede ser expresado como:</p>
 <p><span class="math display" id="eq:form602">\[\begin{equation}
 \boxed{\left(\hat{p} - z_{\alpha/2} \sqrt{\frac{p(1-p)}{n}}, 
-      \hat{p} + z_{\alpha/2} \frac{p(1-p)}{\sqrt{n}} \right)}
+      \hat{p} + z_{\alpha/2} \sqrt{\frac{p(1-p)}{\n}} \right)}
 \tag{2.2}
 \end{equation}\]</span></p>
 </div>
@@ -291,10 +293,35 @@ Entonces el intervalo de confianza puede ser expresado como:
 </div>
 <div id="tamaño-de-muestra" class="section level2">
 <h2><span class="header-section-number">2.5</span> Tamaño de muestra</h2>
+<p>De los intervalos de confianza mostrados anteriormente, se puede ver que muchos dependen de dos factores: el nivel de confianza <span class="math inline">\(1-\alpha\)</span> y del tamaño de muestra <span class="math inline">\(n\)</span>. Entonces podemos observar que el tamaño de la muestra influye el intervalo que mostramos. Generalmente el <span class="math inline">\(n\)</span> se encuentra en el denominador, por lo que a mayor tamaño de muestra, el intervalo de confianza se hace más reducido. De las primeras clases del curso se introdujo la expresion:</p>
+<p><span class="math display">\[|{\hat{\theta}- \theta}| \leq B\]</span></p>
+<p>Es decir, que tan cerca se encuentra el estimador del parámetro poblacional. La B la definimos coo el error máximo de estimación, tal que:</p>
+<p><span class="math display">\[P(|{\hat{\theta}- \theta}| \leq B) = 1-\alpha\]</span></p>
+<div id="tamaño-de-muestra-para-la-media" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Tamaño de muestra para la media</h3>
+<p>En el caso de la media, tenemos que el intervalo de confianza para <span class="math inline">\(\mu\)</span>:</p>
+<p><span class="math display">\[\left(\overline{X} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}, \overline{X} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\right)\]</span>
+Y adecuando la expresión del tamaño de muestra para el caso tenemos que:</p>
+<p><span class="math display">\[P(|{{\overline{X}}- \mu}| \leq B) = 1-\alpha\]</span>
+De esta manera, podemos ver <span class="math inline">\(B =z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\)</span>. Despejando <span class="math inline">\(n\)</span> de la expresión tenemos que:</p>
+<p><span class="math display">\[ n = \frac{(z_{\alpha/2})^2 \sigma^2}{B^2} \]</span></p>
 </div>
-<div id="resumen-estimación-por-intervalos" class="section level2">
-<h2><span class="header-section-number">2.6</span> Resumen estimación por intervalos</h2>
+<div id="tamaño-de-muestra-para-la-proporción" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Tamaño de muestra para la proporción</h3>
+<p>En el caso de la proporción, tenemos que el intervalo de confianza para <span class="math inline">\(p\)</span>:</p>
+<p><span class="math display">\[\left(\hat{p} - z_{\alpha/2} \sqrt{\frac{p(1-p)}{n}}, 
+      \hat{p} + z_{\alpha/2} \sqrt{\frac{p(1-p)}{n}} \right)\]</span></p>
+<p>Y adecuando la expresión del tamaño de muestra para el caso tenemos que:</p>
+<p><span class="math display">\[P(|{{\hat{p}}- p}| \leq B) = 1-\alpha\]</span>
+De esta manera, podemos ver <span class="math inline">\(B =z_{\alpha/2} \frac{\sqrt{\hat{p}({1-\hat{p}})}}{\sqrt{n}}\)</span>. Despejando <span class="math inline">\(n\)</span> de la expresión tenemos que:</p>
+<p><span class="math display">\[ n = \frac{(z_{\alpha/2})^2 \hat{p}({1-\hat{p}})}{B^2} \]</span>
+## Intervalos de confianza de un lado</p>
+<p>Otra manera de construir intervalos de confianza es tomando unicamente en cuenta una cola. Se dice que un intervalo de confianza es <strong>inferior</strong> para <span class="math inline">\(\theta\)</span> si unicamente se proporciona un valor mínimo sin especificar un máximo:</p>
+<p><span class="math display">\[(B, \infty)\]</span></p>
+<p>Por otro lado, se dice que un intervalo de confianza es <strong>superior</strong> para <span class="math inline">\(\theta\)</span> si unicamente se proporciona un valor máximo sin especificar un valor mínimo:
+<span class="math display">\[(-\infty, A)\]</span></p>
 
+</div>
 </div>
 </div>
             </section>
