@@ -1,0 +1,247 @@
+%%% Template originaly created by Karol Kozioł (mail@karol-koziol.net) and modified for ShareLaTeX use
+
+\documentclass[addpoints]{exam}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm,textcomp}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage[spanish]{babel}
+
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.3}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+{1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+  
+  \theoremstyle{mytheor}
+  \newtheorem{defi}{Definition}
+  
+  % my own titles
+  \makeatletter
+  \renewcommand{\maketitle}{
+    \begin{center}
+    \vspace{2ex}
+    {\huge \textsc{\@title}}
+    \vspace{1ex}
+    \\
+    \linia\\
+    \@author \hfill \@date
+    \vspace{4ex}
+    \end{center}
+  }
+  \makeatother
+  %%%
+  
+  % custom footers and headers
+  %\usepackage{fancyhdr}
+  %\pagestyle{fancy}
+  \lfoot{Assignment \textnumero{} 5}
+  \cfoot{}
+  \rfoot{Page \thepage}
+  %\renewcommand{\headrulewidth}{0pt}
+  %\renewcommand{\footrulewidth}{0pt}
+  
+  % code listing settings
+  \usepackage{listings}
+  \lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+  }
+  
+  %%%----------%%%----------%%%----------%%%----------%%%
+  
+  \begin{document}
+  
+  \title{Parcial 1 - Estadística II}
+  
+  \author{ITAM, Primavera 2020}
+  
+  \date{26/02/2020}
+  
+  \maketitle
+  
+  \section*{Instrucciones}
+  
+  El examen consta de dos secciones. La primera es opción múltiple con 4 opciones cada una donde se deberá seleccionar la opción correcta. Para cada pregunta hay una sola respuesta correcta. Si se selecciona más de una opción será considerada como incorrecta. En la segunda sección se deberá desarrollar el problema planteado. Se debe cuidar la formalidad al escribir los resultados, ya que es parte de la calificación del problema. En caso de no tener el desarrollo de la pregunta, o bien se llegué a la respuesta sin una justificación se podrá anular la respuesta. 
+  
+  \vspace{10pt}
+  
+  
+  El examen tiene una duración de 1:45 horas. Una vez comenzado el examen, no se podrá salir del aula salvo por un motivo justificado. En caso contrario, se deberá entregar el examen. Esta prohibido el uso de electrónicos como computadoras, celulares o tablets. Solamente se pueden utilizar calculadoras y las hojas brindadas por el profesor. Favor de no desengrapar el examen. Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento del departamento. 
+  
+  \section*{Seccion A: Opción múltiple (30 pts)}
+  
+  \begin{questions}
+  
+  \question MUESTREO: Son colecciones no traslapadas de elementos de la población que cubren la población completa.
+  
+  \begin{checkboxes}
+  \choice Marcos muestrales
+  \choice Unidades de muestreo
+  \choice Elemento muestral
+  \choice Muestra
+  \end{checkboxes}
+  
+  \question MUESTREO: Es una lista de unidades de muestreo.
+  
+  \begin{checkboxes}
+  \choice Marcos muestrales
+  \choice Unidades de muestreo
+  \choice Elemento muestral
+  \choice Muestra
+  \end{checkboxes}
+  
+  \question MUESTREO:  Consiste en seleccionar una muestra mediante la separación de los elementos de la población en grupos que no presenten traslapes, de manera que cada grupo sea homogéneo entre sus elementos, pero heterogéneo entre grupos.
+  
+  \begin{checkboxes}
+  \choice Muestreo aleatorio simple
+  \choice Muestreo aleatorio estratificado
+  \choice Muestreo por conglomerados
+  \choice Muestreo por cuotas
+  \end{checkboxes}
+  
+  
+  \question DISTRIBUCIONES MUESTRALES: Es una función de las variables aleatorias observables en una muestra y de constantes conocidas.
+  
+  \begin{checkboxes}
+  \choice Estadístico 
+  \choice Parámetro
+  \choice Distribución
+  \choice Media poblacional
+  \end{checkboxes}
+  
+  
+  \question DISTRIBUCIONES MUESTRALES: Sean $Y_1$, $Y_2$, ..., $Y_n$ variables iid distribuidas normalmente con $E(Y_i) = \mu_i$ y $V(Y_i) = \sigma_i^2$ para i = 1,2,...,n. Definiendo $Z_i = \frac{Y_i - \mu_i}{\sigma_i}$, entonces $\sum_{i = 1}^{n} Z_i^2$ sigue una distribución:
+    \begin{checkboxes}
+  \choice t-student con $n-1$ g.l.
+  \choice Normal con $\mu = 0$ y $\sigma = 1$ 
+    \choice F con $n-1$ y $m-1$ g.l.
+  \choice $\chi^2$ con $n-1$ g.l.
+  \end{checkboxes}
+  
+  
+  \question DISTRIBUCIONES MUESTRALES: Sean $W_1$ y $W_2$ v.a. independientes con distribución $\chi_2$ con $v_1$ y $v_2$ g.l. respectivamente. Entonces se dice que: $\frac{W_1/v_1}{W_2/v_2}$ sigue una distribución:
+    
+    \begin{checkboxes}
+  \choice t-student con $v_1$ g.l.
+  \choice Normal con $\mu = 0$ y $\sigma = 1$ 
+    \choice F con $v_1$ y $v_2$ g.l.
+  \choice $\chi^2$ con $v_1$ g.l.
+  \end{checkboxes}
+  
+  
+  \end{questions}
+  
+  \section*{Seccion B: Preguntas a desarrollar (70 pts)}
+  
+  
+  \begin{questions} 
+  \question (20 pts) Suponga que una variable aleatoria puede tomar los valores \{1,3,5\}. Considere muestras de tamaño 2 con reemplazo.
+  
+  \begin{enumerate}
+  \item Calcule $E(X)$ y $V(X)$
+  \item Obtenga distribución de muestreo de $\overline{X}$, $E(\overline{X})$ y $V(\overline{X})$
+  \item Obtenga distribución de muestreo de $S^2$, $E(\overline{S^2})$ y $V(\overline{S^2})$
+  \item Calcule la probabilidad que $S^2$ tome valores entre 1 y 3
+  \item ¿Las distribuciones de $S^2$ y $\overline{X}$ son distribuciones exactas?
+  Justifique
+  \end{enumerate}
+  
+  \question (15 pts) Suponga que se tienen 5 vehiculos $V_1$, $V_2$, $V_3$, $V_4$, $V_5$. Los vehículos $V_3$ y $V_4$ requieren reparación.
+
+  \begin{enumerate}
+  \item Obtenga la distribución de muestreo de la proporción de vehículos $\hat{p}$ que necesitan reparación, si se toman muestras de dos vehiculos sin reemplazo
+  \item Calcule el valor esperado de la distribución de muestreo y la varianza de la distribución de muestreo $E(\hat{p})$ y $V(\hat{p})$
+  \end{enumerate}
+  
+  
+  \question (15 pts) 
+  En la torre de control de un aeropuerto se contaron cuantos aviones despegaban durante 40 periodos de una hora seleccionados al azar durante un mes. Supongase que la distribución del número de aviones (X) que despegan por hora es normal con $\mu = 50$ y desviación estándar $\sigma=7$.
+  
+  \begin{enumerate}
+  \item ¿Cuál es la probabilidad de que la media muestral para n = 40 periodos de una hora sea mayor a 55?
+  \item Suponga que n = 5, ¿Cuál es la probabilidad que $\bar{X}$ sea mayor que 55?
+  \item ¿La distribución presentada para n = 40 es una distribución exacta o aproximada? ¿Para n = 5 es una distribución exacta o aproximada?
+  \item ¿Cuál es la probabilidad que el número total de aviones para un periodo de 4 horas sea mayor que 180?
+  \end{enumerate}
+ 
+  
+  \question (10 pts) 
+  En una caja, las variaciones en el número personas atendidas por los cajeros A y B es la misma. Se obtuvo el número promedio de personas manejadas por dia por cada cajero, así como la varianza muestral. Esto se realizó durante 16 y 21 dias respectivamente. 
+  \begin{enumerate}
+  \item ¿Cuál es la probabilidad que el cociente de varianzas muestrales exceda 0.52 suponiendo que, los números de unidades manejadas por día por los cajeros son v.a. independientes que se distribuyen normal?
+  \end{enumerate}
+  
+  
+  \question (10 pts)
+  El peso de unas computadoras que se distribuye de forma normal con media 10 kgs y desviación estándar de 3. 
+  \begin{enumerate}
+  \item ¿Cuál es la probabilidad que un producto seleccionado al azar pese más de 12 kg?
+  \item ¿Si se toma una muestra de 9 productos, ¿Cuál es la probabilidad que la varianza de la muestra sea menor a 3?
+  \end{enumerate}
+  
+  
+  
+  \end{questions}
+  
+  
+  
+  
+  
+  
+  
+  \section*{Pregunta de rescate (5pts)}
+  
+  \begin{questions}
+  \question DISTRIBUCIONES MUESTRALES: Sea $Z$ una v.a. normal estándar y sea $W$ una variable con distribución $\chi^2$ con $v$ g.l. Entonces si $W$ y $Z$ son independientes, se dice que $\frac{Z}{\sqrt{W/v}}$ sigue una distribución:
+    
+    \begin{checkboxes}
+  \choice t-student con $v$ g.l.
+  \choice Normal con $\mu = 0$ y $\sigma = 1$ 
+    \choice F con $v-1$ y $w-1$ g.l.
+  \choice $\chi^2$ con $w-1$ g.l.
+  \end{checkboxes}
+  
+  \end{questions}
+  
+  
+  
+  \end{document}
+  

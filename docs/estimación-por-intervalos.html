@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Estimación por intervalos | ITAM - Estadística 2</title>
+  <title>Chapter 2 Estimación por intervalos | 06_estimacion_intervalos</title>
   <meta name="description" content="Notas para el curso de Estadística 2 - Primavera 2020" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Estimación por intervalos | ITAM - Estadística 2" />
+  <meta property="og:title" content="Chapter 2 Estimación por intervalos | 06_estimacion_intervalos" />
   <meta property="og:type" content="book" />
   
   
@@ -16,12 +16,12 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Estimación por intervalos | ITAM - Estadística 2" />
+  <meta name="twitter:title" content="Chapter 2 Estimación por intervalos | 06_estimacion_intervalos" />
   
   <meta name="twitter:description" content="Notas para el curso de Estadística 2 - Primavera 2020" />
   
 
-<meta name="author" content="Salvador García" />
+<meta name="author" content="Salvador Garcia" />
 
 
 
@@ -32,6 +32,7 @@
   
 <link rel="prev" href="index.html"/>
 
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,6 +50,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 
@@ -69,24 +72,29 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
-<li class="chapter" data-level="2" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html"><i class="fa fa-check"></i><b>2</b> Estimación por intervalos</a><ul>
-<li class="chapter" data-level="2.1" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#estadístico-z---media-varianza-conocida"><i class="fa fa-check"></i><b>2.1</b> Estadístico Z - Media (varianza conocida)</a><ul>
+<li class="chapter" data-level="2" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html"><i class="fa fa-check"></i><b>2</b> Estimación por intervalos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#estadístico-z---media-varianza-conocida"><i class="fa fa-check"></i><b>2.1</b> Estadístico Z - Media (varianza conocida)</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#ic-para-media"><i class="fa fa-check"></i><b>2.1.1</b> IC para media</a></li>
 <li class="chapter" data-level="2.1.2" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#ic-para-proporción"><i class="fa fa-check"></i><b>2.1.2</b> IC para proporción</a></li>
 <li class="chapter" data-level="2.1.3" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#ic-diferencia-de-medias-muestras-independientes"><i class="fa fa-check"></i><b>2.1.3</b> IC diferencia de medias (muestras independientes)</a></li>
 <li class="chapter" data-level="2.1.4" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#ic-diferencia-de-medias-muestras-dependientes"><i class="fa fa-check"></i><b>2.1.4</b> IC diferencia de medias (muestras dependientes)</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#estadístico-t---media-varianza-desconocida"><i class="fa fa-check"></i><b>2.2</b> Estadístico T - Media (varianza desconocida)</a><ul>
+<li class="chapter" data-level="2.2" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#estadístico-t---media-varianza-desconocida"><i class="fa fa-check"></i><b>2.2</b> Estadístico T - Media (varianza desconocida)</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#ic-para-la-media"><i class="fa fa-check"></i><b>2.2.1</b> IC para la media</a></li>
 <li class="chapter" data-level="2.2.2" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#ic-para-la-proporción"><i class="fa fa-check"></i><b>2.2.2</b> IC para la proporción</a></li>
 <li class="chapter" data-level="2.2.3" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#ic-diferencia-de-medias-muestras-independientes-1"><i class="fa fa-check"></i><b>2.2.3</b> IC diferencia de medias (muestras independientes)</a></li>
 <li class="chapter" data-level="2.2.4" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#ic-diferencia-de-medias-muestras-dependientes-1"><i class="fa fa-check"></i><b>2.2.4</b> IC diferencia de medias (muestras dependientes)</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#estadístico-j---varianza"><i class="fa fa-check"></i><b>2.3</b> Estadístico J - Varianza</a></li>
-<li class="chapter" data-level="2.4" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#estadístico-f---cociente-de-varianzas"><i class="fa fa-check"></i><b>2.4</b> Estadístico F - Cociente de varianzas</a><ul>
+<li class="chapter" data-level="2.4" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#estadístico-f---cociente-de-varianzas"><i class="fa fa-check"></i><b>2.4</b> Estadístico F - Cociente de varianzas</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#ic-para-cociente-de-varianzas-muestras-independientes"><i class="fa fa-check"></i><b>2.4.1</b> IC para cociente de varianzas (muestras independientes)</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#tamaño-de-muestra"><i class="fa fa-check"></i><b>2.5</b> Tamaño de muestra</a><ul>
+<li class="chapter" data-level="2.5" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#tamaño-de-muestra"><i class="fa fa-check"></i><b>2.5</b> Tamaño de muestra</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#tamaño-de-muestra-para-la-media"><i class="fa fa-check"></i><b>2.5.1</b> Tamaño de muestra para la media</a></li>
 <li class="chapter" data-level="2.5.2" data-path="estimación-por-intervalos.html"><a href="estimación-por-intervalos.html#tamaño-de-muestra-para-la-proporción"><i class="fa fa-check"></i><b>2.5.2</b> Tamaño de muestra para la proporción</a></li>
 </ul></li>
@@ -103,7 +111,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ITAM - Estadística 2</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">06_estimacion_intervalos</a>
           </h1>
         </div>
 
@@ -111,17 +119,17 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="estimación-por-intervalos" class="section level1">
+<div id="estimación-por-intervalos" class="section level1" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Estimación por intervalos</h1>
 <p>Durante el tema anterior se abordó la estimación puntual, donde se proporciona un solo valor que nos da una idea de un parámetro <span class="math inline">\(\theta\)</span>. A veces un solo valor no es suficiente y es requerido tener un rango de valores donde creemos se encuentra el parámetro.</p>
 <p><strong>Nivel de confianza</strong>: Grado de seguridad que se tiene sobre la veracidad de una afirmación acerca del parámetro (o parámetros) de interés. El nivel de confianza se denota como <span class="math inline">\(1-\alpha\)</span> con <span class="math inline">\(\alpha\)</span> constante entre 0 y 1.</p>
 <p><strong>Intervalo de confianza (IC)</strong>: Rango de valores en el que se encuentra el verdadero valor del parámetro <span class="math inline">\(\theta\)</span>. Este rango de valores es dependiente la nivel de confianza <span class="math inline">\(1-\alpha\)</span>. Sean <span class="math inline">\(T_1\)</span> y <span class="math inline">\(T_2\)</span> dos estadísticas tal que:</p>
 <p><span class="math display">\[P(T_1 &lt; \theta &lt; T_2) = 1 - \alpha\]</span></p>
 <p>Entonces <span class="math inline">\((T_1, T_2)\)</span> es un intervalo tal que la probabilidad que el verdadero parámetro <span class="math inline">\(\theta\)</span> se encuentre dentro de los valores es <span class="math inline">\(1-\alpha\)</span></p>
-<div id="estadístico-z---media-varianza-conocida" class="section level2">
+<div id="estadístico-z---media-varianza-conocida" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Estadístico Z - Media (varianza conocida)</h2>
 <p>Recordando clases pasadas, se había encontrado la distrubión de los estimadores de la media (<span class="math inline">\(\overline{X}\)</span>). De acuerdo si se tenía una varianza conocida o desconocida, el estimador <span class="math inline">\(\overline{X}\)</span> se podía distribuir normalmente o como una distribución t-student respectivamente.</p>
-<div id="ic-para-media" class="section level3">
+<div id="ic-para-media" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> IC para media</h3>
 <p>Si se tienen <span class="math inline">\(n\)</span> datos, donda cada <span class="math inline">\(X_i\)</span> se modela con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span> <strong>conocida</strong>, entonces tenemos que:</p>
 <p><span class="math display">\[Z = \left(\frac{\overline{X}-\mu} {\sigma/\sqrt{n}} \right)  = \left(\frac{\overline{X}-\mu} {\sqrt{\frac{\sigma^2}{n}}} \right) \sim N\left(0,1\right)\]</span>
@@ -137,7 +145,7 @@ P\left(\overline{X} - z_{\alpha/2} {\sqrt{\frac{\sigma^2}{n}}} \leq \mu \leq \ov
 \tag{2.1}
 \end{equation}\]</span></p>
 </div>
-<div id="ic-para-proporción" class="section level3">
+<div id="ic-para-proporción" class="section level3" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> IC para proporción</h3>
 <p>La proporción se puede ver como un caso particular de una media, solo que para el caso en el que cada <span class="math inline">\(X_i\)</span> se distribuye <em>Bernoulli</em>.</p>
 <p><span class="math display">\[Z = \left(\frac{\overline{X}-\mu}{\sqrt{\frac{\sigma^2}{n}}}\right) = \left(\frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}\right) \sim N\left(0,1\right)\]</span>
@@ -150,11 +158,11 @@ P\left(\hat{p} - z_{\alpha/2} {\sqrt{\frac{p(1-p)}{n}}} \leq p \leq \hat{p} + z_
 Entonces el intervalo de confianza puede ser expresado como:</p>
 <p><span class="math display" id="eq:form602">\[\begin{equation}
 \boxed{\left(\hat{p} - z_{\alpha/2} \sqrt{\frac{p(1-p)}{n}}, 
-      \hat{p} + z_{\alpha/2} \sqrt{\frac{p(1-p)}{\n}} \right)}
+      \hat{p} + z_{\alpha/2} \sqrt{\frac{p(1-p)}{n}} \right)}
 \tag{2.2}
 \end{equation}\]</span></p>
 </div>
-<div id="ic-diferencia-de-medias-muestras-independientes" class="section level3">
+<div id="ic-diferencia-de-medias-muestras-independientes" class="section level3" number="2.1.3">
 <h3><span class="header-section-number">2.1.3</span> IC diferencia de medias (muestras independientes)</h3>
 <p>En el caso de tener dos poblaciones es posible medir la diferencia de medias entre las poblaciones. Se le llama muestra independientes cuando no hay relación entre una u otra población. En cambio cuando son dependientes comúnmente son muestras pareadas (siguiente sección). En el caso de independencia y asumiendo normalidad, se tienen dos poblaciones <span class="math inline">\(X \sim N(\mu_x, \sigma_X^2)\)</span> y <span class="math inline">\(Y \sim N(\mu_y, \sigma_Y^2)\)</span>. En esta sección se asume que se conoce la varianza de ambas poblaciones. Con estos supuestos se sabe que <span class="math inline">\(\overline{Y}-\overline{X} \sim N(\mu_{Y}-\mu_{X},\frac{\sigma_X^2}{n}+\frac{\sigma_Y^2}{m})\)</span>. De esta manera podemos escribir a Z como:</p>
 <p><span class="math display">\[Z = \frac{\left(\overline{Y}-\overline{X}\right) -\left(\mu_{Y}-\mu_{X}\right)}{\sqrt{\frac{\sigma_X^2}{n}+\frac{\sigma_Y^2}{m}}} \sim N\left(0,1\right)\]</span>
@@ -172,7 +180,7 @@ Entonces el intervalo de confianza puede ser expresado como:</p>
 \tag{2.3}
 \end{equation}\]</span></p>
 </div>
-<div id="ic-diferencia-de-medias-muestras-dependientes" class="section level3">
+<div id="ic-diferencia-de-medias-muestras-dependientes" class="section level3" number="2.1.4">
 <h3><span class="header-section-number">2.1.4</span> IC diferencia de medias (muestras dependientes)</h3>
 <p>Otro caso común es cuando se desea medir la diferencia de las medias de dos grupos. Donde cada <span class="math inline">\(X_i\)</span> esta distribuida con media <span class="math inline">\(\mu_X\)</span> y varianza <span class="math inline">\(\sigma_X^2\)</span>, y de una manera análoga <span class="math inline">\(Y_i\)</span> se distribuye <span class="math inline">\(\mu_X\)</span> y varianza <span class="math inline">\(\sigma_X^2\)</span>. Cuando se asume que las muestras son pareadas se calcula la diferencia entre cada par de valores (<span class="math inline">\(X_i\)</span>, <span class="math inline">\(Y_i\)</span>). Para esto, se definer la diferencia <span class="math inline">\(D_i = Y_i - X_i\)</span>. Definido de esta forma, D_i se distibuye con media <span class="math inline">\(\mu_D = \mu_X - \mu_Y\)</span> y varianza <span class="math inline">\(\sigma_D^2 = \sigma_X^2 + \sigma_Y^2 - 2\sigma_{XY}\)</span>. En particular, al asumir normalidad: <span class="math inline">\(\overline{Y}-\overline{X} \sim N\left(\mu_{Y}-\mu_{X},\frac{\sigma_X^2 + \sigma_Y^2 - 2\sigma_{XY}}{n}\right)\)</span> o visto de otra manera: <span class="math inline">\(\overline{D} \sim N\left(\mu_{D},\sqrt{\frac{\sigma_D^2}{n}}\right)\)</span></p>
 <p><span class="math display">\[  Z = \frac{\left(\overline{Y}-\overline{X} \right) - \left(\mu_{Y}-\mu_{X}\right)}{\sqrt{\frac{\sigma_X^2 + \sigma_Y^2 - 2\sigma_{XY}}{n}}}\]</span>
@@ -190,10 +198,10 @@ P\left(\left(\overline{Y}-\overline{X}\right) - z_{\alpha/2} \sqrt{\frac{\sigma_
 \end{equation}\]</span></p>
 </div>
 </div>
-<div id="estadístico-t---media-varianza-desconocida" class="section level2">
+<div id="estadístico-t---media-varianza-desconocida" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Estadístico T - Media (varianza desconocida)</h2>
 <p>Los casos para el estadístico T son muy similares al estadístico Z, solamente que ahora se asume que no se conoce la varianza poblacional y es estimada por la varianza muestral.</p>
-<div id="ic-para-la-media" class="section level3">
+<div id="ic-para-la-media" class="section level3" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> IC para la media</h3>
 <p>Si se tienen <span class="math inline">\(n\)</span> datos, donde cada <span class="math inline">\(X_i\)</span> se modela con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span> <strong>desconocida</strong>, entonces la varianza se estima con con <span class="math inline">\(s^2\)</span>. Por lo tanto tenemos que:</p>
 <p><span class="math display">\[T = \left(\frac{\overline{X}-\mu}{s/\sqrt{n}}\right) = \left(\frac{\overline{X}-\mu}{\sqrt{\frac{s^2}{n}}}\right) \sim t_{n-1}\]</span></p>
@@ -209,11 +217,11 @@ Entonces el intervalo de confianza puede ser expresado como:</p>
 \tag{2.5}
 \end{equation}\]</span></p>
 </div>
-<div id="ic-para-la-proporción" class="section level3">
+<div id="ic-para-la-proporción" class="section level3" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> IC para la proporción</h3>
 <p>Nota: para el caso de la distribución <span class="math inline">\(Bernoulli(p)\)</span>, al conocer la media se conoce la varianza. Esto es por que la media de la Bernoulli es <span class="math inline">\(p\)</span> y la varianza <span class="math inline">\(p(1-p)\)</span>. Por lo tanto la proporción no se puede distribuir como <span class="math inline">\(t-student\)</span>.</p>
 </div>
-<div id="ic-diferencia-de-medias-muestras-independientes-1" class="section level3">
+<div id="ic-diferencia-de-medias-muestras-independientes-1" class="section level3" number="2.2.3">
 <h3><span class="header-section-number">2.2.3</span> IC diferencia de medias (muestras independientes)</h3>
 <p>Para la diferencia de medias se tiene no se conoce la varianza de X ni de Y, por lo que se estiman por medio de <span class="math inline">\(S_X^2\)</span> y <span class="math inline">\(S_Y^2\)</span>:</p>
 <p><span class="math display">\[T = \frac{\left(\overline{Y}-\overline{X}\right) -\left(\mu_{Y}-\mu_{X}\right)}{\sqrt{\frac{S_X^2}{n}+\frac{S_Y^2}{m}}} \sim t_{n+m-2}\]</span>
@@ -231,7 +239,7 @@ Entonces el intervalo de confianza puede ser expresado como:</p>
 \tag{2.6}
 \end{equation}\]</span></p>
 </div>
-<div id="ic-diferencia-de-medias-muestras-dependientes-1" class="section level3">
+<div id="ic-diferencia-de-medias-muestras-dependientes-1" class="section level3" number="2.2.4">
 <h3><span class="header-section-number">2.2.4</span> IC diferencia de medias (muestras dependientes)</h3>
 <p>Para el caso de muestras independientes, podemos estimar la varianza como sigue:</p>
 <p><span class="math display">\[S_D^2  = \frac{1}{n-1} \sum_{i = 1}^{n} (D_i-\bar{D})^2\]</span></p>
@@ -252,7 +260,7 @@ P\left(\overline{D} - t_{(n-1,\alpha/2)} \sqrt{\frac{S_D^2}{n}} \leq \mu_Y-\mu_X
 \end{equation}\]</span></p>
 </div>
 </div>
-<div id="estadístico-j---varianza" class="section level2">
+<div id="estadístico-j---varianza" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Estadístico J - Varianza</h2>
 <p>Una vez revisado el intervalo de confianza para la media con varianza conocida y desconocida, un paso intuitivo es construir el de la varianza. Como se estudio en clases pasadas, el estimador más común de la varianza es <span class="math inline">\(S^2\)</span>. Además se definió el estadistico J con distribución <span class="math inline">\(\chi^2\)</span>. Suponiendo que se cada <span class="math inline">\(X_i\)</span> se distribuye normal y que se tienen n observaciones:</p>
 <p><span class="math display">\[J = \frac{(n-1) s^2}{\sigma^2} \sim \chi_{n-1}^2\]</span></p>
@@ -270,9 +278,9 @@ Entonces el intervalo de confianza puede ser expresado como:</p>
 \tag{2.8}
 \end{equation}\]</span></p>
 </div>
-<div id="estadístico-f---cociente-de-varianzas" class="section level2">
+<div id="estadístico-f---cociente-de-varianzas" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Estadístico F - Cociente de varianzas</h2>
-<div id="ic-para-cociente-de-varianzas-muestras-independientes" class="section level3">
+<div id="ic-para-cociente-de-varianzas-muestras-independientes" class="section level3" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> IC para cociente de varianzas (muestras independientes)</h3>
 <p>El último estadistico estudiado es la F, usado para el cociente de varianzas. Este es usado en procesos donde se requiere comparar la variabilidad de distintas poblaciones. Para comparar esta variaciones tomamos el supuesto de independencia de las muestras. De clases pasadas sabemos que el estadístico para medir esta variabilidad es la F:</p>
 <p><span class="math display">\[ F = \frac{S_X^2 \sigma_Y^2}{S_Y^2 \sigma_X^2} \sim F_{(n-1, m-1)}\]</span></p>
@@ -291,13 +299,13 @@ Entonces el intervalo de confianza puede ser expresado como:
 \end{equation}\]</span></p>
 </div>
 </div>
-<div id="tamaño-de-muestra" class="section level2">
+<div id="tamaño-de-muestra" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Tamaño de muestra</h2>
 <p>De los intervalos de confianza mostrados anteriormente, se puede ver que muchos dependen de dos factores: el nivel de confianza <span class="math inline">\(1-\alpha\)</span> y del tamaño de muestra <span class="math inline">\(n\)</span>. Entonces podemos observar que el tamaño de la muestra influye el intervalo que mostramos. Generalmente el <span class="math inline">\(n\)</span> se encuentra en el denominador, por lo que a mayor tamaño de muestra, el intervalo de confianza se hace más reducido. De las primeras clases del curso se introdujo la expresion:</p>
 <p><span class="math display">\[|{\hat{\theta}- \theta}| \leq B\]</span></p>
 <p>Es decir, que tan cerca se encuentra el estimador del parámetro poblacional. La B la definimos coo el error máximo de estimación, tal que:</p>
 <p><span class="math display">\[P(|{\hat{\theta}- \theta}| \leq B) = 1-\alpha\]</span></p>
-<div id="tamaño-de-muestra-para-la-media" class="section level3">
+<div id="tamaño-de-muestra-para-la-media" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Tamaño de muestra para la media</h3>
 <p>En el caso de la media, tenemos que el intervalo de confianza para <span class="math inline">\(\mu\)</span>:</p>
 <p><span class="math display">\[\left(\overline{X} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}, \overline{X} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\right)\]</span>
@@ -306,7 +314,7 @@ Y adecuando la expresión del tamaño de muestra para el caso tenemos que:</p>
 De esta manera, podemos ver <span class="math inline">\(B =z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\)</span>. Despejando <span class="math inline">\(n\)</span> de la expresión tenemos que:</p>
 <p><span class="math display">\[ n = \frac{(z_{\alpha/2})^2 \sigma^2}{B^2} \]</span></p>
 </div>
-<div id="tamaño-de-muestra-para-la-proporción" class="section level3">
+<div id="tamaño-de-muestra-para-la-proporción" class="section level3" number="2.5.2">
 <h3><span class="header-section-number">2.5.2</span> Tamaño de muestra para la proporción</h3>
 <p>En el caso de la proporción, tenemos que el intervalo de confianza para <span class="math inline">\(p\)</span>:</p>
 <p><span class="math display">\[\left(\hat{p} - z_{\alpha/2} \sqrt{\frac{p(1-p)}{n}}, 

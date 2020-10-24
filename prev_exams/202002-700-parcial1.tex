@@ -1,0 +1,178 @@
+%%% Template originaly created by Karol Kozioł (mail@karol-koziol.net) and modified for ShareLaTeX use
+
+\documentclass[addpoints]{exam}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage[spanish]{babel}
+
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,%
+bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.3}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+{1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+  
+  \theoremstyle{mytheor}
+  \newtheorem{defi}{Definition}
+  
+  % my own titles
+  \makeatletter
+  \renewcommand{\maketitle}{
+    \begin{center}
+    \vspace{2ex}
+    {\huge \textsc{\@title}}
+    \vspace{1ex}
+    \\
+    \linia\\
+    \@author \hfill \@date
+    \vspace{4ex}
+    \end{center}
+  }
+  \makeatother
+  %%%
+  
+  % custom footers and headers
+  \lfoot{Assignment \textnumero{} 5}
+  \cfoot{}
+  \rfoot{Page \thepage}
+  %
+  
+  % code listing settings
+  \usepackage{listings}
+  \lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+  }
+  
+  %%%----------%%%----------%%%----------%%%----------%%%
+  
+  \begin{document}
+  
+  \title{Parcial 1 - Estadística II}
+  
+  \author{ITAM, Primavera 2020}
+  
+  \date{26/02/2020}
+  
+  \maketitle
+  
+  \section*{Instrucciones}
+  
+
+  
+  
+ El examen consta de una sección. Se deberá desarrollar el problema planteado. Se debe cuidar la formalidad al escribir los resultados, ya que es parte de la calificación del problema. En caso de no tener el desarrollo de la pregunta, o bien se llegue a la respuesta sin una justificación se podrá anular la respuesta. 
+  
+  \vspace{10pt}
+  
+El examen tiene una duración de 1:45 horas. Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento del departamento. Se tiene hasta las 8:50 para enviar el examen, se debe enviar al siguiente correo: salvador.garcia.gonzalez@itam.mx
+
+
+  \section*{Seccion A: Preguntas a desarrollar (100 pts)}
+  
+  
+  \begin{questions} 
+  \question (20 pts) Suponga que una variable aleatoria puede tomar los valores \{2,4,6\}. con probabilidades $\{0.1, 0.3, 0.6\}$ respectivamente. Considere muestras de tamaño 2 con reemplazo.
+  
+  \begin{enumerate}
+  \item Calcule $E(X)$ y $V(X)$
+  \item Obtenga distribución de muestreo del siguiente estadístico $\overline{X}$ y su respectiva esperanza y varianza
+  \item Obtenga distribución de muestreo del siguiente estadístico, $\frac{X_1 - X_2}{2}$ y su respectiva esperanza y varianza
+  \item ¿Las distribuciones encontradas en los incisos anteriores son distribuciones aproximadas? Justifique.
+  \item ¿Calcule la probabilidad que $3 \leq \overline{X} \leq 5$ ?
+  \end{enumerate}
+  
+  \question (20 pts) 
+  El número de metros que nada un hipopótamo por minuto en un rio de Sudáfrica sigue una distribución con media $\mu_A = 24.7$. Se toma una muestra de nado de $10$ minutos de este hipopótamo y se obtiene que tiene una desviación estándar de la muestra es de $6.17$ metros por segundo. Calcule la probabilidad que la desviación estándar de la muestra sea superior o igual a $6.17$, si la teoria dice que este hipopotamo en particular tiene una $\sigma=4.5$. Concluye de acuerdo al problema y al resultado.
+ 
+  \question (20 pts) 
+  Si $S_1^2$ y $S_2^2$ son varianzas de dos muestras aleatorias independientes de 10 y 15 elementos respectivamente y fueron tomadas de poblaciones normales con varianzas iguales:
+  \begin{enumerate}
+  \item Calcule $P(\frac{S_1^2}{S_2^2} < 4.03)$ 
+  \end{enumerate}
+  
+ Si se sabe que la varianza de la poblacion de donde salio la muestra 1 es de 20 y la varianza de la poblacion que se extrajo la muestra 2 es 15:
+ \begin{enumerate}
+  \item Calcule $P(\frac{S_1^2}{S_2^2} < 4.28)$ 
+  \end{enumerate}
+  
+  
+  \question (20 pts) 
+Para seleccionar entre dos profesores del ITAM (A y B) se les realiza una prueba con 50 preguntas y se les toma el tiempo en resolver estas preguntas. Si las medias muestrales del tiempo para resolver estas preguntas difiere en mas de 1 hora, el profesor con menor tiempo es seleccionado. De otra forma se considera empate. Si las desviaciones estandar de los tiempos para ambos profesores es de 2 horas, ¿Cual es la probabilidad de que el profesor A obtenga el trabajo, aun cuando los dos sean igualmente habiles (es decir, se espera que resuelvan las preguntas en el mismo tiempo)?
+    
+  \question (20 pts) 
+  Se sabe que la demanda de chilaquiles del ITAM se distribuye como Poisson con media de 6 por hora. Calcule la probabilidad de que, en un periodo de 40 horas, la demanda promedio por hora sea al menos de 7
+
+  \end{questions}
+  
+  
+  
+  \section*{Pregunta de rescate(Se deben tener ambas correctas para sumar los 5 puntos, solamente una pregunta correcta no es acreedora a puntos) (5pts)}
+  
+  \begin{questions}
+  \question Suponga que tiene una población con media $\mu$ y varianza $\sigma^2$. ¿Qué distribución sigue $\overline{X}$ suponiendo una muestra de $n = 10$ elementos:
+  
+  \begin{checkboxes}
+  \choice $N(\mu, \sigma^2)$ y es exacta
+  \choice $N(\mu, \sigma^2)$ y es aproximada
+  \choice $N(\mu, \frac{\sigma^2}{n})$ y es exacta
+  \choice $N(\mu, \frac{\sigma^2}{n})$ y es aproximada
+  \choice No es posible saber con los datos
+  \end{checkboxes}
+    
+  \question Suponga que tiene una distribución Poisson(5). Usando TCL, ¿Qué distribución sigue $\overline{X} y \sum_i X_i$ cuando $n=30$?
+  
+  \begin{checkboxes}
+  \choice $\overline{X} \sim N(5,\frac{5}{30})$ y $\sum_i X_i \sim N(150, 150)$
+  \choice $\overline{X} \sim N(5,\frac{25}{30})$ y $\sum_i X_i \sim N(5, \frac{25}{30})$
+  \choice $\overline{X} \sim N(5,\frac{5}{30})$ y $\sum_i X_i \sim N(5, \frac{25}{30})$
+  \choice $\overline{X} \sim N(5,\frac{25}{30})$ y $\sum_i X_i \sim N(150, 150)$
+  \choice No es posible saber con los datos
+  \end{checkboxes}
+  
+
+  
+  \end{questions}
+  
+  
+  
+  \end{document}
+  

@@ -1,0 +1,176 @@
+%%% Template originaly created by Karol Kozioł (mail@karol-koziol.net) and modified for ShareLaTeX use
+
+\documentclass[addpoints]{exam}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage[spanish]{babel}
+
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,%
+bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.3}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+{1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+  
+  \theoremstyle{mytheor}
+  \newtheorem{defi}{Definition}
+  
+  % my own titles
+  \makeatletter
+  \renewcommand{\maketitle}{
+    \begin{center}
+    \vspace{2ex}
+    {\huge \textsc{\@title}}
+    \vspace{1ex}
+    \\
+    \linia\\
+    \@author \hfill \@date
+    \vspace{4ex}
+    \end{center}
+  }
+  \makeatother
+  %%%
+  
+  % custom footers and headers
+
+  \lfoot{Assignment \textnumero{} 5}
+  \cfoot{}
+  \rfoot{Page \thepage}
+  %
+  
+  % code listing settings
+  \usepackage{listings}
+  \lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+  }
+  
+  %%%----------%%%----------%%%----------%%%----------%%%
+  
+  \begin{document}
+  
+  \title{Parcial 3 - Estadística II}
+  
+  \author{ITAM, Primavera 2020}
+  
+  \date{06/05/2020}
+  
+  \maketitle
+  
+  \section*{Instrucciones}
+  
+  El examen consta de dos secciones. La primera consta de 4 preguntas con distintos incisos. La segunda sección brinda 10 puntos extra en el examen: las que mencionan Verdadero-Falso, se debe indicar una de las dos opciones y explicar a detalle. En caso contrario se debe contestar la pregunta. Se debe cuidar la formalidad al escribir los resultados, ya que es parte de la calificación del problema. En caso de no tener el desarrollo de la pregunta, o bien se llegué a la respuesta sin una justificación se podrá anular la respuesta. 
+  
+  \vspace{10pt}
+  
+  El examen tiene una duración de 1:45 horas. Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento del departamento. En caso de no ser proporcionada, use $\alpha = 0.05$
+  
+  
+  \section*{Seccion B: Preguntas a desarrollar (100 pts)}
+  
+  
+  \begin{questions} 
+  \question (25 pts) Las vaquitas marinas son cetáceos que les gusta buscar calamares y peces cerca de aguas poco profundas. Un grupo de investigadores está interesado en medir las libras promedio que consumen por semana, la cual se distribuye normal. Los investigadores suponen que consumen $800$ libras (o menos) con $\sigma$ menor que 40, bastante abajo del límite que plantea la revista Nature, que es de $1000$ libras semanales. Con esto deciden tomar una muestra de $n = 40$ vaquitas, encontrando que la media muestra y la varianza son igual a $825$ libras y $2350$ libras respectivamente (use $\alpha = 0.05$).
+  
+  \begin{enumerate}
+  \item  si $\mu = 800$ y $\sigma = 40$, ¿Que tan probable es que es una vaquita marina consuma más de 1000 libras a la semana?
+  \item ¿Los datos proporcionan suficiente evidencia para indicar que las vaquitas marinas consumen más de 800 libras? Plantea $H_0$, $H_1$, usa TCL y concluye.
+  \item ¿Los datos aportan suficiente evidencia para indicar $\sigma$ excede de 40? Plantea $H_0$ y $H_1$ y concluye.
+  \end{enumerate}
+  
+  \question (25 pts) En tiempos de Covid19, se desea saber si la temperatura promedio de los empleados de Grupo S. es distinta que en tiempos normales, para esto se recolectó una muestra antes y una durante la pandemia, obteniendose los siguientes datos (use $\alpha = .05$):
+
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{ll}
+    Durante Covid19 & Pre-Covid19 \\
+    $n_1 = 20$ & $n_2 = 20$ \\
+    $\bar{y_1} =  78$ & $\bar{y_2} = 67$ \\
+    $s_1 = 22$ &  $s_2 = 20$
+    \end{tabular}
+    \end{table}
+
+  \begin{enumerate}
+  \item  ¿Hay suficiente evidencia para decir que existe una diferencia en la temperatura promedio de los empleados de Grupo S? Concluye.
+  \item ¿Cuál es el nivel de significancia alcanzado (valor-p)?
+  \end{enumerate}
+  
+  
+  \question (25 pts) 
+  La cafetería del ITAM sigue un proceso de calidad en sus alimentos. Se sabe que la proporción de alimentos en mal estado es del $14\%$. El ITAM como institución no pueda aceptar que la cafetería venda alimentos si toma una muestra de 20 alimentos y encuentra 4 o más alimentos mal estado. Para monitorear la calidad del proceso se desea hacer una prueba estadística (use $\alpha = .05$). 
+  
+  \begin{enumerate}
+  \item Enuncie las hipótesis nula y alternativa
+  \item Obtenga la probabilidad de cometer el error tipo I 
+  \item Obtenga la potencia de la prueba cuando la proporción de alimentos defectuosas es del $20\%$ y $30\%$. 
+  \item Obtenga la potencia de la prueba para p = 0.20 y p = 0.25 cuando la muestra inspeccionada es de 100 alimentos y el ITAM no acepta si encuentra 20 o más alimentos defectuosos.
+  \end{enumerate}
+ 
+  
+  \question (25 pts) 
+  En la construcción de la estela de Luz se usaron estructuras prefabricadas. Con la información histórica de la compañía que las fabricas se puede considerar que la resistencia $(ton/m^2)$ de estas estructuras se puede modelar como una variable aleatoria normal con $\sigma^2 = 900$. Se desea probar que la resistencia promedio de estas estructuras es mayor de 150 toneladas, para lo anterior se tomó una muestra aleatoria de 25 estructuras. 
+  \begin{enumerate}
+  \item obtenga los valores de $\bar{X}$ que determina la región de rechazo. 
+  \item Con base a la información que puede arrojar la muestra calcule la probabilidad de cometer el error tipo II cuando las estructuras en realidad soportan 160 toneladas, considere un nivel de significancia del $2.5\%$
+  \item Determine el tamaño de muestra necesario para que $\alpha = 0.025$ y $\beta = 0.05$
+
+  \end{enumerate}
+  \end{questions}
+  
+  
+  \section*{Seccion B: Preguntas extra, verdadero-falso (10 pts)}
+  
+  \begin{questions}
+  
+  \question Verdadero-Falso: La única manera de disminuir simultaneamente el error tipo 1 y tipo 2 es aumentando el tamaño de la muestra. Para considerar correcto, explique a detalle la lógica. 
+  
+   \question Verdadero-Falso: Si el valor-p de una prueba de hipótesis es mayor al nivel de significancia de la prueba, entonces se rechaza la prueba. Explique a detalle y muestre una gráfica ejemplificando.
+   
+   \question Explique a detalle la relación entre Intervalo de confianza y Región de rechazo. Realiza una gráfica explicando la relación
+   
+   \question Explique a detalle la relación inversa entre error tipo 1 y error tipo 2. Realice una/dos gráfica(s) para ejemplificar.
+   
+   \question ¿Qué tipo de error (error tipo 1, error tipo 2) es considerado más grave comúnmente? Explique el razonamiento.
+   
+   \end{questions}
+ 
+  \end{document}
+  

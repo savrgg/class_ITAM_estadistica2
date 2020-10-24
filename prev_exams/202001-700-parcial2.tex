@@ -1,0 +1,181 @@
+%%% Template originaly created by Karol Kozioł (mail@karol-koziol.net) and modified for ShareLaTeX use
+
+\documentclass[addpoints]{exam}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage[spanish]{babel}
+
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,%
+bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.3}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+{1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+  
+  \theoremstyle{mytheor}
+  \newtheorem{defi}{Definition}
+  
+  % my own titles
+  \makeatletter
+  \renewcommand{\maketitle}{
+    \begin{center}
+    \vspace{2ex}
+    {\huge \textsc{\@title}}
+    \vspace{1ex}
+    \\
+    \linia\\
+    \@author \hfill \@date
+    \vspace{4ex}
+    \end{center}
+  }
+  \makeatother
+  %%%
+  
+  % custom footers and headers
+  \lfoot{Assignment \textnumero{} 5}
+  \cfoot{}
+  \rfoot{Page \thepage}
+  %
+  
+  % code listing settings
+  \usepackage{listings}
+  \lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+  }
+  
+  %%%----------%%%----------%%%----------%%%----------%%%
+  
+  \begin{document}
+  
+  \title{Parcial 2 - Estadística II}
+  
+  \author{ITAM, Primavera 2020}
+  
+  \date{13/04/2020}
+  
+  \maketitle
+  
+  \section*{Instrucciones}
+  
+  El examen es para resolver en casa. Se debe contestar individualmente y entregarse a más tardar a las 23:59 del lunes 13 de abril. La entrega será via email a la dirección: salvador.garcia.gonzalez@itam.mx (la misma que aparece en comunidad). En cuanto se envíe el examen, favor de escribir un mensaje para que les confirme de recibido. El examen cuenta con 9 preguntas a desarrollar y 1 opcional. Se debe cuidar la formalidad al escribir los resultados, ya que es parte de la calificación del problema. En caso de no tener el desarrollo de la pregunta, o bien se llegué a la respuesta sin una justificación se podrá anular la respuesta. Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento del departamento. 
+  
+  \vspace{10pt}
+  
+  \section*{Seccion A: Propiedades de estimadores (30 pts)}
+ 
+  \begin{questions} 
+  \question (10 pts) Suponga que el número de pacientes de una enfermedad  en los paises del G20 de la sigue la siguiente distribución. Donde $x$ es el número de enfermos. 
+  
+  \begin{equation}
+  f(x; \theta) = \frac{3 \theta^{3}}{x^{4}} \quad para \quad x > \theta
+  \end{equation}
+  
+  Se está evaluando el ingreso de otros 5 paises, pero para su ingreso se debe determinar el número máximo de enfermos por dicha enfermedad. Como estimador se propone a $\hat{\theta} = b \bar{X}$. Determine el valor de b, tal que el estimador $\hat{\theta}$ sea insesgado (Hint: No olvidar que, si $E(x)$ no es proporcionada, se puede calcular con $\int_{a}^{b} x f(x; \theta) dx$ )
+  
+  \question (20 pts) Sea $X_1, X_2, ..., X_n$ una muestra aleatoria de una población con media $\mu$ y varianza $\sigma^2$. Considere los tres estimadores siguientes para $\mu$:
+  
+  \begin{equation}
+  \hat{\mu_1} = \frac{1}{2}(X_1+X_2) \quad\quad \hat{\mu_2} = \frac{1}{4}X_1 + \frac{X_2+...+X_{n-1}}{2(n-2)} + \frac{1}{4}X_n \quad\quad \hat{\mu_3} = \bar{X}
+  \end{equation}
+  
+  \begin{enumerate}
+  \item Determine si son insesgados
+  \item Encuentre la varianza de cada estimador e identifique el más eficiente
+  \item Determine las eficiencias relativa: $\frac{ECM(\hat{\mu_2})}{ECM(\hat{\mu_3})}$ y $\frac{ECM(\hat{\mu_1})}{ECM(\hat{\mu_3})}$
+  \end{enumerate}
+
+\newpage
+
+\section*{Seccion B: Intervalos de confianza y tamaño de muestra (70 pts)}
+
+\question (10 pts) En una muestra aleatoria de 100 empleados de una empresa 50 están a favor del home office. Obtenga un intervalo de confianza (IC) del $95\%$ de probabilidad para la proporción poblacional.
+
+\question (10 pts) El jefe del departamento de estadistica va a estimar la calificación promedio de los estudiantes de estadística 2. Para ello, desea usar una muestra lo suficientemente grande para que la probabilidad que la media muestral no difiera de la media poblacional en más del $25\%$ de la desviación estándar poblacional. Tome $(1-\alpha)= 95\%$. ¿De qué tamaño debe elegir la muestra? 
+  
+\question (10 pts) Se desea conocer la proporción de la población que está en contra de un cambio en política pública. ¿Cuántas personas se debe incluir en la muestra si se desea con una probabilidad de $96\%$ que la proporción muestral no diste de la verdadera proporción en más de 0.15. Se sabe de un estudio previo que $\sigma^2$ es de 1 (la varianza poblacional).  
+
+\question (10 pts) Se seleccionó una muestra aleatoria de 21 repartidores de pizza y se les preguntó el número de horas que trabajan a la semana. La desviación estándar muestral fue de 7 horas. Determine un IC del $90\%$ para la varianza de las horas de trabajo de todos los repartidores de pizza. (Asuma normalidad)
+
+\question (10 pts) Se desea comparar la cantidad de venados con la cantidad de lobos en un parque estatal. Se supone que la cantidad de venados $N_V$ depende de la cantidad de lobos $N_L$, por lo que se quiere estimar la diferencia en el número de lobos vs el número de venados $N_V$-$N_L$. Se tienen los siguientes datos obtenidos en distintos sectores del parque:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lllllllllllll}
+Sector & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\ \hline
+$N_V$ & 110 & 66 & 44 & 49 & 49 & 49 & 52 & 61 & 64 & 65 & 64 & 56 \\
+$N_L$ & 81 & 102 & 37 & 44 & 44 & 43 & 44 & 48 & 67 & 69 & 74 & 60
+\end{tabular}
+\end{table}
+
+Encuentre un IC al $90\%$ para la diferencia de lobos y venados en el parque. Determine si podemos afirmar que hay una diferencia. 
+
+\question (10 pts)
+Los pangolines son unos mamíferos que pasan durmiendo la mayor parte del día. Pero se cree que los pangolines machos duermen más, pero con una varianza mayor que las pangolines hembras. Se tienen los siguientes datos para una muestra de 40 pangolines macho y 40 pangolines hembra:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+Hembras & Machos \\
+$\bar{x}$ = 5.35 & $\bar{y}$ = 4.31 \\
+$s_x^2$ = 2.31 & $s_y^2$ = 1.21
+\end{tabular}
+\end{table}
+
+Construya un intervalo de confianza del $99\%$ para el cociente de varianzas $\frac{\sigma_x^2}{\sigma_y^2}$. Con base en este intervalo concluya si el supuesto de que las varianzas poblacionales son distintas.
+
+ \question (10 pts) Los empleados de una app de reparto de comida quieren conocer el tiempo promedio de entrega. Eligen aleatoriamente 16 pedidos y toman el tiempo promedio. Los resultados son: $\sum X_i = 336$ y $\sum X_i^2 = 7116$. Determine el intervalo de confianza del $99\%$ del tiempo promedio de entrega.
+  
+  
+  \section*{Pregunta de rescate - estimación puntual (5pts)}
+   \question Sean $X$ y $Y$ dos poblaciones. Se toman 6 muestras aleatorias de los pesos de cada una, de manera que la muestra aleatoria para X es ${5,7,9,11,13,15}$ y la muestra aleatoria para Y es ${10,14,18,22,26,30}$:
+  
+  \begin{enumerate}
+  \item Estime el promedio promedio de la poblacion X (con $\bar{X} = \frac{1}{n}\sum_{i=1}^n$)
+  \item Estime la varianza de la población Y (con $S^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X})^2$)
+  \item Estime el coeficiente de correlación de la población X y Y 
+  
+  (con $r = \frac{S_{XY}}{S_X S_Y}$, usando $S_{XY} =\sqrt{\frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X})(Y_i-\bar{Y})}, S_X = \sqrt{S_X^2}, S_Y = \sqrt{S_Y^2}$)
+  \end{enumerate}
+
+  \end{questions}
+  \end{document}
+  
