@@ -1,0 +1,265 @@
+\documentclass[addpoints]{exam}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+\usepackage[defaultmono]{droidmono}
+
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage[spanish]{babel}
+
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,%
+bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.3}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+{1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+  
+  \theoremstyle{mytheor}
+  \newtheorem{defi}{Definition}
+  
+  % my own titles
+  \makeatletter
+  \renewcommand{\maketitle}{
+    \begin{center}
+    \vspace{2ex}
+    {\huge \textsc{\@title}}
+    \vspace{1ex}
+    \\
+    \linia\\
+    \@author \hfill \@date
+    \vspace{4ex}
+    \end{center}
+  }
+  \makeatother
+  %%%
+  
+  % custom footers and headers
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \lhead{}
+  \chead{}
+  \rhead{}
+  \lfoot{Assignment \textnumero{} 5}
+  \cfoot{}
+  \rfoot{Page \thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+  %
+  
+  % code listing settings
+  \usepackage{listings}
+  \lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+  }
+  
+  %%%----------%%%----------%%%----------%%%----------%%%
+  
+  \begin{document}
+  
+  \title{Preguntas examen final - Estadística II}
+  
+  \author{ITAM, Primavera 2020}
+  
+  \date{28/05/2020}
+  
+  \maketitle
+  
+  \section*{1 - Pregunta opción múltiple}
+  
+  \begin{questions}
+  
+  \question Si el $valor-p$ para una prueba de hipótesis de diferencia de medias (dos colas) es de .075, entonces la hipótesis nula se rechaza si el valor de $\alpha$ es de:
+    
+    \begin{checkboxes}
+  \choice 0.16
+  \choice 0.074
+  \choice 0.078
+  \choice opción A y C
+  \end{checkboxes}
+  
+  \question Si el $valor-p$ para una prueba de hipótesis de diferencia de medias (dos colas) es de .08, entonces la hipótesis nula se rechaza si el valor de $\alpha$ es de:
+    
+    \begin{checkboxes}
+  \choice 0.079
+  \choice 0.085
+  \choice 0.05
+  \choice opción A y C
+  \end{checkboxes}
+  
+  \question Si el $valor-p$ para una prueba de hipótesis de diferencia de medias (dos colas) es de .1, entonces la hipótesis nula se rechaza si el valor de $\alpha$ es de:
+    
+    \begin{checkboxes}
+  \choice 0.09
+  \choice 0.11
+  \choice 0.08
+  \choice opción A y C
+  \end{checkboxes}
+  
+  \newpage
+  
+  \section*{2 - Pregunta opción múltiple}
+  
+  \question A mayor tamaño de muestra:
+    
+    \begin{checkboxes}
+  \choice Mayor potencia, menor probabilidad error tipo I, mayor probabilidad error tipo II
+  \choice Menor potencia, menor probabilidad error tipo I, menor probabilidad error tipo II
+  \choice Mayor potencia, menor probabilidad error tipo I, menor probabilidad error tipo II
+  \choice Mayor potencia, mayor probabilidad error tipo I, mayor probabilidad error tipo II
+  \end{checkboxes}
+  
+  \question A mayor tamaño de muestra:
+    
+    \begin{checkboxes}
+  \choice Mayor potencia, menor probabilidad error tipo I, menor probabilidad error tipo II
+  \choice Mayor potencia, mayor probabilidad error tipo I, menor probabilidad error tipo II
+  \choice Menor potencia, mayor probabilidad error tipo I, mayor probabilidad error tipo II
+  \choice Menor potencia, mayor probabilidad error tipo I, menor probabilidad error tipo II
+  \end{checkboxes}
+  
+  
+  \question A mayor tamaño de muestra:
+    \begin{checkboxes}
+  \choice Menor potencia, menor probabilidad error tipo I, mayor probabilidad error tipo II
+  \choice Menor potencia, menor probabilidad error tipo I, menor probabilidad error tipo II
+  \choice Mayor potencia, mayor probabilidad error tipo I, mayor probabilidad error tipo II
+  \choice Mayor potencia, menor probabilidad error tipo I, menor probabilidad error tipo II
+  \end{checkboxes}
+  
+  \newpage
+  
+  \section*{3 - Pregunta opción múltiple: Coeficiente de correlación Pearson}
+  
+  \question El jefe de área de estudios socioeconómicos del INEGI sostiene que el ingreso por familia aumenta conforme aumenta al promedio en años de escolaridad de los miembros. Para verificar este hecho se selecciona una muestra aleatoria de 10 familias a los que se les pregunta el número de años promedio de escolaridad (X) y el ingreso familiar (Y). Los resultados son los siguientes {(use $\alpha = .05$)}. Utilice la estadística de prueba $t = \frac{r \sqrt{n-2}}{\sqrt{1-r^2}}$ con $r = \frac{S_{xy}}{S_x S_y}$. Use: $\bar{X} = 6.1$,  $\bar{Y} = 286.5$, $\sum_{i=1}
+  ^{10}{X_i Y_i} = 23,985$, $\sum_{i=1}^{10}{X_i^2} = 489$, $\sum_{i=1}^{10}{Y_i^2} =  2,277,725$ 
+    
+    \begin{table}[h]
+  \centering
+  \begin{tabular}{lllllllllllll} 
+  $X$ & 5 & 11 & 10 & 2 & 7 & 8 & 1 & 3 & 10 & 4 \\
+  $Y$ & 75 & 50 & 200 & 70 & 600 & 400 & 50 & 10 & 1300 & 110
+  \end{tabular}
+  \end{table}
+  
+  
+  \question El jefe de área de estudios socioeconómicos del INEGI sostiene que el ingreso por familia aumenta conforme aumenta al promedio en años de escolaridad de los miembros. Para verificar este hecho se selecciona una muestra aleatoria de 10 familias a los que se les pregunta el número de años promedio de escolaridad (X) y el ingreso familiar (Y). Los resultados son los siguientes {(use $\alpha = .10$)}. Utilice la estadística de prueba $t = \frac{r \sqrt{n-2}}{\sqrt{1-r^2}}$ con $r = \frac{S_{xy}}{S_x S_y}$. Use: $\bar{X} =  12.2$,  $\bar{Y} =  515.7$, $\sum_{i=1}
+  ^{10}{X_i Y_i} = 86,346$, $\sum_{i=1}^{10}{X_i^2} =  1,956$, $\sum_{i=1}^{10}{Y_i^2} =   7,379,829$ 
+    
+    \begin{table}[h]
+  \centering
+  \begin{tabular}{lllllllllllll} 
+  $X$ & 10 & 22 & 20 & 4 & 14 & 16 & 2 & 6 & 20 & 8 \\
+  $Y$ & 135 & 90 & 360 & 126 & 1080 & 720 & 90 & 18 & 2340 & 198
+  \end{tabular}
+  \end{table}
+  
+  
+  \question El jefe de área de estudios socioeconómicos del INEGI sostiene que el ingreso por familia aumenta conforme aumenta al promedio en años de escolaridad de los miembros. Para verificar este hecho se selecciona una muestra aleatoria de 10 familias a los que se les pregunta el número de años promedio de escolaridad (X) y el ingreso familiar (Y). Los resultados son los siguientes {(use $\alpha = .025$)}. Utilice la estadística de prueba $t = \frac{r \sqrt{n-2}}{\sqrt{1-r^2}}$ con $r = \frac{S_{xy}}{S_x S_y}$. Use: $\bar{X} =  24.4$,  $\bar{Y} =  257.9$, $\sum_{i=1}
+  ^{10}{X_i Y_i} = 86,346$, $\sum_{i=1}^{10}{X_i^2} =  7,824$, $\sum_{i=1}^{10}{Y_i^2} =   1,844,957$ 
+    \begin{table}[h]
+  \centering
+  \begin{tabular}{lllllllllllll} 
+  $X$ & 20 & 44 & 40 & 8 & 28 & 32 & 4 & 12 & 40 & 16 \\
+  $Y$ & 715.5 & 477 & 1908 & 667.8 & 5724 & 3816 & 477 & 95.4 & 12402 & 1049.4
+  \end{tabular}
+  \end{table}
+  
+  
+  \newpage
+  
+  \section*{4 - Pregunta abierta: Prueba de hipótesis diferencia medias pareado}
+  \question En el zoológico de Chapultepec los hipopótamos padecen sobrepeso. Por este motivo se decidió cambiar el alimento que se les suministraba. Para una muestra de 12 hipopótamos se registró su peso antes y después y se obtuvieron los pesos mostrados a continuación. Determine mediante una prueba de hipótesis si es posible afirmar que los hipopótamos disminuyeron su peso con el nuevo alimento. Use $\alpha = 0.05$. 
+  
+  
+  \begin{table}[h]
+  \centering
+  \begin{tabular}{lllllllllllll} 
+  $X$ & 800 & 700 & 600 & 900 & 700 & 1000 & 800 & 600 & 500 & 800 & 1000 & 800 \\
+  $Y$ & 600 & 500 & 800 & 600 & 900 & 800 & 1000 & 700 & 500 & 600 & 900 & 500
+  \end{tabular}
+  \end{table}
+  
+  
+  \question En el zoológico de Chapultepec los hipopótamos padecen sobrepeso. Por este motivo se decidió cambiar el alimento que se les suministraba. Para una muestra de 12 hipopótamos se registró su peso antes y después y se obtuvieron los pesos mostrados a continuación. Determine mediante una prueba de hipótesis si es posible afirmar que los hipopótamos disminuyeron su peso con el nuevo alimento. Use $\alpha = 0.10$. 
+  \begin{table}[h]
+  \centering
+  \begin{tabular}{lllllllllllll} 
+  $X$ & 1200 & 1100 & 1000 & 1300 & 1100 & 1400 & 1200 & 1000 & 900 & 1200 & 1400 & 1200 \\
+  $Y$ & 1000 & 900 & 1200 & 1000 & 1300 & 1200 & 1400 & 1100 & 900 & 1000 & 1300 & 900
+  \end{tabular}
+  \end{table}
+  
+  \question En el zoológico de Chapultepec los hipopótamos padecen sobrepeso. Por este motivo se decidió cambiar el alimento que se les suministraba. Para una muestra de 12 hipopótamos se registró su peso antes y después y se obtuvieron los pesos mostrados a continuación. Determine mediante una prueba de hipótesis si es posible afirmar que los hipopótamos disminuyeron su peso con el nuevo alimento. Use $\alpha = 0.20$. 
+  \begin{table}[h]
+  \centering
+  \begin{tabular}{lllllllllllll} 
+  $X$ & 600 & 550 & 500 & 650 & 550 & 700 & 600 & 500 & 450 & 600 & 700 & 600 \\
+  $Y$ & 500 & 450 & 600 & 500 & 650 & 600 & 700 & 550 & 450 & 500 & 650 & 450
+  \end{tabular}
+  \end{table}
+  
+  
+  \newpage
+  \section*{5 - Pregunta adicional}    
+  
+  \question Una fábrica de computadoras presenta una proporción de falla de computaduras del $10\%$. Para asegurar una buena calidad se toma una muestra de 20 máquinas. Si se encuentran 3 o más máquinas en mal estado se rechaza el lote. Se decide hacer una prueba estadística (Use $\alpha = 0.05$).
+  \begin{enumerate}
+  \item Enuncie $H_0$ y $H_1$
+    \item Obtenga la probabilidad de cometer el error tipo 1
+  \item Obtenga la potencia para $p = 0.2$ cuando se tiene una muestra de 100 computadoras y la fábrica no acepta 20 o más computadoras. Utilice TCL.
+  \end{enumerate}
+  
+  \question Una fábrica de computadoras presenta una proporción de falla de computaduras del $10\%$. Para asegurar una buena calidad se toma una muestra de 20 máquinas. Si se encuentran 5 o más máquinas en mal estado se rechaza el lote. Se decide hacer una prueba estadística (Use $\alpha = .10$).
+  \begin{enumerate}
+  \item Enuncie $H_0$ y $H_1$
+    \item Obtenga la probabilidad de cometer el error tipo 1
+  \item Obtenga la potencia para $p = 0.3$ cuando se tiene una muestra de 100 computadoras y la fábrica no acepta 25 o más computadoras. Utilice TCL.
+  \end{enumerate}
+  
+  \question Una fábrica de computadoras presenta una proporción de falla de computaduras del $10\%$. Para asegurar una buena calidad se toma una muestra de 20 máquinas. Si se encuentran 4 o más máquinas en mal estado se rechaza el lote. Se decide hacer una prueba estadística (Use $\alpha = .05$).
+  \begin{enumerate}
+  \item Enuncie $H_0$ y $H_1$
+    \item Obtenga la probabilidad de cometer el error tipo 1
+  \item Obtenga la potencia para $p = 0.2$ cuando se tiene una muestra de 100 computadoras y la fábrica no acepta 15 o más computadoras. Utilice TCL.
+  \end{enumerate}
+  
+  \end{questions}
+  
+  \end{document}
+  
