@@ -17,6 +17,8 @@
 \usepackage[spanish]{babel}
 \usepackage{enumitem}
 
+\decimalpoint
+
 \usepackage{geometry}
 \geometry{left=25mm,right=25mm,%
 bindingoffset=0mm, top=20mm,bottom=20mm}
@@ -98,31 +100,22 @@ bindingoffset=0mm, top=20mm,bottom=20mm}
   
   \section*{Instrucciones}
   
-El examen consta de dos secciones. La primer sección pondera 50\% de la calificación del tercer parcial y consiste en 20 preguntas de Falso/Verdadero a través de la plataforma Socrative. En pantalla se mostrará la URL. Para esta sección cada pregunta correcta cuenta 0.25 puntos, mientras que cada incorrecta resta 0.25 puntos, las preguntas en blanco no restan ningún punto. Es importante notar que una vez contestada la pregunta no será posible regresar a ella. 
+El examen consiste en dos secciones. La primer sección es el 50\% de la calificación del tercer parcial y consiste en 20 preguntas de Falso/Verdadero a través de la plataforma Socrative. En pantalla se mostrará la URL. Para esta sección cada pregunta correcta es 0.25 puntos, mientras que cada incorrecta tiene una penalización de 0.25 puntos del examen, las preguntas en blanco no restan ningún punto. Es importante notar que una vez contestada la pregunta no será posible regresar a ella. Al final, se tienen dos 3 preguntas bonus que se contarán como extra. 
  
  \vspace{10pt}
  
-La segunda sección consta de 3 preguntas abiertas. En estas se proporcionan la mayor parte de los datos para poder realizar una resolución rápida de la pregunta. Se debe desarrollar el problema planteado y cuidar la formalidad al escribir los resultados, ya que es parte de la calificación del problema. En caso de no tener el desarrollo de la pregunta, o bien se llegue a la respuesta sin una justificación se anulará la respuesta. 
+La segunda sección consta de 3 preguntas abiertas. Se proporcionan la mayor parte de los datos para poder realizar la resolución rápida de la pregunta. Se debe desarrollar el problema planteado y cuidar la formalidad al escribir los resultados, ya que es parte de la calificación del problema. En caso de no tener el desarrollo de la pregunta, o bien se llegue a la respuesta sin una justificación se anulará la respuesta. 
 
 \vspace{10pt}
   
-El examen tiene una duración de 1:45 horas. Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento del departamento. La hora de entrega es 08:50 al correo: salvador.garcia.gonzalez@itam.mx
+El examen tiene una duración de 1:45 horas. \textbf{Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento.} La hora de entrega es 08:50 al correo: salvador.garcia.gonzalez@itam.mx
 
 \section*{Seccion A: Preguntas a desarrollar (100 pts)}
   
   
 \begin{questions} 
-
-
-\question (15 pts) Durante cinco años se llevó a cabo un estudio para determinar si existe alguna diferencia en el número de resfriados que sufren los fumadores (Y) y los no fumadores (X). Con base en muestras aleatorias de 10 no fumadores y 8 fumadores se observaron a lo largo de los años los siguientes datos: $\bar{X} = 2.5$, $\bar{Y} = 6.25$. Determine si existen dos resfriados de diferencia entre ambos grupos
-
-\begin{enumerate}
-\item Encuentre $H_0$ y $H_1$ correspondiente
-\item Resuelva la prueba de hipótesis con $\alpha=0.05$
-\end{enumerate}
-
  
-\question 6.1.7 (15 pts) Durante cinco años se llevó a cabo un estudio para determinar si existe alguna diferencia en el número de resfriados que sufren los alcohólicos (Y) y los no alcohólicos (X). Con base en muestras aleatorias de 10 no alcohólicos y 8 alcohólicos se observaron a lo largo de los años los siguientes datos: $\bar{X} = 2.5$, $\bar{Y} = 6.25$. Determine si existen dos resfriados de diferencia entre ambos grupos. Utilice $\alpha = .05$ (Se sabe que $T_{16,.025} = 2.12$, $T_{16,.05} = 1.75$, $T_{18,.025} = 2.10$, $T_{18,.05} = 1.73$)
+\question 6.1.7 (15 pts) Durante cinco años se llevó a cabo un estudio para determinar si existe alguna diferencia en el número de resfriados que sufren los alcohólicos (Y) y los no alcohólicos (X). Con base en muestras aleatorias de 10 no alcohólicos y 8 alcohólicos se observaron a lo largo de los años los siguientes datos: $\bar{X} = 2.5$, $\bar{Y} = 6.25$. Determine si existen dos resfriados de diferencia entre ambos grupos. Utilice $\alpha = 0.05$ (Se sabe que $T_{16,.025} = 2.12$, $T_{16,.05} = 1.75$, $T_{18,.025} = 2.10$, $T_{18,.05} = 1.73$)
 
 \begin{enumerate}
 \item Encuentre $H_0$ y $H_1$ correspondiente
@@ -134,21 +127,21 @@ El examen tiene una duración de 1:45 horas. Cualquier práctica fraudulenta ser
  
  \question 5.2.20 (15 pts)
 
-El Gobierno de la Ciudad de México decide comprar una cantidad importante de semáforos. El productor de estos semáforos afirma que tienen una vida promedio de 5 años, con una varianza menor a 2 años. El gobierno decide adquirirlos solamente si tienen una varianza menor 2 años de duración. Se seleccionan al azar 30 semáforos y se obtiene $S^2 = 3.1$. Usted forma parte del gobierno de la Ciudad de México y piensa que lo dicho por el productor es mentira, por lo que busca contrastar lo afirmado por el.
+El Gobierno de la Ciudad de México decide comprar una cantidad importante de semáforos. El productor de estos semáforos afirma que tienen una vida promedio de 5 años, con una varianza menor o igual a 2 años. El gobierno decide adquirirlos solamente si tienen una varianza menor o igual 2 años de duración. Se seleccionan al azar 30 semáforos y se obtiene $S^2 = 3.1$. Usted forma parte del gobierno de la Ciudad de México y piensa que lo dicho por el productor es mentira, por lo que busca contrastar lo afirmado por el. (Se sabe que $\chi_{29,.025} = 45.72$, $\chi_{29,.975} = 16.05$, $\chi_{29,.05} = 42.55$, $\chi_{29,.95} = 17.71$)
 
 \begin{enumerate}
-\item Formule las hipótesis H_0 y H_1 apropiadas al problemas
-\item Pruebe con un nivel de significancia de $\alpha = .05$
+\item Formule las hipótesis $H_0$ y $H_1$ apropiadas al problemas
+\item Pruebe con un nivel de significancia de $\alpha = 0.05$
 \item Muestre en una gráfica la región de rechazo y el estadístico de prueba correspondiente
 \item Inteprete el resultado
 \end{enumerate}
 
-\question 5.2.21 (15 pts)
-La dirección del ITAM desea saber si existe una diferencia del doble de la varianza de las calificaciones de las clases en linea comparándolas con las clases presenciales. Para esto selecciona las calificaciones que tuvieron 12 alumnos previo a la pandemia (X: clases presenciales), contra 16 en la situación actual (Y: clase en linea). Los datos obtenidos son los siguientes: $\bar{X} = 6.92$, $\bar{Y} = 9.48$, $\S_{X} = 1.46$, $\S_{Y} = 1.11$
+\question 5.2.21 (20 pts)
+La dirección del ITAM desea saber si existe una diferencia del doble de la varianza de las calificaciones de las clases en linea comparándolas con las clases presenciales ($2*\sigma^2_{Presencial} = \sigma^2_{Online}$). Para esto selecciona las calificaciones que tuvieron 11 alumnos previo a la pandemia (X: clases presenciales), contra 16 en la situación actual (Y: clase en linea). Los datos obtenidos son los siguientes: $\bar{X} = 6.92$, $\bar{Y} = 9.48$, $S_{X} = 1.46$, $S_{Y} = 1.11$
 
 \begin{enumerate}
-\item Formule las hipótesis H_0 y H_1 apropiadas al problemas
-\item Pruebe con un nivel de significancia de $\alpha = .05$
+\item Formule las hipótesis $H_0$ y $H_1$ apropiadas al problemas
+\item Pruebe con un nivel de significancia de $\alpha = 0.05$
 \item Muestre en una gráfica la región de rechazo y el estadístico de prueba correspondiente
 \item Inteprete el resultado
 \end{enumerate}
