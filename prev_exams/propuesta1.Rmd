@@ -1,0 +1,89 @@
+---
+title: "Examen_final - Propuesta1"
+author: "Salvador Garcia"
+date: "11/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Propuesta de examen
+
+#### Versión 1) Pregunta de propiedades de estimadores puntuales:
+
+Considere una variable aleatoria $X \sim Pois(\lambda)$. Si $X_1,...X_n$ es una muestra aleatoria de $X$ y se proponen dos estimadores del parámetro:
+
+$$\hat{\lambda_1} = \frac{1}{6}(X_1+X_2) + \frac{2}{3} \frac{(X_3+..+X_n)}{(n-2)}$$
+$$\hat{\lambda_2} = \frac{X_1 - X_n}{2}$$
+**a) Determine si $ECM(\hat{\lambda_1}) > V(\hat{\lambda_1})$. Justifique:**
+
+**b) Determine cuál estimador es más sesgado. Justifique:**
+
+
+**Respuesta a)** Para el ejercicio es suficiente determinar si el estimador es sesgado. No es requerido calular la varianza:
+
+$$E(\hat{\lambda_1}) = \frac{1}{6}E(X_1+X_2) + \frac{2}{3}E \bigg( \frac{(n-2)X_1}{(n-2)} \bigg) \\
+ = \frac{2}{6} \lambda + \frac{2}{3} \lambda  = \lambda $$
+
+Con esto observamos que el estimador es insesgado, entonces el $ECM(\hat{\lambda_1}) = V(\hat{\lambda_1})$
+ 
+**Respuesta b)** Para el segundo inciso requerimos calcular el sesgo del segundo estimador:
+$$E(\hat{\lambda_2}) = E \bigg( \frac{X_1-X_2}{2} \bigg) = 0$$ 
+Debido a que $\hat{\lambda_2}$ es un estimador sesgado y $\hat{\lambda_1}$ es insesgado, entonces el estimador $\hat{\lambda_2}$ tiene un mayor sesgo. 
+
+#### Versión 2) Pregunta de propiedades de estimadores puntuales:
+
+Considere una variable aleatoria $X \sim Pois(\lambda)$. Si $X_1,...X_n$ es una muestra aleatoria de $X$ y se proponen dos estimadores del parámetro:
+
+$$\hat{\lambda_1} = \frac{1}{6}(X_1+X_2+X_3) + \frac{1}{2} \frac{(X_4+..+X_{n})}{(n-3)} + \frac{1}{3}X_n$$
+$$\hat{\lambda_2} = \frac{X_1 + X_n}{2}$$
+
+**a) Determine si $ECM(\hat{\lambda_1}) > V(\hat{\lambda_1})$. Justifique:**
+
+**b) Determine cuál estimador es más sesgado. Justifique:**
+
+**Respuesta a)** Para el ejercicio es suficiente determinar si el estimador es sesgado. No es requerido calular la varianza:
+
+$$E(\hat{\lambda_1}) = \frac{1}{6}E(X_1+X_2+X_3) + \frac{1}{2} E \bigg( \frac{X_4+..+X_{n}}{n-3} \bigg) + \frac{1}{3} E(X_n) \\
+ = \frac{1}{2} \lambda + \frac{1}{2} \lambda  + \frac{1}{3} \lambda= \frac{4}{3} \lambda $$
+Por lo tanto, es posible ver que $B(\hat{\lambda_1})^2 > 0$, por lo que podemos deducir que $ECM(\hat{\lambda_1}) > V(\hat{\lambda})$
+
+ 
+**Respuesta b)** Para el segundo inciso requerimos calcular el sesgo del segundo estimador:
+$$E(\hat{\lambda_2}) = E \bigg( \frac{X_1+X_2}{2} \bigg) = \lambda$$ 
+Debido a que $\hat{\lambda_1}$ es un estimador sesgado y $\hat{\lambda_2}$ es insesgado, entonces el estimador $\hat{\lambda_1}$ tiene un mayor sesgo. 
+
+
+#### Versión 3) Pregunta de propiedades de estimadores puntuales:
+
+Considere una variable aleatoria $X \sim Pois(\lambda)$. Si $X_1,...X_n$ es una muestra aleatoria de $X$ y se proponen dos estimadores del parámetro:
+
+$$\hat{\lambda_1} = \frac{1}{6}(X_1+X_2+X_3) + \frac{1}{2} \frac{(X_4+..+X_{n})}{(n-3)} + \frac{1}{2}X_n$$
+$$\hat{\lambda_2} = \frac{3 X_1 + X_n}{4}$$
+
+**a) Determine si $ECM(\hat{\lambda_1}) > V(\hat{\lambda_1})$. Justifique:**
+
+**b) Determine cuál estimador es más sesgado. Justifique:**
+
+**Respuesta a)** Para el ejercicio es suficiente determinar si el estimador es sesgado. No es requerido calular la varianza:
+
+$$E(\hat{\lambda_1}) = \frac{1}{6}E(X_1+X_2+X_3) + \frac{1}{2} E \bigg( \frac{X_4+..+X_{n}}{n-3} \bigg) + \frac{1}{2}X_n \\
+ = \frac{3}{6} \lambda + \frac{1}{2} \lambda  + \frac{1}{2} \lambda = \frac{3}{2} \lambda $$
+Por lo tanto, es posible ver que $B(\hat{\lambda_1})^2 > 0$, por lo que podemos deducir que $ECM(\hat{\lambda_1}) > V(\hat{\lambda_1})$
+
+ 
+**Respuesta b)** Para el segundo inciso requerimos calcular el sesgo del segundo estimador:
+$$E(\hat{\lambda_2}) = E \bigg( \frac{3X_1+X_2}{4} \bigg) = \lambda$$ 
+Debido a que $\hat{\lambda_1}$ es un estimador sesgado y $\hat{\lambda_2}$ es insesgado, entonces el estimador $\hat{\lambda_1}$ tiene un mayor sesgo. 
+
+
+
+
+
+
+
+
+
+
