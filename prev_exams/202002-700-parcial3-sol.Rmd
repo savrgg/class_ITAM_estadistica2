@@ -1,0 +1,137 @@
+---
+title: "Soluciones tercer parcial 7:00"
+output: pdf_document
+---
+
+
+*1. (15 pts) Durante cinco años se llevó a cabo un estudio para determinar si existe alguna diferencia en el número de resfriados que sufren los alcohólicos (Y) y los no alcohólicos (X). Con base en muestras aleatorias de 10 no alcohólicos y 8 alcohólicos se observaron a lo largo de los años los siguientes datos: $\bar{X} = 2.5$, $\bar{Y} = 6.25$. Determine si existen dos resfriados de diferencia entre ambos grupos. Utilice $\alpha = 0.05$ (Se sabe que $T_{16,.025} = 2.12$, $T_{16,.05} = 1.75$, $T_{18,.025} = 2.10$, $T_{18,.05} = 1.73$)*
+
+**Encuentre $H_0$ y $H_1$ correspondiente**
+
+$H_0: \mu_y- \mu_x = 2$ 
+
+$H_1: \mu_y- \mu_x \neq 2$
+
+**Resuelva la prueba de hipótesis con $\alpha=0.05$**
+
+$T = \frac{(\bar{Y} - \bar{X}) - (\mu_y-\mu_x)}{\sqrt{S_p^2 (\frac{1}{n}+\frac{1}{m})}} \sim t_{16}$
+
+$RR =\{T \leq t_{16, 0.05}\} = \{T \leq -1.7959 \}$
+
+Evaluando
+
+$S_P^2 = \frac{9(0.7)+7(0.9)}{16} = 0.7875$
+
+$T = \frac{(6.25-2.5)-2}{\sqrt{0.7875 (\frac{1}{10}+\frac{1}{8})}} = 4.1574$
+
+Rechazamos $H_0$
+
+**Muestre en una gráfica la región de rechazo y el estadístico de prueba correspondiente**
+
+```{r echo = F, message=F, fig.height=2}
+library(tidyverse)
+ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1)) + 
+  ylab("")+
+  theme_minimal() +
+  geom_vline(xintercept = -2.12, color = "red")+
+  geom_vline(xintercept = 2.12, color = "red")+
+  geom_rect(aes(xmin=-Inf,xmax=-2.12,ymin=0,ymax=.5),alpha=0.1,fill="red")+
+  geom_rect(aes(xmin=2.12,xmax=Inf,ymin=0,ymax=.5),alpha=0.1,fill="red")+
+  geom_vline(xintercept = -4.15, color = "orange")
+```
+
+**Inteprete el resultado**
+
+Hay evidencia suficiente para rechazar $H_0$. Por lo tanto podemos rechazar que existen dos resfriados de diferencia entre los grupos (puede haber más o menos de 2)
+
+Nota: También se puede resolver con 
+
+$H_0: \mu_x - \mu_y = 2$ 
+
+$H_1: \mu_x - \mu_y \neq 2$
+
+
+\newpage
+
+
+*2. El Gobierno de la Ciudad de México decide comprar una cantidad importante de semáforos. El productor de estos semáforos afirma que tienen una vida promedio de 5 años, con una varianza menor o igual a 2 años. El gobierno decide adquirirlos solamente si tienen una varianza menor o igual 2 años de duración. Se seleccionan al azar 30 semáforos y se obtiene $S^2 = 3.1$. Usted forma parte del gobierno de la Ciudad de México y piensa que lo dicho por el productor es mentira, por lo que busca contrastar lo afirmado por el. (Se sabe que $\chi_{29,.025} = 45.72$, $\chi_{29,.975} = 16.05$, $\chi_{29,.05} = 42.55$, $\chi_{29,.95} = 17.71$)*
+
+**Formule las hipótesis $H_0$ y $H_1$ apropiadas al problemas**
+
+$H_0: \sigma^2 = 2$
+
+$H_1: \sigma^2 > 2$
+
+**Pruebe con un nivel de significancia de $\alpha = 0.05$**
+
+$J = \frac{(n-1)S^2}{\sigma^2} \sim \chi_{29}$
+
+$RR =\{J > \chi_{29, 0.05}\} = \{J > 42.55 \}$
+
+Evaluando
+
+$J = \frac{(29)(3.1)}{2} = 44.95$
+
+Rechazamos $H_0$
+
+**Muestre en una gráfica la región de rechazo y el estadístico de prueba correspondiente**
+
+```{r echo = F, message=F, fig.height=2}
+library(tidyverse)
+ggplot(data = data.frame(x = c(0, 50)), aes(x)) +
+  stat_function(fun = dchisq, n = 101, args = list(df = 29)) + 
+  ylab("")+
+  theme_minimal() +
+  geom_vline(xintercept = 42.55, color = "red")+
+  geom_rect(aes(xmin=42.55,xmax=Inf,ymin=0,ymax=.05),alpha=0.1,fill="red")+
+  geom_vline(xintercept = 44.95, color = "orange")
+```
+
+**Inteprete el resultado**
+
+Hay evidencia suficiente para rechazar $H_0$. Por lo tanto podemos rechazar que la varianza = 2. Esto nos indica que hay evidencia suficiente para decir que el gobierno no debe adquirir los semáforos
+
+
+\newpage
+
+*3. La dirección del ITAM desea saber si existe una diferencia del doble de la varianza de las calificaciones de las clases en linea comparándolas con las clases presenciales ($2\sigma^2_{Presencial} = \sigma^2_{Online}$). Para esto selecciona las calificaciones que tuvieron 11 alumnos previo a la pandemia (X: clases presenciales), contra 16 en la situación actual (Y: clase en linea). Los datos obtenidos son los siguientes: $\bar{X} = 6.92$, $\bar{Y} = 9.48$, $S_{X} = 1.46$, $S_{Y} = 1.11$*
+
+**Formule las hipótesis $H_0$ y $H_1$ apropiadas al problemas**
+
+$H_0: 2\sigma^2_x = \sigma^2_y$
+
+$H_1: 2\sigma^2_x \neq \sigma^2_y$
+
+**Pruebe con un nivel de significancia de $\alpha = 0.05$**
+
+$F = \frac{S_x^2 \sigma^2_y}{S_y^2 \sigma^2_x} \sim F_{10,15}$
+
+$RR = \{F_{10,15} \leq 0.2841\}$ U $\{F_{10,15} > 3.06\}$
+
+$\frac{\sigma^2_y}{\sigma^2_x} =2$
+
+Evaluando
+
+$F = \frac{1.46^2}{1.1^2}(2) =3.46$
+
+Rechazamos $H_0$
+
+**Muestre en una gráfica la región de rechazo y el estadístico de prueba correspondiente**
+
+```{r echo = F, message=F, fig.height=2}
+library(tidyverse)
+ggplot(data = data.frame(x = c(0, 5)), aes(x)) +
+  stat_function(fun = df, n = 101, args = list(df1 = 10, df2 = 15)) + 
+  ylab("")+
+  theme_minimal() +
+  geom_vline(xintercept = 3.06, color = "red")+
+  geom_vline(xintercept = 0.2841, color = "red")+
+  geom_rect(aes(xmin=3.06,xmax=Inf,ymin=0,ymax=1),alpha=0.1,fill="red")+
+  geom_rect(aes(xmin=-Inf,xmax=0.2841,ymin=0,ymax=1),alpha=0.1,fill="red")+
+  geom_vline(xintercept = 3.46, color = "orange")
+```
+
+
+**Inteprete el resultado**
+Hay evidencia suficiente para rechazar $H_0$; es decir, que existe una diferencia de dos veces la varianza de las calificaciones en linea comparandolas con las clases presenciales.

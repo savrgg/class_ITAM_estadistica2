@@ -1,0 +1,125 @@
+---
+title: "Soluciones tercer parcial 20:00"
+output: pdf_document
+---
+
+
+*(15 pts) En una fábrica se cambió el sistema de compensación de los empleados para disminuir el número de fallas en la producción, por lo que se desea saber si fue exitoso. Se seleccionaron 12 empleados y se tienen los siguientes datos del número de fallas (Sea D la diferencia entre el número de fallas después del cambio menos el número de fallas antes del cambio): $\bar{D} = -0.66$, $S_D = 1.97$.*
+
+**Encuentre $H_0$ y $H_1$ correspondiente**
+
+$H_0: \mu_{\bar{D}} = 0$ 
+
+$H_1: \mu_{\bar{D}} < 0$ 
+
+**Resuelva la prueba de hipótesis con $\alpha=0.05$**
+
+$T = \frac{\bar{D} - \mu_{\bar{D}}}{\sqrt{\frac{S_{\bar{D}}^2}{n}}} \sim t_{11}$
+
+$RR =\{T \leq t_{11, 0.05}\} = \{T \leq -1.7959 \}$
+
+Evaluando:
+
+$T = \frac{-.0.66 - 0}{\sqrt{\frac{1.97}{12}}}  = -1.6289$
+
+No Rechazamos $H_0$
+
+**Muestre en una gráfica la región de rechazo y el estadístico de prueba correspondiente**
+
+```{r echo = F, message=F, fig.height=2}
+library(tidyverse)
+ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1)) + 
+  ylab("")+
+  theme_minimal() +
+  geom_vline(xintercept = -1.7959, color = "red")+
+  geom_rect(aes(xmin=-Inf,xmax=-1.7959,ymin=0,ymax=.5),alpha=0.1,fill="red")+
+  geom_vline(xintercept = -1.6289, color = "orange")
+```
+
+**Inteprete el resultado**
+
+No hay evidencia suficiente para rechazar $H_0$. No tenemos elementos suficientes para rechazar que el cambio no disminuyera las fallas. 
+
+
+\newpage
+
+
+*La Secretaria de Salud decide decide comprar una cantidad importante de ventiladores. El productor de estos ventiladores afirma que tienen una vida promedio de 5 años, con una varianza menor a 2 años. La Secretaria decide adquirirlos solamente si tienen una desviación estandar menor 1.4142 años de duración. Se seleccionan al azar 51 ventiladores y se obtiene $S^2 = 1.5$. Usted está convencido que el productor está diciendo la verdad, así que desea formular una prueba de hipótesis para apoyarlo. (Se sabe que $\chi_{50,.025} = 71.42$, $\chi_{50,.975} = 32.35$, $\chi_{50,.05} = 67.50$, $\chi_{50,.95} =34.76$)*
+
+**Formule las hipótesis $H_0$ y $H_1$ apropiadas al problemas**
+
+$H_0: \sigma^2 = 2$
+
+$H_1: \sigma^2 < 2$
+
+**Pruebe con un nivel de significancia de $\alpha = 0.025$**
+
+$J = \frac{(n-1)S^2}{\sigma^2} \sim \chi_{50}$
+
+$RR =\{J \leq \chi_{50, 0.05}\} = \{J \leq 32.35 \}$
+
+Evaluando
+
+$J = \frac{(50)(1.5)}{2} = 37.5$
+
+No Rechazamos $H_0$
+
+**Muestre en una gráfica la región de rechazo y el estadístico de prueba correspondiente**
+
+```{r echo = F, message=F, fig.height=2}
+library(tidyverse)
+ggplot(data = data.frame(x = c(0, 50)), aes(x)) +
+  stat_function(fun = dchisq, n = 101, args = list(df = 50)) + 
+  ylab("")+
+  theme_minimal() +
+  geom_vline(xintercept = 32.35, color = "red")+
+  geom_rect(aes(xmin=-Inf,xmax=32.35,ymin=0,ymax=.05),alpha=0.1,fill="red")+
+  geom_vline(xintercept = 37.5, color = "orange")
+```
+
+**Inteprete el resultado**
+
+No hay evidencia suficiente para rechazar $H_0$. Por lo tanto no podemos rechazar que la varianza = 2, entonces no hay evidencia suficiente para apoyar al productor. 
+
+
+\newpage
+
+*La dirección del ITAM desea saber si existe una diferencia estadística entre la varianza de las calificaciones de las clases en linea comparándolas con las clases presenciales. Para esto selecciona las calificaciones que tuvieron 12 alumnos previo a la pandemia (X: clases presenciales), contra 16 en la situación actual (Y: clase en linea). Los datos obtenidos son los siguientes: $\bar{X} = 2.49$, $\bar{Y} = 2.93$, $S_{X} = 1.46$, $S_{Y} = 1.11$*
+
+**Formule las hipótesis $H_0$ y $H_1$ apropiadas al problemas**
+
+$H_0: sigma^2_x = \sigma^2_y$
+
+$H_1: sigma^2_x \neq \sigma^2_y$
+
+**Pruebe con un nivel de significancia de $\alpha = 0.05$**
+
+$F = \frac{S_x^2 \sigma^2_y}{S_y^2 \sigma^2_x} \sim F_{11,15}$
+
+$RR = \{F_{11,15} \leq 0.2841\}$ U $\{F_{10,15} > 3.06\}$
+
+Evaluando
+
+$F = \frac{1.46^2}{1.1^2} = 1.73$
+
+No rechazamos $H_0$
+
+**Muestre en una gráfica la región de rechazo y el estadístico de prueba correspondiente**
+
+```{r echo = F, message=F, fig.height=2}
+library(tidyverse)
+ggplot(data = data.frame(x = c(0, 5)), aes(x)) +
+  stat_function(fun = df, n = 101, args = list(df1 = 10, df2 = 15)) + 
+  ylab("")+
+  theme_minimal() +
+  geom_vline(xintercept = 3.06, color = "red")+
+  geom_vline(xintercept = 0.2841, color = "red")+
+  geom_rect(aes(xmin=3.06,xmax=Inf,ymin=0,ymax=1),alpha=0.1,fill="red")+
+  geom_rect(aes(xmin=-Inf,xmax=0.2841,ymin=0,ymax=1),alpha=0.1,fill="red")+
+  geom_vline(xintercept = 1.73, color = "orange")
+```
+
+
+**Inteprete el resultado**
+No hay evidencia suficiente para rechazar $H_0$; es decir, que existe no podemos rechazar que la varianza de las calificaciones en linea es igual que con las clases presenciales.
