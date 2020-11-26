@@ -1,0 +1,33 @@
+---
+title: "Formulario Estadística 2"
+author: "Salvador Garcia"
+date: "11/26/2020"
+output: html_document
+---
+
+
+```{r fig.height=1}
+library(ggplot2)
+
+# Create data
+data <- data.frame(
+  x=c(1,1.5,2,2.5,3),
+  y=c(0.01, 0.1, 0.33, 0.40, 0.16)
+)
+
+# Plot
+p <- ggplot(data, aes(x=x, y=y)) +
+  geom_segment( aes(x=x, xend=x, y=0, yend=y), color="grey") +
+  geom_point( color="orange", size=1) +
+  theme_light() +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks.x = element_blank(),
+    text = element_text(size = 8)
+  ) +
+  xlab("") +
+  ylab("")
+ggsave(plot =  p,filename =  "prueba.png", width = 2, height = 2)
+```
+
