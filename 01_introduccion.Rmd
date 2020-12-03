@@ -1,5 +1,0 @@
----
-title: "Introduccion"
-author: "Salvador Garcia"
-output: html_document
----
