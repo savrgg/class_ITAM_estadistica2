@@ -1,0 +1,19 @@
+
+
+## 4.1 Prueba de hipótesis p = 1/2, valor-p = 0.025, alpha = 0.0125
+No rechazamos H_0, corremos el riesgo del error tipo 2
+
+## 4.2 Prueba de hipótesis mu_1 = mu_2, valor-p = .01, alpha = .05
+Rechazamos H_0, corremos el riesgo del error tipo 1
+
+## 4.3 Prueba de hipótesis mu_1 = 0, valor-p = .07, alpha = .1
+Rechazamos H0,  corremos el riesgo del error tipo 1
+
+## 4.4 Prueba de hipótesis sigma_1 = sigma_2, valor-p = .02, alpha = .025
+Rechazamos H0,  corremos el riesgo del error tipo 1
+
+## 4.5 Prueba de hipótesis sigma_1 = 1, valor-p = .07, alpha = .05
+No Rechazamos H0,  corremos el riesgo del error tipo 2
+
+## 4.6 Prueba de hipótesis p1 = p2, valor-p = 0.2, alpha = 0.025
+No rechazamos H_0, corremos el riesgo del error tipo 2

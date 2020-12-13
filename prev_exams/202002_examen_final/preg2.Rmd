@@ -1,0 +1,272 @@
+
+## 2.1 Deficiencias de hierro en bebes (primer dato 14.2)
+```{r}
+materna <- c(14.2, 17.1, 8.8, 13.5, 13.9, 12.5, 10.3, 16.5, 15.8, 15.1, 11.0, 18.4, 16.1)
+formula <- c(15.3, 10.0, 7.5, 9.7, 14.2, 14.3, 14.4, 13.1, 13.8, 12.1)
+```
+
+
+a) al 98%
+```{r}
+sp2 = (12*var(materna)+9*var(formula))/21
+materna_menos_formula <- (mean(materna)-mean(formula))
+B = qt(.99, 21)*sqrt(sp2*((1/13)+(1/11)))
+
+materna_menos_formula-B
+materna_menos_formula+B
+```
+
+# Si restan de la otra forma, el intervalo es: 
+```{r}
+-materna_menos_formula-B
+-materna_menos_formula+B
+```
+
+b) leche materna > formula
+no podemos afirmar ya que incluye al cero
+
+c) 96%
+```{r}
+IC_lower <- var(formula)/var(materna)*qf(.02, 12, 10)
+IC_upper <- var(formula)/var(materna)*qf(.98, 12, 10)
+IC_lower
+IC_upper
+```
+
+d) diferencia en varianzas pob
+
+Incluye al uno entonces no hay manera de determinar si hay diferencia
+
+## 2.2 Dos metodos de alfabetización (primer dato 90)
+
+```{r}
+tradicional <- c(90,62,64,60,41,70,38,39,73,72,58,69,75)
+nuevo <- c(93,88,76,82,94,80,59,68,49,72,69)
+```
+
+
+a) al 98%
+```{r}
+sp2 = (12*var(tradicional)+10*var(nuevo))/22
+tradicional_menos_nuevo <- (mean(tradicional)-mean(nuevo))
+B = qt(.9975, 21)*sqrt(sp2*((1/13)+(1/11)))
+
+tradicional_menos_nuevo-B
+tradicional_menos_nuevo+B
+```
+
+# Si restan de la otra forma, el intervalo es: 
+```{r}
+-tradicional_menos_nuevo-B
+-tradicional_menos_nuevo+B
+```
+
+b) tradicional > nuevo
+Incluye al cero, no podemos afirmar
+
+c) 96%
+```{r}
+IC_lower <- var(tradicional)/var(nuevo)*qf(.01, 12, 10)
+IC_upper <- var(tradicional)/var(nuevo)*qf(.99, 12, 10)
+IC_lower
+IC_upper
+```
+
+Otro posible intervalo con el cociente tomado al reves
+```{r}
+IC_lower <- var(tradicional)/var(nuevo)*qf(.01, 12, 10)
+IC_upper <- var(tradicional)/var(nuevo)*qf(.99, 12, 10)
+1/IC_lower
+1/IC_upper
+```
+
+d) diferencia en varianzas pob
+
+Incluye al uno entonces no hay manera de determinar si hay diferencia
+
+
+## 2.3 Dos metodos de alfabetización (primer dato 60)
+
+```{r}
+tradicional <- c(60,72,41,38,73,69,75,39,90,62,70,58,64)
+nuevo <- c(80,69,76,49,68,82,59,88,93,94,72)
+```
+
+
+a) al 99.8%
+```{r}
+sp2 = (12*var(tradicional)+10*var(nuevo))/22
+tradicional_menos_nuevo <- (mean(tradicional)-mean(nuevo))
+B = qt(.999, 21)*sqrt(sp2*((1/13)+(1/11)))
+
+tradicional_menos_nuevo-B
+tradicional_menos_nuevo+B
+```
+
+# Si restan de la otra forma, el intervalo es: 
+```{r}
+-tradicional_menos_nuevo-B
+-tradicional_menos_nuevo+B
+```
+
+b) tradicional > nuevo
+Incluye al cero, no podemos afirmar
+
+c) 99%
+```{r}
+IC_lower <- var(tradicional)/var(nuevo)*qf(.995, 12, 10)
+IC_upper <- var(tradicional)/var(nuevo)*qf(.005, 12, 10)
+IC_lower
+IC_upper
+```
+
+Otro posible intervalo con el cociente tomado al reves
+```{r}
+IC_lower <- var(tradicional)/var(nuevo)*qf(.005, 12, 10)
+IC_upper <- var(tradicional)/var(nuevo)*qf(.995, 12, 10)
+1/IC_lower
+1/IC_upper
+```
+
+d) diferencia en varianzas pob
+
+Incluye al uno entonces no hay manera de determinar si hay diferencia
+
+
+
+## 2.4 Barcelona (primer dato 613)
+
+```{r}
+celular <- c(613, 625, 591, 600, 609, 579, 592, 583, 597, 540)
+inodoro <- c(491, 495, 507, 504, 519, 490, 515, 617)
+```
+
+
+a) al 99.7%
+```{r}
+sp2 = (9*var(celular)+6*var(inodoro))/15
+celular_menos_inodoro <- (mean(celular)-mean(inodoro))
+B = qt(.9985, 15)*sqrt(sp2*((1/10)+(1/7)))
+
+celular_menos_inodoro-B
+celular_menos_inodoro+B
+```
+
+# Si restan de la otra forma, el intervalo es: 
+```{r}
+-celular_menos_inodoro-B
+-celular_menos_inodoro+B
+```
+
+b) celular > inodoro
+No incluye, si es mayor
+
+c) 96%
+```{r}
+IC_lower <- var(celular)/var(inodoro)*qf(.98, 12, 7)
+IC_upper <- var(celular)/var(inodoro)*qf(.02, 12, 7)
+IC_lower
+IC_upper
+```
+
+Otro posible intervalo con el cociente tomado al reves
+```{r}
+IC_lower <- var(celular)/var(inodoro)*qf(.02, 12, 10)
+IC_upper <- var(celular)/var(inodoro)*qf(.98, 12, 10)
+1/IC_lower
+1/IC_upper
+```
+
+d) diferencia en varianzas pob
+
+Incluye al uno entonces no hay manera de determinar si hay diferencia
+
+
+
+
+## 2.5 Barcelona (primer dato 540)
+
+```{r}
+celular <- c(540, 625, 583, 579, 613, 609, 591, 597, 600, 592)
+inodoro <- c(495, 519, 507, 490, 515, 617, 504, 491)
+```
+
+
+a) al 99.9%
+```{r}
+sp2 = (9*var(celular)+7*var(inodoro))/16
+celular_menos_inodoro <- (mean(celular)-mean(inodoro))
+B = 3.29*sqrt(sp2*((1/10)+(1/7)))
+
+celular_menos_inodoro-B
+celular_menos_inodoro+B
+```
+
+# Si restan de la otra forma, el intervalo es: 
+```{r}
+-celular_menos_inodoro-B
+-celular_menos_inodoro+B
+```
+
+b) celular > inodoro
+No incluye al cero, si es mayor / menor
+
+c) 95%
+```{r}
+IC_lower <- var(celular)/var(inodoro)*qf(.975, 12, 10)
+IC_upper <- var(celular)/var(inodoro)*qf(.025, 12, 7)
+IC_lower
+IC_upper
+```
+
+Otro posible intervalo con el cociente tomado al reves
+```{r}
+IC_lower <- var(celular)/var(inodoro)*qf(.005, 12, 10)
+IC_upper <- var(celular)/var(inodoro)*qf(.995, 12, 10)
+1/IC_lower
+1/IC_upper
+```
+
+d) diferencia en varianzas pob
+
+Incluye al uno entonces no hay manera de determinar si hay diferencia
+
+
+## 2.6 Deficiencias de hierro en bebes (primer dato 14.2)
+```{r}
+materna <- c(15.8, 14.2, 17.1, 8.8, 13.5, 13.9, 12.5, 10.3, 16.5, 15.1, 11.0, 18.4, 16.1)
+formula <- c(10.0, 15.3, 7.5, 9.7, 14.2, 14.3, 14.4, 13.1, 13.8, 12.1)
+```
+
+
+a) al 96%
+```{r}
+sp2 = (12*var(materna)+9*var(formula))/21
+materna_menos_formula <- (mean(materna)-mean(formula))
+B = qt(.98, 21)*sqrt(sp2*((1/13)+(1/11)))
+
+materna_menos_formula-B
+materna_menos_formula+B
+```
+
+# Si restan de la otra forma, el intervalo es: 
+```{r}
+-materna_menos_formula-B
+-materna_menos_formula+B
+```
+
+b) leche materna > formula
+no podemos afirmar ya que incluye al cero
+
+c) 98%
+```{r}
+IC_lower <- var(formula)/var(materna)*qf(.02, 12, 10)
+IC_upper <- var(formula)/var(materna)*qf(.98, 12, 10)
+IC_lower
+IC_upper
+```
+
+d) diferencia en varianzas pob
+
+Incluye al uno entonces no hay manera de determinar si hay diferencia
+

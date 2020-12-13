@@ -1,0 +1,251 @@
+---
+title: "final"
+author: "Salvador Garcia"
+date: "12/12/2020"
+output: html_document
+---
+
+## 1.1 Papas absorben aceite (primer dato 158)
+
+```{r}
+datos <- c(158, 171, 166, 148, 164, 152, 162, 169, 159, 
+           175, 170, 167, 153, 149, 165, 173, 177, 165)
+```
+
+a) al 96%
+```{r}
+IC_lower <- mean(datos) + qnorm(.02) * sqrt(100/18)
+IC_upper <- mean(datos) + qnorm(.98) * sqrt(100/18)
+IC_lower
+IC_upper
+```
+b) menor a 170
+Si se están cumpliendo los estándares
+
+c) al 97.5%
+```{r}
+# Pide IC 97.5%, pongo el mas cercano en tablas
+s2 = var(datos)
+IC_lower <- (18-1)*s2/qchisq(.99, 17)
+IC_upper <- (18-1)*s2/qchisq(.01, 17)
+IC_lower
+IC_upper
+```
+
+d) menor a 15
+Si se cumple el estandar
+```{r}
+sqrt(IC_lower)
+sqrt(IC_upper)
+```
+
+
+## 1.2 motor automovil vida util (primer dato 295, 99%)
+
+```{r}
+datos <- c(295, 330, 325, 348, 365, 309, 359, 337, 321, 347,
+           316, 311, 296, 329, 348, 334, 315, 325, 318, 329)
+```
+
+a) al 99%
+```{r}
+IC_lower <- mean(datos) + qnorm(.005) * sqrt(100/20)
+IC_upper <- mean(datos) + qnorm(.995) * sqrt(100/20)
+IC_lower
+IC_upper
+```
+b) menor a 320
+No deben diseñar uno nuevo, este cumple
+
+c) al 99.5%
+```{r}
+# Pide IC 97.5%, pongo el mas cercano en tablas
+s2 = var(datos)
+IC_lower <- (20-1)*s2/qchisq(.9975, 19)
+IC_upper <- (20-1)*s2/qchisq(.0025, 19)
+IC_lower
+IC_upper
+```
+
+d) mayor a 32
+Si se de ajustar el diseño
+```{r}
+sqrt(IC_lower)
+sqrt(IC_upper)
+```
+
+## 1.3 motor automovil vida util (primer dato 295, 94%)
+
+```{r}
+datos <- c(295, 334, 348, 309, 311, 318, 325, 330, 337, 359,
+           315, 329, 321, 329, 296, 347, 316, 348, 365, 325)
+```
+
+a) al 94%
+```{r}
+IC_lower <- mean(datos) + qnorm(.03) * sqrt(324/20)
+IC_upper <- mean(datos) + qnorm(.97) * sqrt(324/20)
+IC_lower
+IC_upper
+```
+b) menor a 318
+No deben diseñar uno nuevo, este cumple
+
+c) al 90%
+```{r}
+# Pide IC 97.5%, pongo el mas cercano en tablas
+s2 = var(datos)
+IC_lower <- (20-1)*s2/qchisq(.95, 19)
+IC_upper <- (20-1)*s2/qchisq(.05, 19)
+IC_lower
+IC_upper
+```
+
+d) mayor a 33
+No se debe ajustar el diseño
+```{r}
+sqrt(IC_lower)
+sqrt(IC_upper)
+```
+
+
+## 1.4 amazon (primer dato 6529, 95%)
+
+```{r}
+datos <- c(6529, 6410, 6336, 6898, 6323, 6349, 7285, 6543,
+           7453, 6223, 6929, 6971, 6329, 6932, 6652, 6257)
+```
+
+a) al 95%
+```{r}
+IC_lower <- mean(datos) + qnorm(.025) * sqrt(122500/16)
+IC_upper <- mean(datos) + qnorm(.975) * sqrt(122500/16)
+IC_lower
+IC_upper
+```
+b) mayor a 6400
+Deben contratar mas trabajadores
+
+c) al 99%
+```{r}
+# Pide IC 99%, pongo el mas cercano en tablas
+s2 = var(datos)
+IC_lower <- (15)*s2/qchisq(.995, 15)
+IC_upper <- (15)*s2/qchisq(.005, 15)
+IC_lower
+IC_upper
+```
+
+d) mayor a 590
+No podemos concluirlo
+```{r}
+sqrt(IC_lower)
+sqrt(IC_upper)
+```
+
+
+## 1.5 Papas absorben aceite (primer dato 177)
+
+```{r}
+datos <- c(177, 158, 170, 152, 171, 167, 159, 166, 173, 
+           149, 175, 165, 153, 169, 148, 165, 164, 162)
+```
+
+a) al 98%
+```{r}
+IC_lower <- mean(datos) + qnorm(.01) * sqrt(100/18)
+IC_upper <- mean(datos) + qnorm(.99) * sqrt(100/18)
+IC_lower
+IC_upper
+```
+b) menor a 168
+No se están cumpliendo los estándares
+
+c) al 95%
+```{r}
+# Pide IC 97.5%, pongo el mas cercano en tablas
+s2 = var(datos)
+IC_lower <- (18-1)*s2/qchisq(.975, 17)
+IC_upper <- (18-1)*s2/qchisq(.025, 17)
+IC_lower
+IC_upper
+```
+
+d) menor a 12
+Si se cumple el estandar
+```{r}
+sqrt(IC_lower)
+sqrt(IC_upper)
+```
+
+
+## 1.6 amazon (primer dato 6652, 95%)
+
+```{r}
+datos <- c(6652, 7453, 6329, 6971, 7285, 6543, 6898, 6929,
+           6529, 6323, 6410, 6336, 6932, 6223, 5349, 6257)
+```
+
+a) al 97%
+```{r}
+IC_lower <- mean(datos) + qnorm(.985) * sqrt(122500/16)
+IC_upper <- mean(datos) + qnorm(.015) * sqrt(122500/16)
+IC_lower
+IC_upper
+```
+b) mayor a 6400
+Deben contratar mas trabajadores
+
+c) al 99%
+```{r}
+# Pide IC 99%, pongo el mas cercano en tablas
+s2 = var(datos)
+IC_lower <- (15)*s2/qchisq(.975, 15)
+IC_upper <- (15)*s2/qchisq(.025, 15)
+IC_lower
+IC_upper
+```
+
+d) mayor a 600
+Si podemos concluirlo
+```{r}
+sqrt(IC_lower)
+sqrt(IC_upper)
+```
+
+
+## 1.2 motor automovil vida util (primer dato 295, 99%)
+
+```{r}
+datos <- c(295, 330, 325, 348, 365, 309, 359, 337, 321, 347,
+           316, 311, 296, 329, 348, 334, 315, 325, 318, 329)
+```
+
+a) al 99%
+```{r}
+IC_lower <- mean(datos) + qnorm(.005) * sqrt(324/20)
+IC_upper <- mean(datos) + qnorm(.995) * sqrt(324/20)
+IC_lower
+IC_upper
+```
+b) menor a 320
+No deben diseñar uno nuevo, este cumple
+
+c) al 99.5%
+```{r}
+# Pide IC 97.5%, pongo el mas cercano en tablas
+s2 = var(datos)
+IC_lower <- (20-1)*s2/qchisq(.9975, 19)
+IC_upper <- (20-1)*s2/qchisq(.0025, 19)
+IC_lower
+IC_upper
+```
+
+d) mayor a 32
+Si se de ajustar el diseño
+```{r}
+sqrt(IC_lower)
+sqrt(IC_upper)
+```
+
+

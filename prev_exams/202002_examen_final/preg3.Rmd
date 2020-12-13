@@ -1,0 +1,228 @@
+
+## 3.1 Velocidad maxima de los automoviles (primer dato = 112)
+
+```{r}
+table <- data.frame(
+  `auto 6` = c(210, 215),
+  `auto 1` = c(112, 140),
+  `auto 2` = c(173, 200),
+  `auto 3` = c(104, 119),
+  `auto 4` = c(186, 199),
+  `auto 5` = c(147, 177)
+)
+```
+
+
+```{r}
+D = unlist(table[2,])-unlist(table[1,])
+bar_D = mean(D)
+sd_D2 = sd(D)^2
+
+bar_D
+sd_D2
+```
+
+```{r}
+RR <- qt(.99, df = 5)
+T <- (bar_D - 0)/sqrt(sd_D2/6)
+valor_p <- 1-pt((bar_D - 0)/sqrt(sd_D2/6), df= 5)
+
+RR
+T
+valor_p
+```
+
+Decisión: Rechazamos H_0
+
+
+## 3.2 Simulaciones investigadores compus (primer dato 1.12)
+
+```{r}
+table <- data.frame(
+  `auto 1` = c(1.12, 1.15),
+  `auto 2` = c(1.73, 1.72),
+  `auto 3` = c(1.04, 1.10),
+  `auto 4` = c(1.86, 1.87),
+  `auto 5` = c(1.47, 1.40),
+  `auto 6` = c(2.10, 2.15)
+)
+```
+
+
+```{r}
+D = unlist(table[2,])-unlist(table[1,])
+bar_D = mean(D)
+sd_D2 = sd(D)^2
+
+bar_D
+sd_D2
+```
+
+```{r}
+RR1 <- qt(.975, df = 5)
+RR2 <- qt(.025, df = 5)
+T <- (bar_D - 0)/sqrt(sd_D2/6)
+valor_p <- pt((bar_D - 0)/sqrt(sd_D^2/6), df= 5)
+
+
+RR1
+RR2
+T
+valor_p
+```
+
+Decisión: Rechazamos H_0, valor-p>alpha
+
+
+## 3.3 Cocinero reducir tiempos de platillos (primer dato 112)
+
+
+```{r}
+table <- data.frame(
+  `auto 1` = c(112, 110),
+  `auto 2` = c(173, 150),
+  `auto 3` = c(104, 95),
+  `auto 4` = c(186, 180),
+  `auto 5` = c(147, 150),
+  `auto 6` = c(210, 190)
+)
+```
+
+
+```{r}
+D = unlist(table[2,])-unlist(table[1,])
+bar_D = mean(D)
+sd_D2 = sd(D)^2
+
+bar_D
+sd_D2
+```
+
+```{r}
+RR <- qt(.95, df = 5)
+T <- (bar_D - 0)/sqrt(sd_D2/6)
+valor_p <- pt((bar_D - 0)/sqrt(sd_D2/6), df= 5)
+
+RR
+T
+valor_p
+```
+
+Decisión: No Rechazamos H_0, valor-p>alpha
+
+
+
+## 3.4 Ingeniero velocidad (primer dato 112)
+
+```{r}
+table <- data.frame(
+  `auto 1` = c(112, 140),
+  `auto 2` = c(173, 200),
+  `auto 3` = c(104, 119),
+  `auto 4` = c(186, 199),
+  `auto 5` = c(147, 177),
+  `auto 6` = c(210, 215)
+)
+```
+
+
+```{r}
+D = unlist(table[2,])-unlist(table[1,])
+bar_D = mean(D)
+sd_D2 = sd(D)^2
+
+bar_D
+sd_D2
+```
+
+```{r}
+RR <- qt(.95, df = 5)
+T <- (bar_D - 0)/sqrt(sd_D2/6)
+valor_p <- 1-pt((bar_D - 0)/sqrt(sd_D^2/6), df= 5)
+
+
+RR
+T
+valor_p
+```
+
+Decisión: Rechazamos H_0, valor-p>alpha
+
+
+## 3.4 Simulaciones investigadores compus (primer dato 1.86)
+
+```{r}
+table <- data.frame(
+  `auto 1` = c(1.86, 1.87),
+  `auto 2` = c(1.73, 1.72),
+  `auto 3` = c(1.04, 1.10),
+  `auto 4` = c(1.47, 1.40),
+  `auto 5` = c(2.10, 2.15),
+  `auto 6` = c(1.12, 1.15)
+)
+```
+
+
+```{r}
+D = unlist(table[2,])-unlist(table[1,])
+bar_D = mean(D)
+sd_D2 = sd(D)^2
+
+bar_D
+sd_D2
+```
+
+```{r}
+RR1 <- qt(.95, df = 5)
+RR2 <- qt(.05, df = 5)
+T <- (bar_D - 0)/sqrt(sd_D2/6)
+valor_p <- pt((bar_D - 0)/sqrt(sd_D^2/6), df= 5)
+
+
+RR1
+RR2
+T
+valor_p
+```
+
+Decisión: Rechazamos H_0, valor-p>alpha
+
+
+
+## 3.5 Cocinero reducir tiempos de platillos (primer dato 147)
+
+
+```{r}
+table <- data.frame(
+  `auto 5` = c(147, 150),
+  `auto 6` = c(210, 190),
+  `auto 1` = c(112, 110),
+  `auto 2` = c(173, 150),
+  `auto 3` = c(104, 95),
+  `auto 4` = c(186, 180)
+)
+```
+
+
+```{r}
+D = unlist(table[2,])-unlist(table[1,])
+bar_D = mean(D)
+sd_D2 = sd(D)^2
+
+bar_D
+sd_D2
+```
+
+```{r}
+RR <- qt(.95, df = 5)
+T <- (bar_D - 0)/sqrt(sd_D2/6)
+valor_p <- pt((bar_D - 0)/sqrt(sd_D2/6), df= 5)
+
+
+RR
+T
+valor_p
+```
+
+Decisión: Rechazamos H_0, valor-p>alpha
+

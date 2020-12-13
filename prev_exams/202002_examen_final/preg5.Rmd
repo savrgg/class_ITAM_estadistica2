@@ -1,0 +1,29 @@
+
+
+## 5.1 
+
+primer estimador: 
+$1/6(X_1+X_2+X3) + 1/6 (X_4+...+X_{n-1})/(n-4)$
+$ECM: \sigma^2/18 + 4 \sigma^2 /(9(n-2))$
+
+segundo estimador:
+$1/2(X_1+X_N)$
+$ECM: 1/2 \sigma^2$
+
+Es más chico el primero
+
+## 5.2
+
+primer estimador insesgado: 
+$1/6(X_1+X_2+X3) + 1/6 (X_4+...+X_{n-1})/(n-4) + 1/3X_n$
+$ECM: \sigma^2 (1/12 + 1/36(n-4) 1/9)$
+
+segundo estimador insesgado:
+$1/2(X_1+X_N)$
+$ECM: 1/2 \sigma^2$
+
+Es más chico el primero
+
+
+
+## 5.2 muestreo
