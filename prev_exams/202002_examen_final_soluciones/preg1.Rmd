@@ -144,7 +144,7 @@ sqrt(IC_upper)
 ```
 
 
-## 1.5 Papas absorben aceite (primer dato 177)
+## 1.5 Papas absorben aceite (primer dato 177, 98%)
 
 ```{r}
 datos <- c(177, 158, 170, 152, 171, 167, 159, 166, 173, 
@@ -179,11 +179,11 @@ sqrt(IC_upper)
 ```
 
 
-## 1.6 amazon (primer dato 6652, 95%)
+## 1.6 amazon (primer dato 6652, 97%)
 
 ```{r}
 datos <- c(6652, 7453, 6329, 6971, 7285, 6543, 6898, 6929,
-           6529, 6323, 6410, 6336, 6932, 6223, 5349, 6257)
+           6529, 6323, 6410, 6336, 6932, 6223, 6349, 6257)
 ```
 
 a) al 97%

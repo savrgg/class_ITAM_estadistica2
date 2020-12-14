@@ -1,0 +1,240 @@
+---
+title: "Pregunta 2 - 15 minutos"
+author: "Salvador Garcia"
+date: "11/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(knitr)
+```
+
+# Propuesta de examen
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+#### Versión 1)  Pruebas de hipótesis sobre diferencias de medias
+Un laboratorio de investigación realiza simulaciones para estimar tasas de contagio. Se dan cuenta que estas simulaciones toman demasiado tiempo y deciden cambiar ciertos componentes de las computadoras para disminuir el tiempo de cómputo (en segundos). Para cuantificarlo, deciden tomar el tiempo de procesamiento de 6 computadoras antes y después del cambio:
+
+```{r echo=TRUE,  results='asis'}
+table <- data.frame(
+  `computadora 1` = c(1.12, 1.15),
+  `computadora 2` = c(1.73, 1.72),
+  `computadora 3` = c(1.04, 1.10),
+  `computadora 4` = c(1.86, 1.87),
+  `computadora 5` = c(1.47, 1.40),
+  `computadora 6` = c(2.10, 2.15)
+)
+
+row.names(table) <- c("Antes", "Después")
+kable(table)
+```
+
+**a) ¿Los datos aportan suficiente evidencia para indicar una diferencia en los tiempos medios después del cambio? Determine $H_0$, $H_1$ y la región de rechazo RR con una prueba de hipótesis con $\alpha = 0.05$**
+
+**b) Determina el valor-p para la prueba de hipótesis**
+
+**c) Si se incrementa a $\alpha = 0.10$, ¿se sigue tomando la misma decisión?**
+
+
+**a) SOLUCION ==== **
+
+$H_0: \mu_D = 0$
+$H_1: \mu_D < 0$
+
+**Región de Rechazo:**
+```{r echo=TRUE}
+# Valores menores a:
+qt(.05, df = 5)
+```
+
+
+**Valor del estadístico:**
+mean_D y sd_D
+```{r echo=TRUE}
+D = unlist(table[2,])-unlist(table[1,])
+bar_D = mean(D)
+sd_D = sd(D)
+# bar_D
+bar_D
+# sd_D
+sqrt((sum(D*D)-6*mean(D)*mean(D))/5)
+sd_D
+```
+
+```{r echo=TRUE}
+(bar_D - 0)/sqrt(sd_D^2/6)
+```
+
+**Decisión:**
+No rechazamos H_0
+
+
+**b) SOLUCION ==== **
+
+**valor-p**
+```{r echo=TRUE}
+pt((bar_D - 0)/sqrt(sd_D^2/6), df= 5)
+```
+
+**c) SOLUCION ==== **
+Seguimos sin rechazar, valor-p > $\alpha$
+
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+#### Versión 2)  Pruebas de hipótesis sobre diferencias de medias
+Un ingeniero que trabaja en una empresea automotriz desea mejorar la velocidad máxima de los automoviles. Para esto decide cambiar ciertos componentes de 6 automóviles para para aumentar la velocidad máxima (mph). En la siguiente tabla se muestran las velocidad máximas registradas:
+
+```{r echo=TRUE,  results='asis'}
+table <- data.frame(
+  `auto 1` = c(112, 140),
+  `auto 2` = c(173, 200),
+  `auto 3` = c(104, 119),
+  `auto 4` = c(186, 199),
+  `auto 5` = c(147, 177),
+  `auto 6` = c(210, 215)
+)
+
+row.names(table) <- c("Antes", "Después")
+kable(table)
+```
+
+**a) ¿Los datos aportan suficiente evidencia para indicar una diferencia en los tiempos medios después del cambio? Determine $H_0$, $H_1$ y la región de rechazo RR con una prueba de hipótesis con $\alpha = 0.05$**
+
+**b) Determina el valor-p para la prueba de hipótesis**
+
+**c) Si se decrementa a $\alpha = 0.01$, ¿se sigue tomando la misma decisión?**
+
+
+**a) SOLUCION ==== **
+
+$H_0: \mu_D = 0$
+$H_1: \mu_D > 0$
+
+**Región de Rechazo:**
+```{r echo=TRUE}
+# Valores mayores a:
+qt(.95, df = 5)
+```
+
+
+**Valor del estadístico:**
+mean_D y sd_D
+```{r echo=TRUE}
+D = unlist(table[2,])-unlist(table[1,])
+bar_D = mean(D)
+sd_D = sd(D)
+# bar_D
+bar_D
+# sd_D
+sqrt((sum(D*D)-6*mean(D)*mean(D))/5)
+sd_D
+```
+
+```{r echo=TRUE}
+(bar_D - 0)/sqrt(sd_D^2/6)
+```
+
+**Decisión:**
+Rechazamos H_0
+
+
+**b) SOLUCION ==== **
+
+**valor-p**
+```{r echo=TRUE}
+1-pt((bar_D - 0)/sqrt(sd_D^2/6), df= 5)
+```
+
+**c) SOLUCION ==== **
+Seguimos rechazando H_0, valor-p < $\alpha$
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+#### Versión 3)  Pruebas de hipótesis sobre diferencias de medias
+Un cocinero que trabaja en un restaurante desea reducir el tiempo de cocción de sus platillos. Para esto, decide comprar un nuevo horno que promete un menor tiempo de cocción. Para esto decide preparar 6 platillos y cuantificar el tiempo antes y después. En la siguiente tabla se muestran los tiempos de cocción registrados (en minutos):
+
+```{r echo=TRUE,  results='asis'}
+table <- data.frame(
+  `platillo 1` = c(112, 110),
+  `platillo 2` = c(173, 150),
+  `platillo 3` = c(104, 95),
+  `platillo 4` = c(186, 180),
+  `platillo 5` = c(147, 150),
+  `platillo 6` = c(210, 190)
+)
+
+row.names(table) <- c("Antes", "Después")
+kable(table)
+```
+
+**a) ¿Los datos aportan suficiente evidencia para indicar una diferencia en los tiempos medios después del cambio? Determine $H_0$, $H_1$ y la región de rechazo RR con una prueba de hipótesis con $\alpha = 0.05$**
+
+**b) Determina el valor-p para la prueba de hipótesis**
+
+**c) Si se decrementa a $\alpha = 0.025$, ¿se sigue tomando la misma decisión?**
+
+
+**a) SOLUCION ==== **
+
+$H_0: \mu_D = 0$
+$H_1: \mu_D < 0$
+
+**Región de Rechazo:**
+```{r echo=TRUE}
+# Valores mayores a:
+qt(.05, df = 5)
+```
+
+
+**Valor del estadístico:**
+mean_D y sd_D
+```{r echo=TRUE}
+D = unlist(table[2,])-unlist(table[1,])
+bar_D = mean(D)
+sd_D = sd(D)
+# bar_D
+bar_D
+# sd_D
+sqrt((sum(D*D)-6*mean(D)*mean(D))/5)
+sd_D
+```
+
+```{r echo=TRUE}
+(bar_D - 0)/sqrt(sd_D^2/6)
+```
+
+**Decisión:**
+Rechazamos H_0
+
+
+**b) SOLUCION ==== **
+
+**valor-p**
+```{r echo=TRUE}
+pt((bar_D - 0)/sqrt(sd_D^2/6), df= 5)
+```
+
+**c) SOLUCION ==== **
+No rechazamos H_0, valor-p > $\alpha$
+
+
+
+
+
+

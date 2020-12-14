@@ -4,11 +4,11 @@
 ```{r}
 table <- data.frame(
   `auto 6` = c(210, 215),
-  `auto 1` = c(112, 140),
+  `auto 5` = c(147, 177),
   `auto 2` = c(173, 200),
+  `auto 1` = c(112, 140),
   `auto 3` = c(104, 119),
-  `auto 4` = c(186, 199),
-  `auto 5` = c(147, 177)
+  `auto 4` = c(186, 199)
 )
 ```
 
@@ -71,7 +71,7 @@ T
 valor_p
 ```
 
-Decisión: Rechazamos H_0, valor-p>alpha
+Decisión: No Rechazamos H_0, valor-p>alpha
 
 
 ## 3.3 Cocinero reducir tiempos de platillos (primer dato 112)
@@ -185,7 +185,7 @@ T
 valor_p
 ```
 
-Decisión: Rechazamos H_0, valor-p>alpha
+Decisión: No Rechazamos H_0, valor-p>alpha
 
 
 

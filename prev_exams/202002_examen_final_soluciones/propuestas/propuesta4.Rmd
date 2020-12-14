@@ -1,0 +1,78 @@
+---
+title: "Pregunta 4 - 10 minutos"
+author: "Salvador Garcia"
+date: "11/16/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Propuesta de examen
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+#### Versión 1)  Pregunta sobre conceptos fundamentales e interpretación de pruebas de hipótesis
+
+
+Sea una prueba de hipótesis $H_0: \sigma = 0$ vs $H_1: \sigma > 0$. El *valor-p* de esta prueba es 0.07 y $\alpha = 0.05$. Basado en estos datos, conteste lo siguiente:
+
+**a) Basados en la decisión tomada basado en los datos de la prueba, ¿Qué tipo de error tenemos el riesgo de correr? Justifique**
+
+**b) Si $\alpha = 0.03$ ¿Seguiriamos tomando la misma decisión? ¿Qué tipo de error tenemos el riesgo de correr?**
+
+
+**a) SOLUCION ==== **
+
+Con *valor-p* $=0.07$ y $\alpha = 0.05$, no rechazamos $H_0$. El error que tenemos riesgo de correr es el tipo 2; es decir, que la hipótesis nula sea falsa y no la rechacemos.
+
+**b) SOLUCION ==== **
+
+Con *valor-p* $=0.07$ y $\alpha = 0.03$, seguimos sin rechazar $H_0$. Seguimos con riesgo de cometer el mismo tipo de error que en a)
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+
+#### Versión 2) Pregunta sobre conceptos fundamentales e interpretación de pruebas de hipótesis
+
+Sea una prueba de hipótesis $H_0: \mu = 0$ vs $H_1: \mu \neq 0$. El *valor-p* de esta prueba es 0.07 y $\alpha = 0.05$. Basado en estos datos, conteste lo siguiente:
+
+**a) Basados en la decisión tomada basado en los datos de la prueba, ¿Qué tipo de error tenemos el riesgo de correr? Justifique**
+
+**b) Si $\alpha = 0.10$ ¿Seguiriamos tomando la misma decisión? ¿Qué tipo de error tenemos el riesgo de correr?**
+
+**a) SOLUCION ==== **
+
+Con *valor-p* $=0.07$ y $\alpha = 0.05$, no rechazamos $H_0$. El error que tenemos riesgo de correr es el tipo 2; es decir, que la hipótesis nula sea falsa y no la rechacemos.
+
+**b) SOLUCION ==== **
+
+Con *valor-p* $=0.07$ y $\alpha = 0.10$, rechazamos $H_0$. El error que tenemos riesgo de correr es el tipo 1; es decir, que la hipótesis nula sea verdadera y la rechacemos.
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+
+
+#### Versión 3) Pregunta sobre conceptos fundamentales e interpretación de pruebas de hipótesis
+
+Sea una prueba de hipótesis $H_0: \sigma_x^2 = \sigma_y^2$ vs $H_1: \sigma_x^2 \neq \sigma_y^2$. El *valor-p* de esta prueba es 0.01 y $\alpha = 0.05$. Basado en estos datos, conteste lo siguiente:
+
+**a) Basados en la decisión tomada basado en los datos de la prueba, ¿Qué tipo de error tenemos el riesgo de correr? Justifique**
+
+**b) Si $\alpha = 0.025$ ¿Seguiriamos tomando la misma decisión? ¿Qué tipo de error tenemos el riesgo de correr?**
+
+**a) SOLUCION ==== **
+
+Con *valor-p* $=0.01$ y $\alpha = 0.05$, rechazamos $H_0$. El error que tenemos riesgo de correr es el tipo 1; es decir, que la hipótesis nula sea verdadera y la rechacemos.
+
+**b) SOLUCION ==== **
+
+Con *valor-p* $=0.01$ y $\alpha = 0.025$, rechazamos $H_0$. Seguimos con riesgo de cometer el mismo tipo de error que en a)

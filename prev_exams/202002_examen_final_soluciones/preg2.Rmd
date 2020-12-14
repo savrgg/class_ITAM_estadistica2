@@ -196,7 +196,7 @@ a) al 99.9%
 ```{r}
 sp2 = (9*var(celular)+7*var(inodoro))/16
 celular_menos_inodoro <- (mean(celular)-mean(inodoro))
-B = 3.29*sqrt(sp2*((1/10)+(1/7)))
+B = 4.015*sqrt(sp2*((1/10)+(1/7)))
 
 celular_menos_inodoro-B
 celular_menos_inodoro+B
@@ -213,7 +213,7 @@ No incluye al cero, si es mayor / menor
 
 c) 95%
 ```{r}
-IC_lower <- var(celular)/var(inodoro)*qf(.975, 12, 10)
+IC_lower <- var(celular)/var(inodoro)*qf(.975, 12, 7)
 IC_upper <- var(celular)/var(inodoro)*qf(.025, 12, 7)
 IC_lower
 IC_upper
@@ -235,7 +235,7 @@ Incluye al uno entonces no hay manera de determinar si hay diferencia
 ## 2.6 Deficiencias de hierro en bebes (primer dato 14.2)
 ```{r}
 materna <- c(15.8, 14.2, 17.1, 8.8, 13.5, 13.9, 12.5, 10.3, 16.5, 15.1, 11.0, 18.4, 16.1)
-formula <- c(10.0, 15.3, 7.5, 9.7, 14.2, 14.3, 14.4, 13.1, 13.8, 12.1)
+formula <- c(10.0, 13.1, 15.3, 7.5, 9.7, 12.1,14.4, 14.3, 13.8,14.2)
 ```
 
 
@@ -260,8 +260,8 @@ no podemos afirmar ya que incluye al cero
 
 c) 98%
 ```{r}
-IC_lower <- var(formula)/var(materna)*qf(.02, 12, 10)
-IC_upper <- var(formula)/var(materna)*qf(.98, 12, 10)
+IC_lower <- var(formula)/var(materna)*qf(.01, 12, 10)
+IC_upper <- var(formula)/var(materna)*qf(.99, 12, 10)
 IC_lower
 IC_upper
 ```

@@ -1,0 +1,268 @@
+---
+title: "Pregunta 3 - 20 minutos"
+author: "Salvador Garcia"
+date: "11/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Propuesta de examen
+
+#### Versión 1)  
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+En un sucursal de de banco se registran el número de transacciónes (T) realizadas durante el último mes. La distribución de T es la siguiente :
+
+```{r echo=TRUE,  results='asis'}
+table <- data.frame(
+  `Treinta` = 0.30,
+  `Cuarena` = 0.40,
+  `Cincuenta` = 0.30
+)
+
+row.names(table) <- c("P(T = t)")
+kable(table,caption = "Número de transacciones")
+```
+**a) Determine la media y la varianza del número de transacciones en la sucursal.**
+
+**b) Obtenga la distribución muestral de la media muestral $\bar{T}$ considerando muestras de tamaño 2
+cuando se realizan muestras con reemplazo.**
+
+**c) Calcule la media y la varianza de la media muestral $\bar{T}$**
+
+
+**a) SOLUCION ==== **
+
+$E(T) = 30(0.3)+40(0.4)+50(0.3) = 40$
+
+$E(T^2) = 900(0.3)+1600(0.4)+2500(0.3) = 1660$
+
+$V(T) = 1660 - 40(40) = 60$
+
+**b) SOLUCION ==== **
+
+Posibles muestras
+
+p(30,30) = (0.3)(0.3) = 0.09  ==== $\bar{T} = 30$
+
+p(30,40) = (0.3)(0.4) = 0.12  ==== $\bar{T} = 35$
+
+p(30,50) = (0.3)(0.3) = 0.09  ==== $\bar{T} = 40$
+
+p(40,30) = (0.4)(0.3) = 0.12  ==== $\bar{T} = 35$
+
+p(40,40) = (0.4)(0.4) = 0.16  ==== $\bar{T} = 40$
+
+p(40,50) = (0.4)(0.3) = 0.12  ==== $\bar{T} = 45$
+
+p(50,30) = (0.3)(0.3) = 0.09  ==== $\bar{T} = 40$
+
+p(50,40) = (0.3)(0.4) = 0.12  ==== $\bar{T} = 45$
+
+p(50,50) = (0.3)(0.3) = 0.09  ==== $\bar{T} = 50$
+
+Total = 100
+
+Distribución muestral:
+
+$\bar{T} = 30$ ==== $p(\bar{T}) = 0.09$ 
+
+$\bar{T} = 35$ ==== $p(\bar{T}) = 0.24$ 
+
+$\bar{T} = 40$ ==== $p(\bar{T}) = 0.34$ 
+
+$\bar{T} = 45$ ==== $p(\bar{T}) = 0.24$ 
+
+$\bar{T} = 50$ ==== $p(\bar{T}) = 0.09$ 
+
+
+**c) SOLUCION ==== **
+
+**c) Calcule la media y la varianza de la media muestral $\bar{T}$**
+
+$E(\bar{T}) = 30(0.09)+35(0.24)+40(0.34)+45(0.24)+50(0.09) = 40$
+
+$E(\bar{T}^2) = 900(0.09)+1225(0.24)+1600(0.34)+2025(0.24)+2500(0.09) = 1630$
+
+$V(\bar{T}) = 1630-1600 = 30$
+
+
+
+#### Versión 2)  
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+
+En una agencia de venta de autos se registraron el número de ventas que tuvieron durante la semana. La distribución A es la siguiente:
+
+```{r echo=TRUE,  results='asis'}
+table <- data.frame(
+  `Diez` = 0.20,
+  `Veinte` = 0.60,
+  `Treinta` = 0.20
+)
+
+row.names(table) <- c("P(A = a)")
+kable(table,caption = "Número de autos en venta")
+```
+**a) Determine la media y la varianza del número de autos vendidos**
+
+**b) Obtenga la distribución muestral de la media muestral $\bar{A}$ considerando muestras de tamaño 2
+cuando se realizan muestras con reemplazo.**
+
+**c) Calcule la media y la varianza de la media muestral $\bar{A}$**
+
+
+**a) SOLUCION ==== **
+
+$E(A) = 10(0.2)+20(0.6)+30(0.2) = 20$
+
+$E(A^2) = 100(0.2)+400(0.6)+900(0.2) = 440$
+
+$V(A) = 440 - 20(20) = 40$
+
+**b) SOLUCION ==== **
+
+Posibles muestras
+
+p(10,10) = (0.2)(0.2) = 0.04  ==== $\bar{A} = 10$
+
+p(10,20) = (0.2)(0.6) = 0.12  ==== $\bar{A} = 15$
+
+p(10,30) = (0.2)(0.2) = 0.04  ==== $\bar{A} = 20$
+
+p(20,10) = (0.6)(0.2) = 0.12  ==== $\bar{A} = 15$
+
+p(20,20) = (0.6)(0.6) = 0.36  ==== $\bar{A} = 20$
+
+p(20,30) = (0.6)(0.2) = 0.12  ==== $\bar{A} = 25$
+
+p(30,10) = (0.2)(0.2) = 0.04  ==== $\bar{A} = 20$
+
+p(30,20) = (0.2)(0.6) = 0.12  ==== $\bar{A} = 25$
+
+p(30,30) = (0.2)(0.2) = 0.04  ==== $\bar{A} = 30$
+
+Total = 100
+
+Distribución muestral:
+
+$\bar{A} = 10$ ==== $p(\bar{A}) = 0.04$ 
+
+$\bar{A} = 15$ ==== $p(\bar{A}) = 0.24$ 
+
+$\bar{A} = 20$ ==== $p(\bar{A}) = 0.44$ 
+
+$\bar{A} = 25$ ==== $p(\bar{A}) = 0.24$ 
+
+$\bar{A} = 30$ ==== $p(\bar{A}) = 0.04$ 
+
+
+**c) SOLUCION ==== **
+
+**c) Calcule la media y la varianza de la media muestral $\bar{T}$**
+
+$E(\bar{T}) = 10(0.04)+15(0.24)+20(0.44)+25(0.24)+30(0.04) = 20$
+
+$E(\bar{T}^2) = 100(0.04)+225(0.24)+400(0.44)+625(0.24)+900(0.04) = 420$
+
+$V(\bar{T}) = 420-400 = 20$
+
+
+
+#### Versión 3)  
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+
+En un restaurante se desea medir el número de comensales (C) que acuden al mes. La distribución que encontraron es la siguiente:
+
+```{r echo=TRUE,  results='asis'}
+table <- data.frame(
+  `Cien` = 0.40,
+  `Doscientos` = 0.20,
+  `Trescientos` = 0.40
+)
+
+row.names(table) <- c("P(C = c)")
+kable(table,caption = "Número de comensales al mes")
+```
+**a) Determine la media y la varianza del número de comensales**
+
+**b) Obtenga la distribución muestral de la media muestral $\bar{C}$ considerando muestras de tamaño 2
+cuando se realizan muestras con reemplazo.**
+
+**c) Calcule la media y la varianza de la media muestral $\bar{C}$**
+
+
+**a) SOLUCION ==== **
+
+$E(C) = 100(0.4)+200(0.2)+300(0.4) = 200$
+
+$E(C^2) = 10000(0.4)+40000(0.2)+90000(0.4) = 48000$
+
+$V(C) = 48000 - 200(200) = 8000$
+
+**b) SOLUCION ==== **
+
+Posibles muestras
+
+p(100,100) = (0.4)(0.4) = 0.16  ==== $\bar{C} = 100$
+
+p(100,200) = (0.4)(0.2) = 0.08  ==== $\bar{C} = 150$
+
+p(100,300) = (0.4)(0.4) = 0.16  ==== $\bar{C} = 200$
+
+p(200,100) = (0.2)(0.4) = 0.08  ==== $\bar{C} = 150$
+
+p(200,200) = (0.2)(0.2) = 0.04  ==== $\bar{C} = 200$
+
+p(200,300) = (0.2)(0.4) = 0.08  ==== $\bar{C} = 250$
+
+p(300,100) = (0.4)(0.4) = 0.16  ==== $\bar{C} = 200$
+
+p(300,200) = (0.4)(0.2) = 0.08  ==== $\bar{C} = 250$
+
+p(300,300) = (0.4)(0.4) = 0.16  ==== $\bar{C} = 300$
+
+Total = 100
+
+Distribución muestral:
+
+$\bar{C} = 100$ ==== $p(\bar{C}) = 0.16$ 
+
+$\bar{C} = 150$ ==== $p(\bar{C}) = 0.16$ 
+
+$\bar{C} = 200$ ==== $p(\bar{C}) = 0.36$ 
+
+$\bar{C} = 250$ ==== $p(\bar{C}) = 0.16$ 
+
+$\bar{C} = 300$ ==== $p(\bar{C}) = 0.16$ 
+
+
+**c) SOLUCION ==== **
+
+**c) Calcule la media y la varianza de la media muestral $\bar{T}$**
+
+$E(\bar{C}) = 100(0.16)+150(0.16)+200(0.36)+250(0.16)+300(0.16) = 200$
+
+$E(\bar{C}^2) = 10000(0.16)+22500(0.16)+40000(0.36)+62500(0.16)+90000(0.16) = 44000$
+
+$V(\bar{C}) = 44000-40000 = 4000$
+
+
+
+
+
