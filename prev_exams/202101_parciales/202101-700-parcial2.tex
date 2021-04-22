@@ -1,0 +1,251 @@
+%%% Template originaly created by Karol Kozioł (mail@karol-koziol.net) and modified for ShareLaTeX use
+
+\documentclass[addpoints]{exam}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm,textcomp}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage[spanish]{babel}
+
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.3}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+{1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+  
+  \theoremstyle{mytheor}
+  \newtheorem{defi}{Definition}
+  
+  % my own titles
+  \makeatletter
+  \renewcommand{\maketitle}{
+    \begin{center}
+    \vspace{2ex}
+    {\huge \textsc{\@title}}
+    \vspace{1ex}
+    \\
+    \linia\\
+    \@author \hfill \@date
+    \vspace{4ex}
+    \end{center}
+  }
+  \makeatother
+  %%%
+  
+  % custom footers and headers
+  %\usepackage{fancyhdr}
+  %\pagestyle{fancy}
+  \lfoot{Examen parcial \textnumero{} 2}
+  \cfoot{}
+  \rfoot{Page \thepage}
+  %\renewcommand{\headrulewidth}{0pt}
+  %\renewcommand{\footrulewidth}{0pt}
+  
+  % code listing settings
+  \usepackage{listings}
+  \lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+  }
+  
+  %%%----------%%%----------%%%----------%%%----------%%%
+  
+  \begin{document}
+  
+  \title{Parcial 1 - Estadística II}
+  
+  \author{ITAM, Primavera 2021}
+  
+  \date{23/03/2021}
+  
+  \maketitle
+  
+  \section*{Instrucciones}
+  
+La sección a) y b) son para resolver en clase (Hora de entrega 9:00 del miercoles 24 marzo 2021). La sección c) es para casa (Hora de entrega: 22:00 del viernes 26 marzo 2021). Se debe contestar individualmente. La entrega será via email a la dirección: salvador.garcia.gonzalez@itam.mx. Se debe cuidar la formalidad al escribir los resultados, ya que es parte de la calificación del problema. En caso de no tener el desarrollo de la pregunta, o bien se llegué a la respuesta sin una justificación se anulará la respuesta. Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento del departamento.
+  
+  \section*{Seccion A: Preguntas de teoría (30 pts)}
+  
+  \begin{questions}
+  
+  \question Consiste en seleccionar una muestra mediante la separación de los elementos de la población en grupos que no presenten traslapes, de manera que cada grupo sea homogéneo entre sus elementos, pero heterogéneo entre grupos.
+  \begin{checkboxes}
+  \choice Muestreo por cuotas
+  \choice Muestreo aleatorio estratificado
+  \choice Muestreo por conglomerados
+  \choice Muestreo aleatorio simple
+  \end{checkboxes}
+  
+  
+    \question Es una función de variables aleatorias observables en una
+muestra y de constantes conocidas.
+  \begin{checkboxes}
+  \choice Estadístico
+  \choice Parámetro
+  \choice Distribución
+  \choice Media poblacional
+  \end{checkboxes}
+  
+  \question Es una lista de unidades de muestreo
+  \begin{checkboxes}
+  \choice Marcos muestrales
+  \choice Unidades de muestreo
+  \choice Elemento muestral
+  \choice Muestra
+  \end{checkboxes}
+  
+  
+  \question Son colecciones no traslapadas de elementos de la población que cubren la población completa.
+  \begin{checkboxes}
+  \choice Marcos muestrales
+  \choice Unidades de muestreo
+  \choice Elemento muestral
+  \choice Muestra
+  \end{checkboxes}
+  
+  \question ¿Para cuáles se requiere un supuesto de normalidad para poderlo ocupar? (Seleccione las que apliquen)
+  \begin{checkboxes}
+  \choice Z
+  \choice T
+  \choice J
+  \choice F
+  \end{checkboxes}
+  
+    \question El error de estimación y el sesgo son conceptos equivalentes
+  \begin{checkboxes}
+  \choice Verdadero
+  \choice Falso
+  \end{checkboxes}
+  
+  \question El que un estimador sea insesgado, significa que cualquier estimación del parámetro siempre va a ser igual al parámetro poblacional.
+  \begin{checkboxes}
+  \choice Verdadero
+  \choice Falso
+  \end{checkboxes}
+  
+  \question Si el $ECM(\hat{\theta_1}) < ECM(\hat{\theta_2})$ y ambos son insesgados entonces $V(\hat{\theta_1}) < V(\hat{\theta_2})$
+  \begin{checkboxes}
+  \choice Verdadero
+  \choice Falso
+  \end{checkboxes}
+  
+  
+  
+  \end{questions}
+
+  \section*{Seccion B: Preguntas a desarrollar (70 pts)}
+  
+  
+  \begin{questions} 
+  \question (20 pts) Si $X_1$ y $X_2$ son dos variables aleatorias independientes tales que $E(X_1) = E(X_2) = \mu$ y $V(X_1) = V(X_2) = \sigma^2$, determine si el siguiente estimador es un estimador insesgado para $\sigma^2$
+
+  $$\hat{\sigma^2} = \frac{(X_1-X_2)^2}{2}$$
+  
+  
+  \question (20 pts) Se elige una muestra aleatoria independiente de 3 observaciones de una población con una función de distribución uniforme $f(x)$:
+  
+  $$ \frac{1}{a}  \quad  si x \in [0, a]$$
+  $$ 0  \quad  si x 	\notin [0, a]$$
+  
+  \begin{enumerate}
+  \item Calcule la media y varianza de la función de distribución
+  \item Se define el siguiente estimador para la media de la distribución. Calcule su ECM.
+  $$\hat{\mu_1} = \frac{1}{2} X_1 + \frac{1}{4} X_2 + \frac{1}{4} X_3$$
+  \end{enumerate}
+  
+  \question (15) Un centro de rescate de guacamayas rojas y azules desea medir la correlación entre ambos. Se observan 5 de cada uno con los siguientes datos:
+  
+| Guacamaya Roja | 10 12 15 15 17 |
+
+| Guacamaya Azul | 30 60 50 12 10 |
+
+  \begin{enumerate}
+  \item Estime el coeficiente de correlación
+  \end{enumerate}
+  
+  \question (15) La variación en el peso de los manatíes que viven en cautiverio y lo que viven en la naturaleza es la misma. Se obtuvo la varianza muestral de una muestra de cada grupo, de 16 y de 21 manaties respectivamente. ¿Cúal es la probabilidad que el cociente de varianzas muestrales exceda de 0.52 suponiendo que el peso de los manatíes se distribuye de manera normal?
+
+  \end{questions}
+  
+  
+  \section*{Seccion C: Examen a casa (100 pts)}
+  
+  \begin{questions} 
+  
+  \question (20 pts) Se desea comparar la cantidad de venados con la cantidad de lobos en un parque estatal. Se supone que la cantidad de venados $N_V$ \textbf{depende} de la cantidad de lobos $N_L$, por lo que se quiere estimar la diferencia en el número de lobos vs el número de venados $N_V$-$N_L$. Se tienen los siguientes datos obtenidos en distintos sectores del parque:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lllllllllllll}
+Sector & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\ \hline
+$N_V$ & 110 & 66 & 44 & 49 & 49 & 49 & 52 & 61 & 64 & 65 & 64 & 56 \\
+$N_L$ & 81 & 102 & 37 & 44 & 44 & 43 & 44 & 48 & 67 & 69 & 74 & 60
+\end{tabular}
+\end{table}
+
+Encuentre un IC al $90\%$ para la diferencia de lobos y venados en el parque. Determine si podemos afirmar que hay una diferencia. 
+
+\question (20 pts)
+Los pangolines son unos mamíferos que pasan durmiendo la mayor parte del día. Pero se cree que los pangolines machos duermen más, pero con una varianza mayor que las pangolines hembras. Se tienen los siguientes datos para una muestra de 40 pangolines macho y 40 pangolines hembra:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+Hembras & Machos \\
+$\bar{x}$ = 5.35 & $\bar{y}$ = 4.31 \\
+$s_x^2$ = 2.31 & $s_y^2$ = 1.21
+\end{tabular}
+\end{table}
+
+Construya un intervalo de confianza del $99\%$ para el cociente de varianzas $\frac{\sigma_x^2}{\sigma_y^2}$. Con base en este intervalo concluya si el supuesto de que las varianzas poblacionales son distintas.
+
+\question (15 pts) El jefe del departamento de estadistica va a estimar la calificación promedio de los estudiantes de estadística 2. Para ello, desea usar una muestra lo suficientemente grande para que la probabilidad que la media muestral no difiera de la media poblacional en más del $25\%$ de la desviación estándar poblacional. Tome $(1-\alpha)= 95\%$. ¿De qué tamaño debe elegir la muestra? 
+
+\question (15 pts) Los empleados de una app de reparto de comida quieren conocer el tiempo promedio de entrega. Eligen aleatoriamente 16 pedidos y toman el tiempo promedio. Los resultados son: $\sum X_i = 336$ y $\sum X_i^2 = 7116$. Determine el intervalo de confianza del $99\%$ del tiempo promedio de entrega.
+
+\question (15 pts) En una muestra aleatoria de 100 empleados de una empresa 50 están a favor del home office. Obtenga un intervalo de confianza (IC) del $95\%$ de probabilidad para la proporción poblacional.
+
+\question (15 pts) Se seleccionó una muestra aleatoria de 21 repartidores de pizza y se les preguntó el número de horas que trabajan a la semana. La desviación estándar muestral fue de 7 horas. Determine un IC del $90\%$ para la varianza de las horas de trabajo de todos los repartidores de pizza. (Asuma normalidad)
+
+\end{questions}
+
+
+\end{document}
+  
