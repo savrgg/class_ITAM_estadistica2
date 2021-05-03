@@ -1,0 +1,155 @@
+%%% Template originaly created by Karol Kozioł (mail@karol-koziol.net) and modified for ShareLaTeX use
+
+\documentclass[addpoints]{exam}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage[spanish]{babel}
+\usepackage{enumitem}
+
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,%
+bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.3}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+{1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+  
+  \theoremstyle{mytheor}
+  \newtheorem{defi}{Definition}
+  
+  % my own titles
+  \makeatletter
+  \renewcommand{\maketitle}{
+    \begin{center}
+    \vspace{2ex}
+    {\huge \textsc{\@title}}
+    \vspace{1ex}
+    \\
+    \linia\\
+    \@author \hfill \@date
+    \vspace{4ex}
+    \end{center}
+  }
+  \makeatother
+  %%%
+  
+  % custom footers and header
+  \lfoot{Examen Parcial\textnumero{} 3}
+  \cfoot{}
+  \rfoot{Page \thepage}
+  \renewcommand{\theenumi}{\Alph{enumi}}
+  %
+  
+  % code listing settings
+  \usepackage{listings}
+  \lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+  }
+  
+  %%%----------%%%----------%%%----------%%%----------%%%
+  
+  \begin{document}
+  
+  \title{Parcial 3 - Estadística II}
+  
+  \author{ITAM, Primavera 2021}
+  
+  \date{03/05/2021}
+  
+  \maketitle
+  
+  \section*{Instrucciones}
+  
+ El examen consta de dos secciones. Se deberán desarrollar todos los problema planteados. La formalidad y correctez al escribir los resultados será evaluada. En caso de no tener el desarrollo de la pregunta, o bien se llegue a la respuesta sin una justificación la respuesta será anulada. 
+  
+  \vspace{10pt}
+  
+El examen tiene una duración de 1:45 horas. Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento del departamento. Se debe entregar el examen a más tardar a las 8:50 en el siguiente correo: salvador.garcia.gonzalez@itam.mx
+
+  \section*{Seccion B: Preguntas a desarrollar (100 pts)}
+ 
+  \begin{questions} 
+  
+  \question (15 pts) Se plantea evaluar si la precisión en los tiros con arco está lineanmente relacionado con el nivel de estrés (de forma negativa). La precisión en los tiros se mide de 0 a 10 con 10 la mjor puntuación. El nivel de estrés se utiliza un indice de 0-300 donde 300 indica un mayor estrés. Se tienen los siguientes datos de seis personas distintas: (use alpha = 0.5)
+  
+| Precisión | 8.5 9.5 10 9.15 9.35 8.9|
+| Entrenamiento mensual | 197 178 150 176 205 153 |
+  
+  \begin{enumerate}
+  \item Determine los 4 componentes de la prueba de hipótesis
+  \item Determine el valor del estadístico evaluando los datos muestrales y concluya
+  \item Determine el valor p de la prueba de hipótesis
+  \end{enumerate}
+  
+  \question (15 pts) Se sabe que la proporción de personas alergicas a mariscos es del 20\%. Para un evento de inauguración del edificio de una empresa se piensa ofrecer mariscos a todos los empleados, pero antes de realizarlo deciden sacar una muestra de 20 empleados y si 6 o más empleados cuentan con alergia a los mariscos decidirán cambiar el menú. 
+  
+\begin{enumerate}
+  \item Determine los 4 componentes de la prueba de hipótesis
+  \item Determine la probabilidad de cometer error tipo 1
+  \item Determine la probabilidad de cometer error tipo 2 para una p = .30 
+  \item Si se encontraron 7 empleados alergicos, determine el valor p. Concluya
+\end{enumerate}
+  
+  \question (10 pts) Explique la relación entre la región de rechazo, $\alpha$, $\beta$ y el intervalo de confianza
+  
+
+\question (15 pts) Se anuncia que el nivel de alcohol promedio de una marca de tequila es de .40 El gobierno al sospechar que contiene más alcohol decide tomar una muestra de 15 botellas y encuentra que tienen en promedio .45 de alcohol con una desviación estandar de .030. Use $\alpha = 0.05$
+
+\begin{enumerate}
+  \item Determine los 4 componentes de la prueba de hipótesis de que el nivel medio de alcohol es mayor a 0.3
+  \item con $\alpha = 0.05$ obtenga $\beta$ para $\mu = 0.45$
+  \item contraste la hipótesis nula $\sigma = 0.01$ contra la hipótesis alternativa de que esta cifra es demasiado baja (con $alpha = 0.05$) concluye
+\end{enumerate}
+
+\question La durabilidad de una linterna es una variable aleatoria normal con $\sigma^2 = 1$. En la fábrica se desa probar que la durabilidad media poblacional es mayor que 10 años, en base a una muestra de 25 linternas. Considere $\alpha = 0.025$
+
+\begin{enumerate}
+  \item Determine los 4 componentes de la prueba de hipótesis
+  \item Calcule la probabilidad de cometer el error tipo 2 cuando los focos en  tienen una durabilidad de 11 años
+  \item Determine el tamaño de muestra tal que $\alpha = 0.025$, $\beta = 0.05$ cuando en realidad la durabilidad es de 11 años
+\end{enumerate}
+
+
+
+\end{questions}
+  
+\end{document}
+  
