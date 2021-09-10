@@ -1,6 +1,6 @@
 %Example of use of oxmathproblems latex class for problem sheets
 \documentclass{oxmathproblems}
-
+\printanswers
 %(un)comment this line to enable/disable output of any solutions in the file
 %\printanswers
 
@@ -19,20 +19,15 @@ En esta tarea se exploran básicos de estadística 1. Para los ejercicios \textb
 \miquestion \textbf{Propiedades de esperanza y varianza:}
 Sean X, Y, Z variables aleatorias y usando las propiedades de la esperanza y varianza encuentre: (Use los siguientes valores: $E(X) = 8, V(X) = 10, E(Y) = 3, V(Y) = 5, E(Z) = -3, E(Z^2) = 10$)  
 \begin{parts}
-  \part $E(3X+5) = $
-  \part $E(Z+Y) = $
-  \part $V(X+Y+5) = $ 
-  \part $V(X-Y-5) = $ 
-  \part $V(Z) = $ 
-  \part $E(Y^2) = $ 
-  \part $E(3X^2+5) = $ 
-  \part $E(X^2+Z^2+Y^2) = $
+  \part $E(3X+5) = 3E(X)+5 = 3(8)+5 = 29$
+  \part $E(Z+Y) = E(Z)+E(Y) = -3+3 = 0$
+  \part $V(X+Y+5) = V(X)+V(Y) = 10+5 = 15$
+  \part $V(X-Y-5) = V(X)+V(Y) = 10+5 = 15$ 
+  \part $V(Z) = E(Z^2)-E(Z)^2 = 10-9 = 1$ 
+  \part $E(Y^2) = V(Y)+E(Y)^2 = 5+9 = 14$ 
+  \part $E(3X^2+5) = 3E(X^2) +5= 3(V(X)+E(X)^2) +5= 3(10+64)+5 = 227$ 
+  \part $E(X^2+Z^2+Y^2) = E(X^2)+E(Z^2)+E(Y^2) = 74+10+14 = 98$
 \end{parts}
-
-\begin{solution}
-  The solution would go here
-\end{solution}
-
 
 \miquestion \textbf{Cálculo de esperanza y varianza:}
 Resuelva el ejercicio y determine cuando utilizar formulas para \textbf{datos agrupados} o \textbf{datos no agrupados}. 
@@ -55,12 +50,19 @@ Resuelva el ejercicio y determine cuando utilizar formulas para \textbf{datos ag
 
 Determine si son datos agrupados o no y encuentre E(X) y V(X)
 
-\part Se tiene la siguiente muestra aleatoria: X = \{3, 5, 11, 5, 3\}. Determine si son datos agrupados o no y encuentre la $E(X)$ y $V(X)$.
+\begin{solution}
+  Son datos agrupados y poblacionales:
+  $$E(X) = 1*0.2+2*0.35+3*0.2+4*0.25 = 2.5$$
+  $$V(X) = E(X^2)-E(X)^2 = (1*0.2+4*0.35+9*0.2+16*0.25)-2.5^2 = 7.4-6.25 = 1.15$$
+\end{solution}
 
+\part Se tiene la siguiente muestra aleatoria: X = \{3, 5, 11, 5, 3\}. Determine si son datos agrupados o no y encuentre la $E(X)$ y $V(X)$.
 \end{parts}
 
 \begin{solution}
-  The solution would go here
+  Son datos no agrupados y muestrales:
+  $$E(X) = \frac{\sum{X_i}}{n}= (3+5+11+5+3)/5 = 5.4$$
+  $$V(X) = \frac{\sum{X_i^2}-n\bar{X}^2}{n-1}= \frac{(9+25+121+25+9)-5*(5.4^2)}{4} = 10.8$$
 \end{solution}
 
 
