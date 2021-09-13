@@ -125,14 +125,14 @@ Los automóviles con más de 5 años producidos por la fábrica es:
 
 \begin{checkboxes}
   \choice Marcos muestrales
-  \choice Unidades de muestreo
+  \choice Variable de interes
   \choice Población
   \choice Muestra
   \choice Ninguna de las anteriores
 \end{checkboxes}
 
 
-Cada uno de los 100 autos es:
+Cada uno de los automóviles con más de 5 años es:
 \begin{checkboxes}
   \choice Muestra
   \choice Unidades de muestreo
@@ -210,7 +210,7 @@ El conjunto de los 100 autos es:
   \item El objetivo de la inferencia estadística es analizar a toda la población para obtener conclusiones
   \item Si se toman dos muestras aleatorias del mismo tamaño de la misma población, el valor del estadístico que se calcule será el mismo para ambas
   \item En una distribución de muestreo exacta, buscamos tener una sola muestra y hacer inferencia estadística con ella. 
-  \item La dispersión de la media muestral para un tamaño de muestra n>1, siempre es menor que la varianza de la población completa
+  \item La dispersión de la media muestral para un tamaño de muestra n>1, siempre es menor que la varianza de la población completa (con reemplazo)
   \item Se tiene el experimento de lanzar una moneda y donde los posibles valores son {aguila, sol}. Se toma una muestra de tamaño 1, si se calcula la distribución de muestreo exacta para $\bar{X}$ es la misma que la de la distribución original
   \end{enumerate}
   
@@ -224,16 +224,14 @@ El conjunto de los 100 autos es:
   \question (25 pts)
   Para las siguientes preguntas resuelve 
   \begin{enumerate}
-  \item (8 pts) El peso de unas cajas se distribuye de forma normal con media 10 kgs y desviación estándar de 3. ¿Si se toma una muestra de 9 productos, ¿Cuál es la probabilidad que la varianza  muestral esté entre 1 y 3?
-  \item (8 pts) Se sabe que la demanda de transporte en una plataforma digital en una región se distribuye Poisson con media de 60 por dia. En otra plataforma se distribuye Poisson con media de 50 por dia.Calcule la probabilidad de que diferencia de medias muestrales entre ambas plataformas sea mayor a 20
+  \item (8 pts) El peso de unas cajas se distribuye de forma normal con media 10 kgs y desviación estándar de 3. Si se toma una muestra de 9 productos, ¿Cuál es la probabilidad que la varianza  muestral esté entre 1 y 3?
+  \item (8 pts) Se sabe que la demanda de transporte en una plataforma digital en una región se distribuye Poisson con media de 600 por dia. En otra plataforma se distribuye Poisson con media de 590 por dia.Si se toma una muestra de 30 en cada aplicación, calcule la probabilidad de que diferencia de medias muestrales entre ambas plataformas sea mayor a 20
   \item (9 pts) En una caja, las variaciones en el número personas atendidas por los cajeros A y B es la misma. Se obtuvo el número promedio de personas por dia por cada cajero, así como la varianza muestral. Esto se realizó durante 16 y 21 dias respectivamente. ¿Cuál es la probabilidad que el cociente de varianzas muestrales exceda 0.54 suponiendo que, los números de unidades manejadas por día por los cajeros son v.a. independientes que se distribuyen normal?
   \end{enumerate}
 
-\question (15 pts) 
+\question (15 pts) Si $\bar{Y_1}$ y $\bar{Y_2}$ son medias muestrales de dos poblaciones con las distribuciones mostradas arriba:
 
-Si $\bar{Y_1}$ y $\bar{Y_2}$ son medias muestrales de dos poblaciones con la siguiente distribución:
-
-\begin{table}[h]
+\begin{table}[h!]
 \centering
 \begin{tabular}{llll}
 $Y_1$ & 2 & 5 & 8 \\ \hline
@@ -241,7 +239,7 @@ $P(Y_1)$ & 2/3 & 1/6 & 1/6
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[h!]
 \centering
 \begin{tabular}{llll}
 $Y_2$ & 1 & 5 \\ \hline
@@ -249,7 +247,7 @@ $P(Y_2)$ & 1/2 & 1/2
 \end{tabular}
 \end{table}
 
-Obtenga la probabilidad de que $\bar{X_1} + \bar{X_2}$ sea mayor que 8 cuando se toman muestras aleatorias independientes con reemplazo de tamaño $n_1 = 125$, $n_2 = 100$
+Obtenga la probabilidad de que $\bar{Y_1} + \bar{Y_2}$ sea mayor que 8 cuando se toman muestras aleatorias independientes con reemplazo de tamaño $n_1 = 15$, $n_2 = 15$ (Asuma TCL)
 
  \question (15 pts) En una fabrica de galletas tienen 5 lineas de producción $L_1$, $L_2$, $L_3$, $L_4$, $L_5$. Se sabe que que las lineas $L_3$, $L_4$, $L_5$ requieren reparación.
 
@@ -264,12 +262,10 @@ Obtenga la probabilidad de que $\bar{X_1} + \bar{X_2}$ sea mayor que 8 cuando se
   
   \begin{enumerate}
   \item (3 pts) Calcule $E(X)$ y $V(X)$
-  \item (5 pts) Obtenga el espacio muestral
+  \item (4 pts) Obtenga el espacio muestral
   \item (4 pts) Obtenga distribución de muestreo de $\overline{X}$, $E(\overline{X})$ y $V(\overline{X})$
-  \item (4 pts) Obtenga distribución de muestreo de $S^2$, $E(\overline{S^2})$ y $V(\overline{S^2})$
-  \item (2 pts) Calcule la probabilidad que $S^2$ tome valores entre 10 y 30
-  \item (2 pts) ¿Las distribuciones de $S^2$ y $\overline{X}$ son distribuciones exactas?
-  Justifique
+  \item (2 pts) Calcule la probabilidad que $\overline{X}$ tome valores entre 10 y 30 (inclusivo)
+  \item (2 pts) ¿La distribución de $\overline{X}$ es exacta? Justifique
   \end{enumerate}
 
 \end{questions}
