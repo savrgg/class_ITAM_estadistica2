@@ -1,0 +1,220 @@
+%%% Template originaly created by Karol Kozioł (mail@karol-koziol.net) and modified for ShareLaTeX use
+
+\documentclass[addpoints]{exam}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\renewcommand\familydefault{\sfdefault}
+\renewcommand{\theenumi}{\Alph{enumi}}
+\usepackage{tgheros}
+
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm,textcomp}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage[spanish, es-nodecimaldot]{babel}
+\usepackage{enumitem}
+
+
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.3}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+{1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+  
+  \theoremstyle{mytheor}
+  \newtheorem{defi}{Definition}
+  
+  % my own titles
+  \makeatletter
+  \renewcommand{\maketitle}{
+    \begin{center}
+    \vspace{2ex}
+    {\huge \textsc{\@title}}
+    \vspace{1ex}
+    \\
+    \linia\\
+    \@author \hfill \@date
+    \vspace{4ex}
+    \end{center}
+  }
+  \makeatother
+  %%%
+  
+  % custom footers and headers
+  %\usepackage{fancyhdr}
+  %\pagestyle{fancy}
+  \lfoot{Parcial \textnumero{} 2}
+  \cfoot{}
+  \rfoot{Page \thepage}
+  %\renewcommand{\headrulewidth}{0pt}
+  %\renewcommand{\footrulewidth}{0pt}
+  
+  % code listing settings
+  \usepackage{listings}
+  \lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+  }
+  %%%----------%%%----------%%%----------%%%----------%%%
+  
+  \begin{document}
+  
+  \title{Parcial 2 - Estadística II}
+  
+  \author{ITAM, Primavera 2021}
+  
+  \date{11/11/2021}
+  
+  \maketitle
+  
+  \section*{Instrucciones}
+  
+El examen es para resolver en casa. Se debe contestar individualmente y entregarse a más tardar a las 23:59 del viernes 12 de octubre. La entrega será en canvas. El examen cuenta con 10 preguntas a desarrollar. Se debe cuidar la formalidad al escribir los resultados, ya que es parte de la calificación del problema. En caso de no tener el desarrollo de la pregunta, o bien se llegué a la respuesta sin una justificación se podrá anular la respuesta. Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento del departamento. \textbf{Trabajar con 4 cifras decimales}
+
+\vspace{10pt}
+
+\section*{Seccion A: Intervalos de confianza }
+\begin{questions} 
+
+\question \textbf{(10pts)} En una muestra aleatoria de 100 empleados, 30 están a favor del home office. 
+\begin{enumerate}[label=\Alph*)]
+\item (5pts) Utilizando TCL, obtenga un intervalo de confianza (IC) del $95\%$ de probabilidad para la proporción poblacional. 
+\item (5pts) Sin utilizar TCL obtenga un intervalo de confianza (IC) del $95\%$ de probabilidad para la proporción poblacional. 
+\end{enumerate}
+
+\question \textbf{(10pts)} El jefe del departamento de estadistica va a estimar la calificación promedio de los estudiantes de estadística 2. Para ello, desea usar una muestra lo suficientemente grande para que la probabilidad que la media muestral no difiera de la media poblacional en más del $25\%$ de la desviación estándar poblacional. 
+\begin{enumerate}[label=\Alph*)]
+\item (5pts) Tome $(1-\alpha)= 99\%$. ¿De qué tamaño debe elegir la muestra?, ¿Qué supuesto o teorema debe usar para el inciso?
+\item (5pts) Tome $(1-\alpha)= 90\%$. ¿De qué tamaño debe elegir la muestra?, ¿Qué supuesto o teorema debe usar para el inciso?
+\end{enumerate}
+
+\question \textbf{(10pts)} Se seleccionó una muestra aleatoria de 21 repartidores de pizza y se les preguntó el número de horas que trabajan a la semana. La desviación estándar muestral fue de 7 horas. 
+\begin{enumerate}[label=\Alph*)]
+\item (4pts) Determine un IC del $90\%$ para la varianza de las horas de trabajo de todos los repartidores de pizza
+\item (4pts) Determine un IC del $90\%$ para la desviación estándar de las horas de trabajo de todos los repartidores de pizza
+\item (2pts) ¿Qué supuesto(s) usó para los incisos anteriores?
+\end{enumerate}
+
+\question \textbf{(10pts)} Se desea comparar la cantidad de venados con la cantidad de lobos en un parque estatal. Se supone que la cantidad de venados $N_V$ depende de la cantidad de lobos $N_L$, por lo que se quiere estimar la diferencia en el número de lobos vs el número de venados $N_V$-$N_L$. Se tienen los siguientes datos obtenidos en distintos sectores del parque:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lllllllllllll}
+Sector & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\ \hline
+$N_V$ & 110 & 66 & 44 & 49 & 49 & 49 & 52 & 61 & 64 & 65 & 64 & 56 \\
+$N_L$ & 81 & 102 & 37 & 44 & 44 & 43 & 44 & 48 & 67 & 69 & 74 & 60
+\end{tabular}
+\end{table}
+
+\begin{enumerate}[label=\Alph*)]
+\item (7pts) Encuentre un IC al $90\%$ para la diferencia de lobos y venados en el parque.
+\item (3pts) Determine si podemos afirmar que hay una diferencia. 
+\end{enumerate}
+
+
+\question \textbf{(10pts)} Los pangolines son unos mamíferos que pasan durmiendo la mayor parte del día. Se cree que los pangolines machos duermen más, pero con una varianza mayor que las pangolines hembras. Se tienen los siguientes datos para una muestra de 40 pangolines macho y 40 pangolines hembra:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+Hembras & Machos \\
+$\bar{x}$ = 5.35 & $\bar{y}$ = 4.31 \\
+$s_x^2$ = 2.31 & $s_y^2$ = 1.21
+\end{tabular}
+\end{table}
+
+\begin{enumerate}[label=\Alph*)]
+\item (5pts) Construya un intervalo de confianza del $99\%$ para el cociente de varianzas $\frac{\sigma_x^2}{\sigma_y^2}$.
+\item (2pts) Construya un intervalo de confianza del $99\%$ para el cociente de varianzas $\frac{\sigma_y^2}{\sigma_x^2}$.
+\item (3pts) Con base en este intervalo concluya si el supuesto de que las varianzas poblacionales son distintas.
+\end{enumerate}
+ 
+
+ \question \textbf{(5pts)} Los empleados de una app de reparto de comida quieren conocer el tiempo promedio de entrega. Eligen aleatoriamente 16 pedidos y toman el tiempo promedio. Los resultados son: $\sum X_i = 336$ y $\sum X_i^2 = 7116$. 
+  
+\begin{enumerate}[label=\Alph*)]
+\item (4pts) Determine el intervalo de confianza del $99\%$ del tiempo promedio de entrega.
+\item (1pts) ¿Qué supuestos utilizó para el inciso anterior?
+\end{enumerate}
+  
+  
+
+\section*{Seccion B: Pruebas de hipótesis paramétricas (50 pts)}
+
+ \question \textbf{(15pts)} Las vaquitas marinas son cetáceos que les gusta buscar calamares y peces cerca de aguas poco profundas. Un grupo de investigadores está interesado en medir las libras promedio que consumen por semana, la cual se distribuye normal. Los investigadores suponen que consumen $800$ libras (o menos) con $\sigma$ menor que 40, bastante abajo del límite que plantea la revista Nature, que es de $1000$ libras semanales. Con esto deciden tomar una muestra de $n = 40$ vaquitas, encontrando que la media muestra y la varianza son igual a $825$ libras y $2350$ libras respectivamente (use $\alpha = 0.05$).
+  
+\begin{enumerate}[label=\Alph*)]
+  \item  (3pts) si $\mu = 800$ y $\sigma = 40$, ¿Que tan probable es que es una vaquita marina consuma más de 1000 libras a la semana?
+  \item (6pts) ¿Los datos proporcionan suficiente evidencia para indicar que las vaquitas marinas consumen más de 800 libras? Plantea $H_0$, $H_1$, usa TCL y concluye.
+  \item (6pts) ¿Los datos aportan suficiente evidencia para indicar $\sigma$ excede de 40? Plantea $H_0$ y $H_1$ y concluye.
+  \end{enumerate}
+  
+  \question \textbf{(10pts)} En tiempos de Covid, se desea saber si la temperatura promedio de los empleados de un grupo empresarial es distinta que en tiempos normales, para esto se recolectó una muestra antes y una durante la pandemia, obteniendose los siguientes datos (use $\alpha = .05$):
+
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{ll}
+    Durante Covid19 & Pre-Covid19 \\
+    $n_1 = 20$ & $n_2 = 20$ \\
+    $\bar{y_1} =  78$ & $\bar{y_2} = 67$ \\
+    $s_1 = 22$ &  $s_2 = 20$
+    \end{tabular}
+    \end{table}
+
+\begin{enumerate}[label=\Alph*)]
+  \item (7pts) ¿Hay suficiente evidencia para decir que existe una diferencia en la temperatura promedio de los empleados del grupo? Concluye.
+  \item (3pts) ¿Cuál es el nivel de significancia alcanzado (valor-p)?
+  \end{enumerate}
+  
+  \question \textbf{(10pts)} La cafetería del ITAM sigue un proceso de calidad en sus alimentos. Se sabe que la proporción de alimentos en mal estado es del $14\%$. El ITAM como institución no pueda aceptar que la cafetería venda alimentos si toma una muestra de 20 alimentos y encuentra 4 o más alimentos mal estado. Para monitorear la calidad del proceso se desea hacer una prueba estadística (use $\alpha = .05$). 
+  
+  \begin{enumerate}[label=\Alph*)]
+  \item (2pts) Enuncie las hipótesis nula y alternativa
+  \item (2pts) Obtenga la probabilidad de cometer el error tipo I 
+  \item (3pts) Obtenga la potencia de la prueba cuando la proporción de alimentos defectuosas es del $20\%$ y $30\%$. 
+  \item (3pts) Obtenga la potencia de la prueba para p = 0.20 y p = 0.25 cuando la muestra inspeccionada es de 100 alimentos y el ITAM no acepta si encuentra 20 o más alimentos defectuosos.
+  \end{enumerate}
+ 
+  
+  \question \textbf{(10pts)} En la construcción de la estela de Luz se usaron estructuras prefabricadas. Con la información histórica de la compañía que las fabricas se puede considerar que la resistencia $(ton/m^2)$ de estas estructuras se puede modelar como una variable aleatoria normal con $\sigma^2 = 900$. Se desea probar que la resistencia promedio de estas estructuras es mayor de 150 toneladas, para lo anterior se tomó una muestra aleatoria de 25 estructuras. 
+  \begin{enumerate}[label=\Alph*)]
+  \item (3pts) obtenga los valores de $\bar{X}$ que determina la región de rechazo. 
+  \item (4pts) Con base a la información que puede arrojar la muestra calcule la probabilidad de cometer el error tipo II cuando las estructuras en realidad soportan 160 toneladas, considere un nivel de significancia del $2.5\%$
+  \item (3pts) Determine el tamaño de muestra necesario para que $\alpha = 0.025$ y $\beta = 0.05$
+  \end{enumerate}
+
+  \end{questions}
+  \end{document}
+  
