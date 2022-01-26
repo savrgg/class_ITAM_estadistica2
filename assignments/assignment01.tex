@@ -1,6 +1,7 @@
 %Example of use of oxmathproblems latex class for problem sheets
 \documentclass{oxmathproblems}
-
+\usepackage{blindtext}
+\usepackage{hyperref}
 %(un)comment this line to enable/disable output of any solutions in the file
 %\printanswers
 
@@ -8,60 +9,85 @@
 \course{ITAM - Estadistica 2}
 \oxfordterm{Assignment 01}
 \sheetnumber{1}
-\sheettitle{Repaso Estadística 1}
+\sheettitle{}
 
 \begin{document}
 
-En esta tarea se exploran básicos de estadística 1. Para los ejercicios \textbf{suponga muestras independientes.}
-
 \begin{questions}
 
-\miquestion \textbf{Propiedades de esperanza y varianza:}
-Sean X, Y, Z variables aleatorias y usando las propiedades de la esperanza y varianza encuentre: (Use los siguientes valores: $E(X) = 8, V(X) = 10, E(Y) = 3, V(Y) = 5, E(Z) = -3, E(Z^2) = 10$)  
-\begin{parts}
-  \part $E(3X+5) = $
-  \part $E(Z+Y) = $
-  \part $V(X+Y+5) = $ 
-  \part $V(X-Y-5) = $ 
-  \part $V(Z) = $ 
-  \part $E(Y^2) = $ 
-  \part $E(3X^2+5) = $ 
-  \part $E(X^2+Z^2+Y^2) = $
-\end{parts}
+\miquestion \textbf{Datos no agrupados} Se presentan 5 datos de una muestra de precios de vuelos redondos a una playa mexicana en un viernes específico: 2500, 2000, 1800, 3000, 2100
 
-\begin{solution}
-  The solution would go here
-\end{solution}
+\begin{itemize}
+\item ¿Qué fórmulas ocupas para calcular la media, mediana y varianza?
+\item Calcula los valores
+\end{itemize}
 
+Decides comparar esta muestra con la población total, de manera que los datos ahora son: 2500, 2000, 1800, 3000, 2100, 2600, 1900, 1900, 2900, 2100
 
-\miquestion \textbf{Cálculo de esperanza y varianza:}
-Resuelva el ejercicio y determine cuando utilizar formulas para \textbf{datos agrupados} o \textbf{datos no agrupados}. 
+\begin{itemize}
+\item ¿Qué fórmulas ocupas para calcular la media, mediana y varianza?
+\item Calcula los valores
+\end{itemize}
 
-\begin{parts}
+¿Cómo explicas las diferencias encontradas en estos resultados?
 
-\part X tiene la siguiente distribución poblacional:
+\miquestion \textbf{Datos no agrupados} Un amigo que trabaja en el aeropuerto observa que estás realizando un estudio acerca de los precios de vuelos redondos a una playa, por lo que te proporciona la distribución poblacional discreta que han sacado de manera oficial:
 
 \begin{center}
 \begin{tabular}{ |c|c| } 
  \hline
- X=x & p(X = x)  \\ 
- 1 & 0.2  \\ 
- 2 & 0.35  \\ 
- 3 & 0.2  \\ 
- 4 & 0.25  \\ 
+ \textbf{x} & \textbf{P(x)} \\ 
+ \hline
+ 1800 & 0.1 \\
+ 1900 & 0.2 \\
+ 2000 & 0.1 \\ 
+ 2100 & 0.2 \\ 
+ 2500 & 0.1 \\ 
+ 2600 & 0.1 \\ 
+ 2900 & 0.1 \\ 
+ 3000 & 0.1 \\ 
  \hline
 \end{tabular}
 \end{center}
 
-Determine si son datos agrupados o no y encuentre E(X) y V(X)
+\begin{itemize}
+\item ¿Qué fórmulas ocupas para calcular la media y varianza? Adicional, explica como encuentras la mediana.
+\item Calcula los valores
+\end{itemize}
 
-\part Se tiene la siguiente muestra aleatoria: X = \{3, 5, 11, 5, 3\}. Determine si son datos agrupados o no y encuentre la $E(X)$ y $V(X)$.
+\miquestion \textbf{Función de probabilidad discreta.} Sea X una variable aleatoria con función de probabilidad:
 
-\end{parts}
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ \textbf{x} & \textbf{P(x)} \\ 
+ \hline
+ 0 & 2c \\ 
+ 1 & 0.05 \\ 
+ 2 & 0.2 \\ 
+ 3 & 0.4 \\ 
+ 4 & 0.2 \\ 
+ 5 & c \\ 
+ \hline
+\end{tabular}
+\end{center}
 
-\begin{solution}
-  The solution would go here
-\end{solution}
+\begin{itemize}
+\item Determine el valor de c para que sea una función de probabilidad
+\item En este particular ejemplo, utilizarías fórmulas muestrales o poblacionales. Justifica
+\item Determina $E(x)$, $Var(x)$ y el coeficiente de variación
+\item Obtenga $E(30x-2)$, $Var(30x-2)$ (suponga iid)
+\item Obtenga la función de distribución de probabilidad acumulada y grafique
+\end{itemize}
+
+\miquestion \textbf{Distribución de probabilidad continua.} Sea X una variable aleatoria que denota el tiempo en minutos que una persona tiene que esperar hasta que pasa el camion en cierto lugar de la ciudad. Suponga que x es uniforme en el intervalo (0,100), es decir que la función de densidad es:
+
+\begin{itemize}
+\item Obtenga la función de distribución acumulada de X
+\item Calcule el valor esperado, la desviación estándar y la mediana de X
+\item Una persona se dirige a tomar el camión. ¿Cuál es la probabilidad que tenga que esperar más de 10 minutos?
+\end{itemize}
+
 
 
 \end{questions}
