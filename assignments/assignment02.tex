@@ -1,0 +1,82 @@
+%Example of use of oxmathproblems latex class for problem sheets
+\documentclass{oxmathproblems}
+\usepackage{blindtext}
+\usepackage{hyperref}
+%(un)comment this line to enable/disable output of any solutions in the file
+%\printanswers
+
+%define the page header/title info
+\course{ITAM - Estadistica 2}
+\oxfordterm{Repaso Estadistica 1 (parte 2/2)}
+\sheetnumber{1}
+\sheettitle{}
+
+\begin{document}
+
+
+\begin{questions}
+
+\miquestion \textbf{Correlación entre dos variables aleatorias} 
+
+El departamento de mercadotecnia de una empresa desea investigar la correlación que existe entre las variables X: inversión en una campaña promocional y Y: incremento en ventas después de la promoción.
+
+La función de probabilidad conjunta para las variables anteriores se presentan a continuación (X en renglones, Y en columnas)
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| } 
+ \hline
+ \textbf{x/y} & \textbf{0.01} & \textbf{2.0} & \textbf{3.6} & \textbf{3.9} & \textbf{P(X = x)} \\
+ \hline
+ 0.1 & 0.098 & 0.100 & 0.010 & 0.010 & 0.218 \\
+ 2.5 & 0.001 & 0.010 & 0.200 & 0.001 & 0.212 \\
+ 2.8 & 0.001 & 0.099 & 0.200 & 0.270 & 0.570 \\ 
+ \hline
+ P(Y = y) & 0.100 & 0.209 & 0.410 & 0.281 & 1.000 \\
+ \hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item Calcule E(X), E(Y), Var(X), Var(Y), E(XY), Cov(XY)
+\item Calcula el coeficiente de correlación de X,Y
+\item Interprete
+\end{itemize}
+
+\miquestion \textbf{Valores en tablas} 
+Usando las tablas oficiales calcule los siguientes valores. Recuerde que en distribuciones continuas no hay diferencia si expresamos $P(Z\leq 3)$ y $P(Z < 3)$, aunque por convención, lo expresaremos como: $P(Z\leq 3)$. Para distribuciones discretas tener cuidado ya que SI hay diferencia entre $P(Y\leq 3)$ y $P(Y < 3)$.
+
+
+Usando tablas de Normal encuentre las siguientes probabilidades:
+\begin{itemize}
+\item $P(-2 \leq Z \leq 2)$
+\item $P(Z > 3)$
+
+Usando tablas de Normal encuentre el valor de a:
+\item $P(Z > a) = 0.5$
+\item $P(-a \leq Z \leq a) = 0.98$
+\end{itemize}
+
+Usando tablas de Binomial encuentre las siguientes probabilidades:
+\begin{itemize}
+\item $n = 5, p = 0.5$, $P(Y \leq 2)$
+\item $n = 10, p = 0.3$ $P(Y > 5)$
+
+Usando tablas de Binomial encuentre el valor de a:
+\item $n = 5, p = 0.5$, $P(Y > a) = 0.5$
+\item $n = 10, p = 0.3$, $P(Y < a) = 0.998$
+\end{itemize}
+
+Usando tablas de Poisson encuentre las siguientes probabilidades:
+\begin{itemize}
+\item $\lambda = 3$, $P(X \leq 3)$
+\item $\lambda = 3$, $P(1 < X < 3)$
+
+Usando tablas de Poisson encuentre el valor de a:
+\item $\lambda = 3$, $P(X > a) = 0.353$
+\item $\lambda = 3$, $P(X \leq a) = 0.996$
+\end{itemize}
+
+
+\end{questions}
+
+\end{document}

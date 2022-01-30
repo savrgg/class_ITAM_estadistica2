@@ -42,10 +42,10 @@
 \pagestyle{headandfoot}
 \lhead{}
 \chead[\bfseries \Large \thecourse\\
-\large Sheet \thesheetnumber \ifprintanswers \ Solutions \fi \quad---\quad\theoxfordterm\\%
+\large \ifprintanswers \ Solutions \fi \quad\quad\theoxfordterm\\%
 \ifprintanswers \textit{\textcolor{red}{For Tutors Only --- Not For Distribution}}\\ \fi
 \thesheettitle]{}
-\rhead[]{\bfseries \thecourse: Sheet \thesheetnumber \ifprintanswers \ Solutions \fi --- \theoxfordterm}
+\rhead[]{\bfseries \thecourse: \ifprintanswers \ Solutions \fi  \theoxfordterm}
 \lfoot{\footnotesize ITAM \\}
 \cfoot{}
 \rfoot{Page \thepage{} of \numpages}
