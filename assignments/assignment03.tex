@@ -1,0 +1,51 @@
+%Example of use of oxmathproblems latex class for problem sheets
+\documentclass{oxmathproblems}
+\usepackage{blindtext}
+\usepackage{hyperref}
+%(un)comment this line to enable/disable output of any solutions in the file
+%\printanswers
+
+%define the page header/title info
+\course{ITAM - Estadistica 2}
+\oxfordterm{Assignment 2}
+\sheetnumber{1}
+\sheettitle{}
+
+\begin{document}
+
+
+\begin{questions}
+
+\miquestion \textbf{Distribución de muestro exacta sin reemplazo} 
+
+En una urna hay seis bolas blancas, tres negras y una roja. Se eligen dos de éstas mediante muestreo aleatorio sin reemplazo. Sea X una variable aleatoria que indica el premio de 2,4,6 a los resultados pelota blanca, negra y roja respectivamente:
+
+\begin{itemize}
+\item Calcula E(X), V(X)
+\item Obtén la distribución de muestreo de $\bar{X}$
+\item E($\bar{X}$) y V($\bar{X}$)
+\end{itemize}
+
+\miquestion \textbf{Distribución de muestro exacta con reemplazo} 
+
+Se realiza una investigación de mercado con el propósito de conocer la factibilidad de abrir una tienda de autoservicio. Como parte del estudio se consideró la variable Z, que representa el número de visitas al mes al supermercado que realiza cada persona encuestada. La distribucuón de Z está dada por:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+ \textbf{z} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\
+ \hline
+ Número de personas & 30 & 50 & 15 & 5  \\
+ \hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item Calcule E(Z), V(Z)
+\item Obtenga la distribución de muestreo de $S^2$ para el caso en que se toman muestras aleatorias con reemplazo de tamaño dos
+\item Calcule la media y la varianza de la distribución de muestreo del inciso b)
+\end{itemize}
+
+\end{questions}
+
+\end{document}
