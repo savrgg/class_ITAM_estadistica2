@@ -1,0 +1,193 @@
+%%% Template originaly created by Karol Kozioł (mail@karol-koziol.net) and modified for ShareLaTeX use
+
+\documentclass[addpoints]{exam}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\renewcommand\familydefault{\sfdefault}
+\renewcommand{\theenumi}{\Alph{enumi}}
+\usepackage{tgheros}
+
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm,textcomp}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage[spanish, es-nodecimaldot]{babel}
+\usepackage{enumitem}
+
+
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.3}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+{1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+{{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+  
+  \theoremstyle{mytheor}
+  \newtheorem{defi}{Definition}
+  
+  % my own titles
+  \makeatletter
+  \renewcommand{\maketitle}{
+    \begin{center}
+    \vspace{2ex}
+    {\huge \textsc{\@title}}
+    \vspace{1ex}
+    \\
+    \linia\\
+    \@author \hfill \@date
+    \vspace{4ex}
+    \end{center}
+  }
+  \makeatother
+  %%%
+  
+  % custom footers and headers
+  %\usepackage{fancyhdr}
+  %\pagestyle{fancy}
+  \lfoot{Parcial \textnumero{} 1}
+  \cfoot{}
+  \rfoot{Page \thepage}
+  %\renewcommand{\headrulewidth}{0pt}
+  %\renewcommand{\footrulewidth}{0pt}
+  
+  % code listing settings
+  \usepackage{listings}
+  \lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+  }
+  %%%----------%%%----------%%%----------%%%----------%%%
+  
+  \begin{document}
+  
+  \title{Parcial 1 - Estadística II}
+  
+  \author{ITAM, Primavera 2022}
+  
+  \date{16/03/2022}
+  
+  \maketitle
+  
+  \section*{Instrucciones}
+  
+  El examen cuenta con 10 preguntas a desarrollar. La formalidad al escribir los resultados es considerada como parte del puntaje. En caso de no tener el desarrollo de la pregunta, o bien se llegué a la respuesta sin una justificación se anulará la respuesta. Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento del departamento. \textbf{Trabajar con 4 cifras decimales}
+
+\vspace{10pt}
+
+\begin{questions} 
+
+\section*{Seccion A: Estimación puntual}
+
+\question \textbf{(10pts)} Se toma una muestra del número de matches que se tienen en una app para conocer personas llamada $Bubble$ durante 5 dias aleatorios. Se obtienen los siguientes datos:
+
+$$75, 92, 517, 3200, 428$$
+
+\begin{enumerate}[label=\Alph*)]
+\item Determina el número promedio de matches por dia
+\item La varianza del número de matches por dia
+\item La proporción de dias que cuentan con más de 100 matches al dia
+\end{enumerate}
+
+\section*{Seccion B: Distribuciones de muestreo exactas}
+
+\question \textbf{(15pts)} Suponga que una variable aleatoria X puede tomar los valores \{10,50,70\} con probabilidades \{0.1, 0.3, 0.6\}. Considere muestras de tamaño 2 con reemplazo.
+  
+  \begin{enumerate}
+  \item (3 pts) Calcule $E(X)$ y $V(X)$
+  \item (3 pts) Obtenga el espacio muestral y sus respectivas probabilidades
+  \item (3 pts) Obtenga distribución de muestreo de $\overline{X}$, $E(\overline{X})$ y $V(\overline{X})$ ¿Qué puede concluir comparandola con lo obtenido en A)?
+  \item (1 pts) ¿La distribución de $\overline{X}$ es exacta? Justifique
+  \end{enumerate}
+
+ \question \textbf{(10 pts)} En una fabrica de galletas tienen 5 lineas de producción $L_1$, $L_2$, $L_3$, $L_4$, $L_5$. Se sabe que que las lineas $L_3$, $L_4$, $L_5$ requieren reparación.
+
+  \begin{enumerate}
+  \item (5 pts) Obtenga el espacio muestral si se toman muestras de dos lineas sin reemplazo
+  \item (5 pts) Obtenga la distribución de muestreo de la proporción de lineas $\hat{p}$ que necesitan reparación
+  \end{enumerate}
+
+\section*{Seccion C: Distribuciones de muestreo aproximada}
+
+\question \textbf{(10pts)} 
+Se decide hacer un evento para apoyar monetariamente a refugios de animales sin hogar. Se sabe que el monto que dona cada persona (X) es una variable aleatoria con media 300 y desviación estándar 50. Si en total acuden 100 personas al evento:
+
+\begin{enumerate}[label=\Alph*)]
+\item Determine cuál es la probabilidad que se recauden más de $\$30,500$ pesos durante el evento.
+\item Si los costos logísticos del evento ascienden a $\$15,000$, ¿Cuál es la probabilidad que se incurran en pérdidas?
+\end{enumerate}
+
+\question \textbf{(10pts)} El precio de los armadillos en el zoológico se distribuye normal con media 5 kg y varianza 1.
+
+\begin{enumerate}[label=\Alph*)]
+\item ¿Cuál es la probabilidad que un armadillo seleccionado al azar pese más de 4.5 kg?
+\item Se toma una muestra de 5 armadillos ¿Cuál es la probabilidad que la varianza de la muestra sea mayor a 1.2?
+\end{enumerate}
+  
+
+\section*{Seccion D: Propiedades de estimadores}
+
+\question \textbf{(15pts)} Sea $\hat{\mu}$ un estimador a la media poblacional. Resuelva los siguientes incisos: 
+   
+$$\hat{\mu} = \frac{1}{2} (X_1) + \frac{X_3+...+X_{n-3}}{2b} $$
+
+\begin{enumerate}[label=\Alph*)]
+\item Encuentre el ECM del estimador (poner en términos de b)
+\item Determina $b$ tal que el estimador sea insesgado
+\end{enumerate}
+
+\question \textbf{(15pts)} Sea $Y$ la variable aleatoria que modela el número de alumnos en el ITAM que deciden cambiarse a la carrera de Matemáticas Aplicadas después de llevar Estadística 2. Se sabe que $Y$ se distribuye Poisson con media $\lambda$. Se considera el siguiente estimador a la media:
+
+$$\hat{\lambda} = \sum_i Y_i(Y_i-1) $$
+
+Toma una muestra de tamaño $n$
+
+\begin{enumerate}[label=\Alph*)]
+\item Determina si el estimador es insesgado
+\end{enumerate}
+
+
+\question \textbf{(15pts)} La probabilidad de que un alumno se vuelva fit después de una plática de Barby Regil es $p$. Se sabe que $n$ alumnos acudieron a la platica impartida y se propone el siguiente estimador a la proporción poblacional:
+
+$$\hat{p} = \frac{Y+1}{n+1}$$
+
+Sea Y el número de alumnos que se vuelven fit. 
+
+\begin{enumerate}[label=\Alph*)]
+\item Determina el sesgo de $\hat{p}$
+\end{enumerate}
+
+
+  \end{questions}
+  \end{document}
+  
