@@ -8,20 +8,20 @@
 \usepackage{xcolor}
 
 \renewcommand\familydefault{\sfdefault}
-\renewcommand{\theenumi}{\Alph{enumi}}
 \usepackage{tgheros}
 
-\usepackage{amsmath}
-\usepackage{amssymb,amsthm,textcomp}
+\usepackage{amsmath,amssymb,amsthm,textcomp}
 \usepackage{enumerate}
 \usepackage{multicol}
 \usepackage{tikz}
-\usepackage[spanish, es-nodecimaldot]{babel}
+\usepackage[spanish]{babel}
 \usepackage{enumitem}
 
+\decimalpoint
 
 \usepackage{geometry}
-\geometry{left=25mm,right=25mm,bindingoffset=0mm, top=20mm,bottom=20mm}
+\geometry{left=25mm,right=25mm,%
+bindingoffset=0mm, top=20mm,bottom=20mm}
 
 
 \linespread{1.3}
@@ -53,13 +53,11 @@
   %%%
   
   % custom footers and headers
-  %\usepackage{fancyhdr}
-  %\pagestyle{fancy}
-  \lfoot{Parcial \textnumero{} 2}
+  \lfoot{Assignment \textnumero{} 5}
   \cfoot{}
   \rfoot{Page \thepage}
-  %\renewcommand{\headrulewidth}{0pt}
-  %\renewcommand{\footrulewidth}{0pt}
+  \renewcommand{\theenumi}{\Alph{enumi}}
+  %
   
   % code listing settings
   \usepackage{listings}
@@ -87,107 +85,89 @@
     captionpos=t,
     escapeinside={\%*}{*)}
   }
+  
   %%%----------%%%----------%%%----------%%%----------%%%
   
   \begin{document}
   
-  \title{Parcial 2 - Estadística II}
+  \title{Parcial 2 - Estadística II 20:00}
   
-  \author{ITAM, Primavera 2021}
+  \author{ITAM, Primavera 2022}
   
-  \date{11/11/2021}
+  \date{09/05/2022}
   
   \maketitle
   
   \section*{Instrucciones}
-  
-  El examen cuenta con 10 preguntas a desarrollar. La formalidad al escribir los resultados es considerada como parte del puntaje. En caso de no tener el desarrollo de la pregunta, o bien se llegué a la respuesta sin una justificación se anulará la respuesta. Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento del departamento. \textbf{Trabajar con 4 cifras decimales}
+ 
 
 \vspace{10pt}
+  
+El examen tiene una duración de 1 hora. \textbf{Cualquier práctica fraudulenta será sancionada de acuerdo al reglamento.} La hora de entrega es 22:00 
 
+\section*{Seccion A: Preguntas a desarrollar (100 pts)}
+  
+  
 \begin{questions} 
 
-\section*{Seccion A: Estimación puntual}
-
-\question \textbf{(10pts)} Se toma una muestra del número de matches que se tienen en una app para conocer personas llamada $Bubble$ durante 5 dias aleatorios. Se obtienen los siguientes datos:
-
-$$75, 92, 517, 3200, 428$$
-
-\begin{enumerate}[label=\Alph*)]
-\item Determina el número promedio de matches por dia
-\item La varianza del número de matches por dia
-\item La proporción de dias que cuentan con más de 100 matches al dia
-\end{enumerate}
-
-\section*{Seccion B: Distribuciones de muestreo exactas}
-
-\question \textbf{(10pts)} Suponga que una variable aleatoria X puede tomar los valores \{10,50,70\} con probabilidades \{0.1, 0.3, 0.6\}. Considere muestras de tamaño 2 con reemplazo.
+\question \textbf{(10pts, en casa)}  La cafetería del ITAM sigue un proceso de calidad en sus alimentos. Se sabe que la proporción de alimentos en mal estado debe ser máximo de $14\%$. El ITAM toma como muestra 30 alimentos y decide que si encuentra más de 8 alimentos en mal estado deberá cerrar la cafeteria. Usted es contratado para ayudar al ITAM a contestar las siguientes preguntas: (use $\alpha = .05$). 
   
-  \begin{enumerate}
-  \item (3 pts) Calcule $E(X)$ y $V(X)$
-  \item (3 pts) Obtenga el espacio muestral y sus respectivas probabilidades
-  \item (3 pts) Obtenga distribución de muestreo de $\overline{X}$, $E(\overline{X})$ y $V(\overline{X})$ ¿Qué puede concluir comparandola con lo obtenido en A)?
-  \item (1 pts) ¿La distribución de $\overline{X}$ es exacta? Justifique
-  \end{enumerate}
+\begin{enumerate}[label=\Alph*)]
+\item (2pts) Enuncie las hipótesis nula y alternativa
+\item (3pts) Obtenga la probabilidad de cometer el error tipo I y tipo II
+\item (5pts) Obtenga la potencia de la prueba cuando la proporción de alimentos defectuosas es del $20\%$ y $30\%$. 
+\end{enumerate}
+ 
+ 
+   \question \textbf{(10pts)} En tiempos de Covid, se desea saber si la temperatura promedio de los empleados de un grupo empresarial es distinta que en tiempos normales, para esto se recolectó una muestra antes y una durante la pandemia, obteniendose los siguientes datos (use $\alpha = .05$):
 
- \question (10 pts) En una fabrica de galletas tienen 5 lineas de producción $L_1$, $L_2$, $L_3$, $L_4$, $L_5$. Se sabe que que las lineas $L_3$, $L_4$, $L_5$ requieren reparación.
-
-  \begin{enumerate}
-  \item (5 pts) Obtenga el espacio muestral si se toman muestras de dos lineas sin reemplazo
-  \item (5 pts) Obtenga la distribución de muestreo de la proporción de lineas $\hat{p}$ que necesitan reparación
-  \end{enumerate}
-
-\section*{Seccion C: Distribuciones de muestreo aproximada}
-
-\question \textbf{(10pts)} 
-Se decide hacer un evento para apoyar monetariamente a refugios de animales sin hogar. Se sabe que el monto que dona cada persona (X) es una variable aleatoria con media 300 y desviación estándar 50. Si en total acuden 100 personas al evento:
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{ll}
+    Durante Covid19 & Pre-Covid19 \\
+    $n_1 = 20$ & $n_2 = 20$ \\
+    $\bar{y_1} =  78$ & $\bar{y_2} = 67$ \\
+    $s_1 = 22$ &  $s_2 = 20$
+    \end{tabular}
+    \end{table}
 
 \begin{enumerate}[label=\Alph*)]
-\item Determine cuál es la probabilidad que se recauden más de $\$30,500$ pesos durante el evento.
-\item Si los costos logísticos del evento ascienden a $\$15,000$, ¿Cuál es la probabilidad que se incurran en pérdidas?
-\end{enumerate}
-
-\question \textbf{(10pts)} El precio de los armadillos en el zoológico se distribuye normal con media 5 kg y varianza 1.
-
+  \item (7pts) ¿Hay suficiente evidencia para decir que existe una diferencia en la temperatura promedio de los empleados del grupo? Concluye.
+  \item (3pts) ¿Cuál es el nivel de significancia alcanzado (valor-p)?
+  \end{enumerate}
+  
+  
+ \question \textbf{(15pts)} Las vaquitas marinas son cetáceos que les gusta buscar calamares y peces cerca de aguas poco profundas. Un grupo de investigadores está interesado en medir las libras promedio que consumen por semana, la cual se distribuye normal. Los investigadores suponen que consumen $800$ libras (o menos) con $\sigma$ menor que 40, bastante abajo del límite que plantea la revista Nature, que es de $1000$ libras semanales. Con esto deciden tomar una muestra de $n = 40$ vaquitas, encontrando que la media muestra y la varianza son igual a $825$ libras y $2350$ libras respectivamente (use $\alpha = 0.05$).
+  
 \begin{enumerate}[label=\Alph*)]
-\item ¿Cuál es la probabilidad que un armadillo seleccionado al azar pese más de 4.5 kg?
-\item Se toma una muestra de 5 armadillos ¿Cuál es la probabilidad que la varianza de la muestra sea mayor a 1.2?
+  \item  (3pts) si $\mu = 800$ y $\sigma = 40$, ¿Que tan probable es que es una vaquita marina consuma más de 1000 libras a la semana?
+  \item (6pts) ¿Los datos proporcionan suficiente evidencia para indicar que las vaquitas marinas consumen más de 800 libras? Plantea $H_0$, $H_1$, usa TCL y concluye (no use la varianza del inciso a), si no la varianza muestral del enunciado del ejercicio). Encuentre el valorp
+  \item (6pts) ¿Los datos aportan suficiente evidencia para indicar $\sigma$ excede de 40? Plantea $H_0$ y $H_1$ y concluye. Encuentre el valor p
+  \end{enumerate}
+  
+ 
+ \question \textbf{(10 pts)} El Gobierno de la Ciudad de México decide comprar una cantidad importante de semáforos. El productor de estos semáforos afirma que tienen una vida promedio de 5 años, con una varianza menor o igual a 2 años. El gobierno decide adquirirlos solamente si tienen una varianza menor o igual 2 años de duración. Se seleccionan al azar 30 semáforos y se obtiene $S^2 = 3.1$. Usted forma parte del gobierno de la Ciudad de México y piensa que lo dicho por el productor es mentira, por lo que busca contrastar lo afirmado por él.
+
+\begin{enumerate}
+\item Formule las hipótesis $H_0$ y $H_1$ apropiadas al problemas
+\item Pruebe con un nivel de significancia de $\alpha = 0.05$
+\item Muestre en una gráfica la región de rechazo y el estadístico de prueba correspondiente
+\item Inteprete el resultado
 \end{enumerate}
+
+\question \textbf{(10 pts)}
+La dirección del ITAM desea saber si existe una diferencia del doble de la varianza de las calificaciones de las clases en linea comparándolas con las clases presenciales ($2*\sigma^2_{Presencial} = \sigma^2_{Online}$). Para esto selecciona las calificaciones que tuvieron 11 alumnos previo a la pandemia (X: clases presenciales), contra 16 en la situación actual (Y: clase en linea). Los datos obtenidos son los siguientes: $\bar{X} = 6.92$, $\bar{Y} = 9.48$, $S_{X} = 1.46$, $S_{Y} = 1.11$
+
+\begin{enumerate}
+\item Formule las hipótesis $H_0$ y $H_1$ apropiadas al problemas
+\item Pruebe con un nivel de significancia de $\alpha = 0.05$
+\item Muestre en una gráfica la región de rechazo y el estadístico de prueba correspondiente
+\item Inteprete el resultado
+\end{enumerate}
+
+
+\end{questions}
+\end{document}
   
 
-\section*{Seccion D: Propiedades de estimadores}
-
-\question \textbf{(10pts)} Sea $\hat{\mu}$ un estimador a la media poblacional. Resuelva los siguientes incisos: 
-   
-$$\hat{\mu} = \frac{1}{1} (X_1) + \frac{X_3+...+X_{n-3}}{2b} $$
-
-\begin{enumerate}[label=\Alph*)]
-\item Encuentre el ECM del estimador (poner en términos de b)
-\item Determina $b$ tal que el estimador sea insesgado
-\end{enumerate}
-
-\question \textbf{(10pts)} Sea $Y$ la variable aleatoria que modela el número de alumnos en el ITAM que deciden cambiarse a la carrera de Matemáticas Aplicadas después de llevar Estadística 2. Se sabe que $Y$ se distribuye Poisson con media $\lambda$. Se considera el siguiente estimador a la media:
-
-$$\hat{\lambda} = \sum_i Y_i(Y_i-1) $$
-
-Toma una muestra de tamaño $n$
-
-\begin{enumerate}[label=\Alph*)]
-\item Determina si el estimador es insesgado
-\end{enumerate}
-
-
-\question \textbf{(10pts)} La probabilidad de que un alumno se vuelva fit después de una plática de Barby Regil es $p$. Se sabe que $n$ alumnos acudieron a la platica impartida y se propone el siguiente estimador a la proporción poblacional:
-
-$$\hat{p} = \frac{Y+1}{n+1}$$
-
-Sea Y el número de alumnos que se vuelven fit. 
-
-\begin{enumerate}[label=\Alph*)]
-\item Determina el sesgo de $\hat{p}$
-\end{enumerate}
-
-
-  \end{questions}
-  \end{document}
   
