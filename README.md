@@ -1,4 +1,5 @@
-Repositorio para curso de Estadistica 2 - ITAM
+# Repositorio para curso de Estadistica 2 - ITAM
+
 Notas:
 
 Tareas:
