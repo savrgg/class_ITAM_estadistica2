@@ -1,1 +1,9 @@
-https://savrgg.github.io/class_2020_estadistica2/
+Repositorio para curso de Estadistica 2 - ITAM
+Notas:
+
+Tareas:
+
+Solución Tareas:
+
+Examenes Pasados:
+
